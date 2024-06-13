@@ -1,0 +1,8 @@
+/* Education*/
+#step-title {
+    @apply text-2xl font-extrabold
+}
+
+#step-description {
+    @apply text-xl font-bold
+}

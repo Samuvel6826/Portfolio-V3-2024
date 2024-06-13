@@ -1,0 +1,4 @@
+/* Projects */
+.active {
+    @apply bg-secondary
+}

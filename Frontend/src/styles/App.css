@@ -1,0 +1,12 @@
+/* Navbar */
+#nav-header {
+    @apply text-letter
+}
+
+.uil {
+    @apply mx-1
+}
+
+#mobileMenu-list li {
+    @apply w-full h-16 text-center border-b items-center justify-center
+}

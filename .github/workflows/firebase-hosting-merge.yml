@@ -1,0 +1,43 @@
+name: Deploy to Firebase Hosting on merge
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Firebase CLI
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      # Install dependencies
+      - name: Install dependencies
+        run: cd Frontend && npm install
+
+      # Build the project
+      - name: Build the project
+        # env:
+        #   VITE_APP_API_URL: ${{ vars.VITE_APP_API_URL }}
+        run: cd Frontend && npm run build
+
+      # Login to Firebase using a service account
+      - name: Login to Firebase with service account
+        uses: google-github-actions/auth@v0.4.0
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SAMTOCODE24 }}
+
+      # Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting
+        run: |
+          cd Frontend
+          firebase deploy
+
+      # Success notification (optional)
+      - name: Deployment Successful!
+        if: success() # Only run this step if all previous steps succeed
+        run: echo "Deployment to Firebase Hosting successful!"

@@ -1,0 +1,13 @@
+/* Hero */
+#hero-content-btns-container button {
+    @apply h-14
+}
+
+#hero-content-btns {
+    @apply p-4
+}
+
+/* sm	640px	@media (min-width: 640px) { ... } */
+#hero {
+    @apply max-sm:p-4
+}

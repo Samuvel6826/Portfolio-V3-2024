@@ -1,0 +1,24 @@
+/* Contact */
+#contactForm {
+    @apply w-[48%] flex flex-col justify-between
+}
+
+#nameContainer, #mobileContainer, #emailContainer {
+    @apply w-full h-[10%] p-2 bg-tertiary flex
+}
+
+#msgContainer {
+    @apply w-full h-[40%] p-2 bg-tertiary flex
+}
+
+#your_name, #your_mobile, #your_email, #message {
+    @apply w-full h-full bg-letter p-2 text-tertiary
+}
+
+#your_name::placeholder, #your_mobile::placeholder, #your_email::placeholder, #message::placeholder {
+    @apply text-cyan-900
+}
+
+#require {
+    @apply flex items-center p-2
+}

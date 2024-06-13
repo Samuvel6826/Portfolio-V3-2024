@@ -1,0 +1,16 @@
+/* About */
+#s-box {
+    @apply border-2 border-secondary rounded-2xl p-4 flex flex-col flex-grow items-center justify-center gap-1
+}
+
+#s-box a {
+    @apply flex flex-col items-center justify-center text-center
+}
+
+#d-resume-link {
+    @apply border-2 bg-primary text-white border-secondary w-full flex gap-2 text-2xl items-center justify-center
+}
+
+#d-resume-link a {
+    @apply text-white
+}
