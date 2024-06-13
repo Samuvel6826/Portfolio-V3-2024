@@ -170,7 +170,7 @@ const Skills = () => {
 
     const renderSkillBox = (skill) => (
         <div key={skill.name} id='skills-box' className="skill-box">
-            <a href={skill.link} target="_blank" rel="noopener noreferrer">
+            <a href={skill.link} target="_blank">
                 <img style={{ height: skill.skillIconHeight, width: skill.skillIconWidth }} src={skill.imageUrl} alt={skill.name} />
                 <h3>{skill.name}</h3>
                 <h6 className="skill-level">{skill.level}</h6>
