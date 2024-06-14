@@ -1,78 +1,61 @@
-/* Import custom fonts */
-@import './fonts.css';
+/* Import custom fonts if needed */
+/* @import './fonts.css'; */
 
-/* Import Tailwind CSS */
+/* Include Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+	/* Global reset */
+	*,
+	*::before,
+	*::after {
+		@apply box-border;
+	}
 
-    /* Global reset */
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+	/* Smooth scrolling */
+	html {
+		@apply scroll-smooth;
+	}
 
-    /* Smooth scrolling */
-    html {
-        scroll-behavior: smooth;
-    }
+	/* Remove default text decoration and apply link styles */
+	a {
+		@apply no-underline hover:text-blue-700;
+	}
 
-    /* Cursor pointer for clickable elements */
-    button {
-        cursor: pointer;
-    }
+	button {
+		@apply border-2 rounded-2xl p-4;
+	}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply font-bold;
-    }
+	/* Heading styles */
+	h1 {
+		@apply font-bold text-4xl;
+	}
 
-    h1 {
-        @apply text-4xl;
-    }
+	h2 {
+		@apply font-bold text-3xl;
+	}
 
-    h2 {
-        @apply text-3xl;
-    }
+	h3 {
+		@apply font-bold text-2xl;
+	}
 
-    h3 {
-        @apply text-2xl;
-    }
+	h4 {
+		@apply font-bold text-xl;
+	}
 
-    h4 {
-        @apply text-xl;
-    }
+	h5 {
+		@apply font-bold text-lg;
+	}
 
-    h5 {
-        @apply text-lg;
-    }
+	h6 {
+		@apply font-bold text-base;
+	}
 
-    h6 {
-        @apply text-base;
-    }
-
-    /* Lists */
-    ul,
-    ol {
-        @apply pl-5 my-4;
-    }
-}
-
-@layer components {
-
-    /* Remove default text decoration and apply link styles */
-    a {
-        @apply no-underline hover:text-blue-700;
-    }
-
-    button {
-        @apply border-2 border-primary rounded-2xl
-    }
+	/* Lists */
+	ul,
+	ol {
+		@apply pl-5 my-4;
+	}
 }

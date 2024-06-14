@@ -14,12 +14,12 @@ function App() {
     <Navbar />
     <main className='main'>
       <Hero />
-      <About />
+      {/* <About />
       <Education />
       <Skills />
       <Projects />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </main>
   </div>
 }

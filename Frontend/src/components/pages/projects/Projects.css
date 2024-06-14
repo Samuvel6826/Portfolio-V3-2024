@@ -1,4 +1,4 @@
 /* Projects */
 .active {
-    @apply bg-secondary
+	@apply bg-secondary;
 }

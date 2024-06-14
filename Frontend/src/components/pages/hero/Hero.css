@@ -8,6 +8,8 @@
 }
 
 /* sm	640px	@media (min-width: 640px) { ... } */
-#hero {
-    @apply max-sm:p-4
+@media (max-width: 640px) {
+    #hero {
+        @apply max-sm:px-4
+    }
 }

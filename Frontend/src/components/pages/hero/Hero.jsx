@@ -9,7 +9,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Hero = () => {
     return (
-        <section id="hero" className='h-[calc(100vh-4rem)] mt-16 bg-secondary max-sm:p-4'>
+        <section id="hero" className='h-[calc(100vh-4rem)] mt-16 bg-secondary'>
 
             <div id="container" className="container h-full mx-auto flex items-center">
                 <div id='hero-social-links' className=' text-xl flex flex-col gap-4 max-sm:hidden'>
@@ -24,8 +24,47 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <div className='h-full w-full flex max-sm:flex-col-reverse justify-evenly items-center text-base'>
-                    <div className="introContent w-[58%] max-sm:h-[55%] max-sm:w-full text-base">
+                <div className='h-full w-full flex max-sm:flex-col items-center text-base'>
+
+                    <div id='dp-container' className="relative w-[45%] max-sm:h-[38%] max-sm:w-full flex items-center gap-12">
+
+                        <div id='hero-social-links' className='h-full w-10 pt-5 pb-8 text-xl flex flex-col justify-between items-center  md:hidden'>
+                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
+                                <FaInstagram />
+                            </a>
+                            <a href="https://www.linkedin.com/in/samuvelantony/" target='blank'>
+                                <FaLinkedin />
+                            </a>
+                            <a href="https://github.com/Samuvel6826" target='blank'>
+                                <FaGithub />
+                            </a>
+                        </div>
+
+                        <div id='dp-img-container' className='w-full h-full flex justify-center items-center '>
+                            <img
+                                className='dp-Pic w-full max-sm:w-[68%] '
+                                src="https://res.cloudinary.com/dgsucveh2/image/upload/v1704099547/WhatsApp_Image_2024-01-01_at_06.38.56-modified_bjntky.png"
+                                alt="Avatar"
+                            />
+
+                        </div>
+
+                        <div className='absolute h-52 w-10 z-10 right-0 top-3  md:hidden'>
+                            <a href="#about" className='h-full flex flex-col justify-between items-center text-center'>
+                                <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
+
+                                <div className='m-0 -rotate-90 flex flex-row gap-2'>
+                                    <span className=''>Scroll</span>
+                                    <span className=''>Down</span>
+                                </div>
+
+                                <GoArrowDown className='mx-2' />
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div className="introContent w-[62%] max-sm:h-[55%] max-sm:w-full text-base">
                         <div className='max-sm:leading-8 leading-[3.5rem]'>
                             <p className="hello max-sm:text-[1.45em] text-[1.6em]">Hello!👋🏻</p>
                             <p className="introText max-sm:text-[1.45em] text-[3.2em]">
@@ -68,43 +107,7 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <div id='dp-container' className="relative w-[45%] max-sm:h-[40%] max-sm:w-full flex items-center gap-12">
 
-                        <div id='hero-social-links' className='h-full w-10 pt-5 pb-8 text-xl flex flex-col justify-between items-center  md:hidden'>
-                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
-                                <FaInstagram />
-                            </a>
-                            <a href="https://www.linkedin.com/in/samuvelantony/" target='blank'>
-                                <FaLinkedin />
-                            </a>
-                            <a href="https://github.com/Samuvel6826" target='blank'>
-                                <FaGithub />
-                            </a>
-                        </div>
-
-                        <div id='dp-img-container' className='w-full h-full flex justify-center items-center '>
-                            <img
-                                className='dp-Pic w-full max-sm:w-[68%] '
-                                src="https://res.cloudinary.com/dgsucveh2/image/upload/v1704099547/WhatsApp_Image_2024-01-01_at_06.38.56-modified_bjntky.png"
-                                alt="Avatar"
-                            />
-
-                        </div>
-
-                        <div className='absolute h-52 w-10 z-10 right-0 top-3  md:hidden'>
-                            <a href="#about" className='h-full flex flex-col justify-between items-center text-center'>
-                                <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
-
-                                <div className='m-0 -rotate-90 flex flex-row gap-2'>
-                                    <span className=''>Scroll</span>
-                                    <span className=''>Down</span>
-                                </div>
-
-                                <GoArrowDown className='mx-2' />
-                            </a>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
