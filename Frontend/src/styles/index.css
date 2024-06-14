@@ -1,5 +1,5 @@
 /* Import custom fonts if needed */
-/* @import './fonts.css'; */
+@import "./fonts.css";
 
 /* Include Tailwind CSS */
 @tailwind base;

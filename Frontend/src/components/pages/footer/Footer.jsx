@@ -17,8 +17,8 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
-import Cryptos from '../../common/Cryptos';
-import { Button, Popover, Space } from 'antd';
+import Cryptos from './Cryptos';
+import { Popover, Space } from 'antd';
 
 const Footer = () => {
 

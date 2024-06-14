@@ -1,15 +1,101 @@
 /* Hero */
-#hero-content-btns-container button {
-    @apply h-14
-}
 
-#hero-content-btns {
-    @apply p-4
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* sm	640px	@media (min-width: 640px) { ... } */
-@media (max-width: 640px) {
-    #hero {
-        @apply max-sm:px-4
-    }
+@layer components {
+	@media screen and (max-width: 640px) {
+		#hero-social-links {
+			@apply hidden;
+		}
+
+		#hero-content-btns-container button {
+			@apply h-14;
+		}
+
+		#hero-content-btns {
+			@apply p-4;
+		}
+	}
+
+	/* Media query for screens up to 640px wide: max-sm */
+	@media screen and (min-width: 640px) {
+		#hero {
+			@apply p-0;
+		}
+
+		#dp-pic {
+			@apply w-[50%];
+		}
+
+		#hero-text-container {
+			@apply leading-[3.5em];
+		}
+
+		#intro-text {
+			@apply text-[3.2em];
+		}
+
+		#intro-name {
+			@apply text-[1.6em];
+		}
+
+		#web-dev {
+			@apply text-[2.6em];
+		}
+
+		#intro-para {
+			@apply leading-relaxed text-[1.2em];
+		}
+	}
+
+	/* Media query for screens between 641px and 768px wide: max-md */
+	@media screen and (min-width: 768px) {
+		#hero-container {
+			@apply justify-between;
+		}
+
+		#hero-social-links {
+			@apply mr-4 text-xl;
+		}
+
+		#wrapper {
+			@apply flex-row-reverse justify-between;
+		}
+
+		#dp-container {
+			@apply w-[35%];
+		}
+
+		#dp-pic {
+			@apply w-[95%];
+		}
+
+		#hero-content {
+			@apply w-[64%] justify-center;
+		}
+
+		#hero-content-btns-container {
+			@apply justify-start gap-4;
+		}
+	}
+
+	/* Media query for screens between 769px and 1024px wide: max-lg */
+	@media screen and (min-width: 1024px) {
+	}
+
+	/* Media query for screens between 1025px and 1280px wide: max-xl */
+	@media screen and (min-width: 1280px) {
+	}
+
+	/* Media query for screens between 1281px and 1536px wide: max-2xl */
+	@media screen and (min-width: 1536px) {
+		/* CSS styles for screens between 1281px and 1536px wide */
+	}
+
+	/* Media query for screens wider than 1536px - 2xl*/
+	@media screen and (min-width: 1537px) {
+		/* CSS styles for screens wider than 1536px */
+	}
 }

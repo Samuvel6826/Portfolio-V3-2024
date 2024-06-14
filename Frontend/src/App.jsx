@@ -10,16 +10,16 @@ import Footer from './components/pages/footer/Footer'
 import Education from './components/pages/education/Education'
 
 function App() {
-  return <div className='App'>
+  return <div id='App'>
     <Navbar />
     <main className='main'>
       <Hero />
-      {/* <About />
+      <About />
       <Education />
       <Skills />
       <Projects />
       <Contact />
-      <Footer /> */}
+      <Footer />
     </main>
   </div>
 }
