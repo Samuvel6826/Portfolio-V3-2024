@@ -6,16 +6,16 @@
 
 @layer components {
 	@media screen and (max-width: 640px) {
-		#hero-social-links {
-			@apply hidden;
-		}
-
 		#hero-content-btns-container button {
 			@apply h-14;
 		}
 
 		#hero-content-btns {
 			@apply p-4;
+		}
+
+		#hero-content-scrollBtn {
+			@apply hidden;
 		}
 	}
 
@@ -61,7 +61,7 @@
 		}
 
 		#wrapper {
-			@apply flex-row-reverse justify-between;
+			@apply w-[95%] flex-row-reverse justify-between;
 		}
 
 		#dp-container {

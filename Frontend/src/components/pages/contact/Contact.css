@@ -1,24 +1,66 @@
 /* Contact */
 #contactForm {
-    @apply w-[48%] flex flex-col justify-between
+	@apply w-[48%] flex flex-col justify-between;
 }
 
-#nameContainer, #mobileContainer, #emailContainer {
-    @apply w-full h-[10%] p-2 bg-tertiary flex
+#nameContainer,
+#mobileContainer,
+#emailContainer {
+	@apply w-full h-[10%] p-2 bg-tertiary flex;
 }
 
 #msgContainer {
-    @apply w-full h-[40%] p-2 bg-tertiary flex
+	@apply w-full h-[40%] p-2 bg-tertiary flex;
 }
 
-#your_name, #your_mobile, #your_email, #message {
-    @apply w-full h-full bg-letter p-2 text-tertiary
+#your_name,
+#your_mobile,
+#your_email,
+#message {
+	@apply w-full h-full bg-letter p-2 text-tertiary;
 }
 
-#your_name::placeholder, #your_mobile::placeholder, #your_email::placeholder, #message::placeholder {
-    @apply text-cyan-900
+#your_name::placeholder,
+#your_mobile::placeholder,
+#your_email::placeholder,
+#message::placeholder {
+	@apply text-cyan-900;
 }
 
 #require {
-    @apply flex items-center p-2
+	@apply flex items-center p-2;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	/* Media query for screens up to 640px wide: sm */
+	@media screen and (max-width: 640px) {
+	}
+
+	/* Media query for screens up to 640px wide: max-sm */
+	@media screen and (min-width: 640px) {
+	}
+
+	/* Media query for screens between 641px and 768px wide: max-md */
+	@media screen and (min-width: 768px) {
+	}
+
+	/* Media query for screens between 769px and 1024px wide: max-lg */
+	@media screen and (min-width: 1024px) {
+	}
+
+	/* Media query for screens between 1025px and 1280px wide: max-xl */
+	@media screen and (min-width: 1280px) {
+	}
+
+	/* Media query for screens between 1281px and 1536px wide: max-2xl */
+	@media screen and (min-width: 1536px) {
+	}
+
+	/* Media query for screens wider than 1536px - 2xl*/
+	@media screen and (min-width: 1537px) {
+	}
 }
