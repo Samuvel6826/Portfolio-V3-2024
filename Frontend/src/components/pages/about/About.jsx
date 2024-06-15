@@ -7,14 +7,16 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 const About = () => {
     return <section id='about' className=' h-[calc(100vh-4rem)] bg-primary text-white mx-auto flex flex-col items-center justify-evenly'>
 
-        <header id='aboutHeader' className='text-center text-secondary'>
-            <h1 className="aboutPageTitle">About Me</h1>
-            <h5 className="aboutPageDesc">My Introduction</h5>
-        </header>
+        <div id='about-container' className=' container h-[100%] mx-auto flex flex-col justify-between'>
 
-        <div className=' container h-[80%] flex justify-between items-center'>
-            <img className='w-[46%] h-full rounded-2xl' src={AboutImg} alt="" />
-            <div className='w-[46%] h-full flex flex-col justify-between'>
+            <header id='aboutHeader' className='text-center text-secondary'>
+                <h1 className="aboutPageTitle">About Me</h1>
+                <h5 className="aboutPageDesc">My Introduction</h5>
+            </header>
+
+            <img id='about-img' className='w-[46%] h-full rounded-2xl' src={AboutImg} alt="" />
+
+            <div id='about-content' className='w-[46%] h-full flex flex-col justify-between'>
                 <div className='flex w-full gap-4'>
                     <div id='s-box'>
                         <FaAward />

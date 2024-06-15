@@ -7,15 +7,11 @@
 @layer components {
 	@media screen and (max-width: 640px) {
 		#hero-content-btns-container button {
-			@apply h-14;
+			@apply h-14 border-primary;
 		}
 
 		#hero-content-btns {
 			@apply p-4;
-		}
-
-		#hero-content-scrollBtn {
-			@apply hidden;
 		}
 	}
 
@@ -78,6 +74,10 @@
 
 		#hero-content-btns-container {
 			@apply justify-start gap-4;
+		}
+
+		#hero-content-scrollBtn {
+			@apply flex;
 		}
 	}
 

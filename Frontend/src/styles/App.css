@@ -1,7 +1,4 @@
 /* Navbar */
-#nav-header {
-	@apply text-letter;
-}
 
 .uil {
 	@apply mx-1;

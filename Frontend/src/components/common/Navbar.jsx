@@ -12,7 +12,7 @@ const Navbar = () => {
 		setOpen(false);
 	};
 
-	return <header id='topBar' className=' h-16 w-full fixed top-0 left-0 max-md:px-4 bg-tertiary  flex justify-center items-center text-xl z-10'>
+	return <header id='topBar' className=' h-16 w-full fixed top-0 left-0 max-md:px-4 bg-tertiary flex justify-center items-center text-xl z-20'>
 		<nav id='nav-header' className='container flex justify-between items-center text-letter'>
 			<div id='desktopMenu' className='hidden md:flex justify-between items-center h-full w-full'>
 				<a className='flex' href="index.html">samtocode24</a>

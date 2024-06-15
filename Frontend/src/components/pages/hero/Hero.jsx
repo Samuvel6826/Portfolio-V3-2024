@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 
 
 const Hero = () => {
-    return <section id="hero" className='h-[calc(100vh-4rem)] w-full mt-16 px-4 py-2 bg-secondary'>
+    return <section id="hero" className='h-[calc(100vh-4rem)] w-full mt-16 p-4 bg-secondary'>
 
         <div id="hero-container" className="container h-full mx-auto flex items-center">
 
@@ -28,7 +28,7 @@ const Hero = () => {
 
                 <div id='dp-container' className="relative h-[30%] w-full flex items-center justify-center">
 
-                    <div id='hero-social-links' className='absolute h-[21vh] w-10 z-10 left-0 top-5 text-xl flex flex-col justify-between items-center  md:hidden'>
+                    <div id='hero-social-links' className='absolute h-[21vh] w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start  md:hidden'>
                         <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
                             <FaInstagram />
                         </a>
@@ -47,9 +47,9 @@ const Hero = () => {
                         alt="Avatar"
                     />
 
-                    <div className='absolute h-[32vh] w-10 z-10 right-0 top-3  md:hidden'>
+                    <div id='hero-content-scrollBtn' className='absolute h-[32vh] w-5 z-10 right-0 top-3'>
                         <a href="#about" className='h-full flex flex-col justify-between items-center text-center'>
-                            <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
+                            <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "35px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 
                             <div className='m-0 -rotate-90 flex flex-row gap-2'>
                                 <span className='tracking-widest'>Scroll</span>
@@ -62,7 +62,7 @@ const Hero = () => {
 
                 </div>
 
-                <div id='hero-content' className=" h-[70%] w-full text-base flex flex-col justify-evenly">
+                <div id='hero-content' className=" h-[70%] w-full text-base flex flex-col">
                     <div id='hero-text-container' className=' leading-8 text-base font-semibold'>
                         <p id='intro-text' className=" text-[1.45em]">
                             Hello!👋🏻
@@ -73,7 +73,7 @@ const Hero = () => {
                         <p id='web-dev' className='text-[6.5vw]'>MERN Stack Web Developer</p>
                     </div>
 
-                    <p id='intro-para' className=" text-justify leading-[1.5] mb-2 text-[2.4vh] ">
+                    <p id='intro-para' className=" text-justify leading-[1.4] mb-2 text-[2.4vh] ">
                         Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India, I'm a passionate web developer and designer. Seeking an Assistant Web Developer role or internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss web development!..Feel free to contact me.
                     </p>
 
@@ -97,7 +97,7 @@ const Hero = () => {
             </section>
 
             <div id='hero-content-scrollBtn' className=' h-1/3 w-5 '>
-                <a href="#about" className='h-full flex flex-col justify-between items-center'>
+                <a href="#about" className='h-full flex flex-col justify-between items-center hidden'>
                     <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 
                     <div className='m-0 -rotate-90 flex flex-row gap-2'>
