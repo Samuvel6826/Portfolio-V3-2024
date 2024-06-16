@@ -5,14 +5,17 @@
 @tailwind utilities;
 
 @layer components {
-	@media screen and (max-width: 640px) {
-		#hero-content-btns-container button {
-			@apply h-14 border-primary;
-		}
+	/* Default styles for all screen sizes */
+	#hero-content-btns-container button {
+		@apply h-14 border-primary;
+	}
 
-		#hero-content-btns {
-			@apply p-4;
-		}
+	#hero-content-btns {
+		@apply p-4;
+	}
+
+	#hero-content-scrollBtn a {
+		@apply h-full w-full flex flex-col justify-between items-center;
 	}
 
 	/* Media query for screens up to 640px wide: max-sm */
@@ -74,10 +77,6 @@
 
 		#hero-content-btns-container {
 			@apply justify-start gap-4;
-		}
-
-		#hero-content-scrollBtn {
-			@apply flex;
 		}
 	}
 

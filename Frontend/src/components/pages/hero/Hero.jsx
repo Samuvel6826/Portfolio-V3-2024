@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 
 
 const Hero = () => {
-    return <section id="hero" className='h-[calc(100vh-4rem)] w-full mt-16 p-4 bg-secondary'>
+    return <section id="hero" className='h-[calc(100vh-4rem)] w-full px-4 py-2 bg-secondary'>
 
         <div id="hero-container" className="container h-full mx-auto flex items-center">
 
@@ -47,8 +47,8 @@ const Hero = () => {
                         alt="Avatar"
                     />
 
-                    <div id='hero-content-scrollBtn' className='absolute h-[32vh] w-5 z-10 right-0 top-3'>
-                        <a href="#about" className='h-full flex flex-col justify-between items-center text-center'>
+                    <div id='hero-content-scrollBtn' className='absolute h-[32vh] w-5 z-10 right-0 top-3 md:hidden'>
+                        <a href="#about">
                             <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "35px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 
                             <div className='m-0 -rotate-90 flex flex-row gap-2'>
@@ -96,8 +96,8 @@ const Hero = () => {
 
             </section>
 
-            <div id='hero-content-scrollBtn' className=' h-1/3 w-5 '>
-                <a href="#about" className='h-full flex flex-col justify-between items-center hidden'>
+            <div id='hero-content-scrollBtn' className=' h-1/3 w-5 max-md:hidden'>
+                <a href="#about">
                     <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 
                     <div className='m-0 -rotate-90 flex flex-row gap-2'>
