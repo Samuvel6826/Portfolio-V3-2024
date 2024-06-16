@@ -1,19 +1,17 @@
 /* Education*/
-#step-title {
-	@apply text-2xl font-extrabold;
-}
-
-#step-description {
-	@apply text-xl font-bold;
-}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-	/* Media query for screens up to 640px wide: sm */
-	@media screen and (max-width: 640px) {
+	/* Default styles for all screen sizes */
+	#step-title {
+		@apply text-xl font-extrabold;
+	}
+
+	#step-description {
+		@apply text-base font-bold;
 	}
 
 	/* Media query for screens up to 640px wide: max-sm */
@@ -22,6 +20,21 @@
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
+		#education-page-title {
+			@apply text-3xl;
+		}
+
+		#education-wrapper {
+			@apply p-4;
+		}
+
+		#step-title {
+			@apply text-3xl font-extrabold;
+		}
+
+		#step-description {
+			@apply text-xl font-bold;
+		}
 	}
 
 	/* Media query for screens between 769px and 1024px wide: max-lg */

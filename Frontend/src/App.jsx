@@ -7,7 +7,7 @@ import Skills from './components/pages/skills/Skills'
 import Projects from './components/pages/projects/Projects'
 import Contact from './components/pages/contact/Contact'
 import Footer from './components/pages/footer/Footer'
-import Education from './components/pages/education/Education'
+import Educations from './components/pages/educations/Educations'
 
 function App() {
   return <div id='App'>
@@ -15,11 +15,11 @@ function App() {
     <main className='main'>
       <Hero />
       <About />
-      <Education />
-      <Skills />
+      <Educations />
+      {/* <Skills />
       <Projects />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </main>
   </div>
 }

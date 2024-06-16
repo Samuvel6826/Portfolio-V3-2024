@@ -12,6 +12,7 @@ export default {
         "tertiary": "#082736",
         "letter": "#d9dcd6"
       },
+
       fontFamily: {
         'sans': ['Open Sans', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif']
