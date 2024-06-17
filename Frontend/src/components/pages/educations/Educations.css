@@ -6,6 +6,11 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
+
+	#education-page-title {
+		@apply text-2xl;
+	}
+
 	#step-title {
 		@apply text-xl font-extrabold;
 	}
@@ -20,8 +25,12 @@
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
+		#education-container {
+			@apply h-[30rem];
+		}
+
 		#education-page-title {
-			@apply text-3xl;
+			@apply text-4xl;
 		}
 
 		#education-wrapper {

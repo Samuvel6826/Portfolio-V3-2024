@@ -15,7 +15,7 @@
 	}
 
 	#s-box {
-		@apply border-2 border-secondary rounded-2xl p-3 flex flex-col items-center justify-center;
+		@apply h-full w-full border-2 border-secondary rounded-2xl p-2 flex flex-col items-center justify-center;
 	}
 
 	#s-box h4,
@@ -41,7 +41,7 @@
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
 		#about {
-			@apply p-0;
+			@apply px-10;
 		}
 
 		#about-container {
@@ -53,50 +53,64 @@
 		}
 
 		#about-page-title {
-			@apply text-3xl;
+			@apply text-4xl;
 		}
 
 		#about-wrapper {
-			@apply h-[87%] flex-row justify-between;
+			@apply h-[35rem] flex-row justify-between mb-4;
 		}
 
 		#about-img {
-			@apply w-[48%] h-full;
+			@apply w-[40%] h-full;
 		}
 
 		#about-content {
-			@apply w-[48%] h-full justify-between;
+			@apply w-[58%] h-full justify-between;
 		}
 
+		#about-box-container {
+			@apply text-3xl;
+		}
+
+		#s-box h4,
+		p {
+			@apply text-lg;
+		}
+
+		#about-para {
+			@apply text-base leading-relaxed;
+		}
+	}
+
+	/* Media query for screens between 769px and 1024px wide: max-lg */
+	@media screen and (min-width: 1024px) {
+		#about-box-container {
+			@apply text-3xl;
+		}
+
+		#s-box h4,
+		p {
+			@apply text-xl;
+		}
+
+		#about-para {
+			@apply text-xl leading-relaxed;
+		}
+	}
+
+	/* Media query for screens between 1025px and 1280px wide: max-xl */
+	@media screen and (min-width: 1280px) {
 		#about-box-container {
 			@apply text-4xl;
 		}
 
 		#s-box h4,
 		p {
-			@apply text-[2vw];
-		}
-
-		#s-box {
-			@apply gap-2;
+			@apply text-2xl;
 		}
 
 		#about-para {
-			@apply text-lg leading-[1.75];
-		}
-	}
-
-	/* Media query for screens between 769px and 1024px wide: max-lg */
-	@media screen and (min-width: 1024px) {
-		#about-para {
-			@apply text-xl leading-[1.8];
-		}
-	}
-
-	/* Media query for screens between 1025px and 1280px wide: max-xl */
-	@media screen and (min-width: 1280px) {
-		#about-para {
-			@apply text-2xl leading-[1.65];
+			@apply text-2xl leading-relaxed;
 		}
 	}
 

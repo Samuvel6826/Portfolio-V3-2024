@@ -8,11 +8,11 @@ import { FaGithub } from "react-icons/fa";
 
 
 const Hero = () => {
-    return <section id="hero" className='h-[calc(100vh-4rem)] w-full px-4 py-2 bg-secondary'>
+    return <section id="hero" className=' w-full p-4 bg-secondary'>
 
         <div id="hero-container" className="container h-full mx-auto flex items-center">
 
-            <section id='hero-social-links' className=' max-md:hidden h-1/3 w-5 flex flex-col justify-between items-center'>
+            <section id='hero-social-links' className=' max-md:hidden h-60 w-5 flex flex-col justify-between items-center'>
                 <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
                     <FaInstagram />
                 </a>
@@ -24,9 +24,9 @@ const Hero = () => {
                 </a>
             </section>
 
-            <section id='wrapper' className='h-full flex flex-col items-center text-base'>
+            <section id='hero-wrapper' className=' flex flex-col items-center'>
 
-                <div id='dp-container' className="relative h-[30%] w-full flex items-center justify-center">
+                <div id='dp-container' className="relative w-full flex items-center justify-center">
 
                     <div id='hero-social-links' className='absolute h-[21vh] w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start  md:hidden'>
                         <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
@@ -62,18 +62,18 @@ const Hero = () => {
 
                 </div>
 
-                <div id='hero-content' className=" h-[70%] w-full text-base flex flex-col">
+                <div id='hero-content' className=" w-full text-base flex flex-col">
                     <div id='hero-text-container' className=' leading-8 text-base font-semibold'>
-                        <p id='intro-text' className=" text-[1.45em]">
+                        <p id='intro-text' className=" text-xl">
                             Hello!👋🏻
                             <br />
                             I'm
-                            <span id='intro-name' className=" text-[5vh] text-tertiary font-bold"> Samuvel</span>
+                            <span id='intro-name' className=" text-4xl text-tertiary font-bold"> Samuvel</span>
                         </p>
-                        <p id='web-dev' className='text-[6.5vw]'>MERN Stack Web Developer</p>
+                        <p id='web-dev' className='text-[1.45rem] font-bold'>MERN Stack Web Developer</p>
                     </div>
 
-                    <p id='intro-para' className=" text-justify leading-[1.4] mb-2 text-[2.4vh] ">
+                    <p id='intro-para' className=" text-justify leading-[1.4] mb-2 text-lg ">
                         Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India, I'm a passionate web developer and designer. Seeking an Assistant Web Developer role or internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss web development!..Feel free to contact me.
                     </p>
 
@@ -96,7 +96,7 @@ const Hero = () => {
 
             </section>
 
-            <div id='hero-content-scrollBtn' className=' h-1/3 w-5 max-md:hidden'>
+            <div id='hero-content-scrollBtn' className=' h-60 w-5 max-md:hidden'>
                 <a href="#about">
                     <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 

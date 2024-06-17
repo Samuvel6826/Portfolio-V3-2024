@@ -7,8 +7,10 @@ const Skills = () => {
             name: 'HTML',
             link: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
             imageUrl: 'https://img.icons8.com/color/48/html-5--v1.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'HTML 5 logo',
             level: 'Intermediate',
         },
@@ -16,8 +18,10 @@ const Skills = () => {
             name: 'CSS',
             link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
             imageUrl: 'https://img.icons8.com/color/48/css3.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'CSS 3 logo',
             level: 'Intermediate',
         },
@@ -25,8 +29,10 @@ const Skills = () => {
             name: 'JavaScript',
             link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
             imageUrl: 'https://img.icons8.com/color/48/javascript--v1.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'JavaScript logo',
             level: 'Intermediate',
         },
@@ -34,8 +40,10 @@ const Skills = () => {
             name: 'Bootstrap',
             link: 'https://getbootstrap.com/',
             imageUrl: 'https://img.icons8.com/color-glass/48/bootstrap.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Bootstrap logo',
             level: 'Intermediate',
         },
@@ -43,8 +51,10 @@ const Skills = () => {
             name: 'Tailwind CSS',
             link: 'https://tailwindcss.com/',
             imageUrl: 'https://img.icons8.com/fluency/48/tailwind_css.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Tailwind CSS logo',
             level: 'Intermediate',
         },
@@ -52,8 +62,10 @@ const Skills = () => {
             name: 'React',
             link: 'https://react.dev/',
             imageUrl: 'https://img.icons8.com/officel/80/000000/react.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'React logo',
             level: 'Intermediate',
         },
@@ -64,8 +76,10 @@ const Skills = () => {
             name: 'Node.js',
             link: 'https://nodejs.org/docs/latest/api/',
             imageUrl: 'https://img.icons8.com/color/48/nodejs.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Node.js logo',
             level: 'Basic',
         },
@@ -73,8 +87,10 @@ const Skills = () => {
             name: 'Express.js',
             link: 'https://expressjs.com/',
             imageUrl: 'https://img.icons8.com/ios/50/express-js.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Express.js logo',
             level: 'Basic',
         },
@@ -82,8 +98,10 @@ const Skills = () => {
             name: 'MySQL',
             link: 'https://www.mysql.com/downloads/',
             imageUrl: 'https://img.icons8.com/color/96/000000/mysql-logo.png',
-            skillIconHeight: '3rem',
-            skillIconWidth: '4rem',
+            desktopSkillIconHeight: '3rem',
+            desktopSkillIconWidth: '4rem',
+            mobileSkillIconHeight: '2.5rem',
+            mobileSkillIconWidth: '3.5rem',
             altText: 'MySQL logo',
             level: 'Basic',
         },
@@ -91,8 +109,10 @@ const Skills = () => {
             name: 'MongoDB',
             link: 'https://www.mongodb.com/',
             imageUrl: 'https://img.icons8.com/color/48/mongodb.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'MongoDB logo',
             level: 'Basic',
         },
@@ -100,11 +120,24 @@ const Skills = () => {
             name: 'Mongoose',
             link: 'https://mongoosejs.com/',
             imageUrl: 'https://img.icons8.com/color/48/mongoose.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Mongoose logo',
             level: 'Basic',
         },
+        {
+            name: 'JWT Token',
+            link: 'https://mongoosejs.com/',
+            imageUrl: 'https://img.icons8.com/color/48/mongoose.png',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
+            altText: 'Mongoose logo',
+            level: 'Basic',
+        }
     ];
 
     const otherSkills = [
@@ -112,8 +145,10 @@ const Skills = () => {
             name: 'GitHub',
             link: 'https://github.com/Samuvel6826',
             imageUrl: 'https://res.cloudinary.com/dgsucveh2/image/upload/v1705581039/github-mark_iq2coy.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'GitHub logo',
             level: 'Basic',
         },
@@ -121,8 +156,10 @@ const Skills = () => {
             name: 'Git',
             link: 'https://git-scm.com/',
             imageUrl: 'https://img.icons8.com/color/48/git.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Git logo',
             level: 'Basic',
         },
@@ -130,8 +167,10 @@ const Skills = () => {
             name: 'AWS',
             link: 'https://aws.amazon.com/free/webapps/?p=ft&z=subnav&loc=3',
             imageUrl: 'https://img.icons8.com/color/48/amazon-web-services.png',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'AWS logo',
             level: 'Basic',
         },
@@ -139,10 +178,10 @@ const Skills = () => {
             name: 'Surge.sh',
             link: 'https://surge.sh',
             imageUrl: 'https://surge.sh/images/logos/svg/surge-logo.svg',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Surge.sh logo',
             level: 'Basic',
         },
@@ -150,8 +189,21 @@ const Skills = () => {
             name: 'Render',
             link: 'https://render.com',
             imageUrl: 'https://media.licdn.com/dms/image/D4E0BAQGGDoFoqHtOvA/company-logo_200_200/0/1702595267620/renderco_logo?e=1723075200&v=beta&t=hRST8MwdcWbWhduHqrz7zSOoG4T4wTo5ej7j_E4ipW0',
-            skillIconHeight: '2.5rem',
-            skillIconWidth: '2.5rem',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
+            altText: 'Render logo',
+            level: 'Basic',
+        },
+        {
+            name: 'Firebase',
+            link: 'https://render.com',
+            imageUrl: 'https://media.licdn.com/dms/image/D4E0BAQGGDoFoqHtOvA/company-logo_200_200/0/1702595267620/renderco_logo?e=1723075200&v=beta&t=hRST8MwdcWbWhduHqrz7zSOoG4T4wTo5ej7j_E4ipW0',
+            desktopSkillIconHeight: '2.5rem',
+            desktopSkillIconWidth: '2.5rem',
+            mobileSkillIconHeight: '2rem',
+            mobileSkillIconWidth: '2rem',
             altText: 'Render logo',
             level: 'Basic',
         },
@@ -159,8 +211,10 @@ const Skills = () => {
             name: 'Netlify',
             link: 'https://app.netlify.com',
             imageUrl: 'https://res.cloudinary.com/dgsucveh2/image/upload/v1714823239/Screenshot_2024-05-04_at_5.13.00_PM_ouxpj1.png',
-            skillIconHeight: '4rem',
-            skillIconWidth: '6rem',
+            desktopSkillIconHeight: '4rem',
+            desktopSkillIconWidth: '6rem',
+            mobileSkillIconHeight: '3rem',
+            mobileSkillIconWidth: '5rem',
             altText: 'Netlify logo',
             level: 'Basic',
         },
@@ -169,40 +223,45 @@ const Skills = () => {
 
 
     const renderSkillBox = (skill) => (
-        <div key={skill.name} id='skills-box' className="skill-box">
+        <div key={skill.name} id='skills-box'>
             <a href={skill.link} target="_blank">
-                <img style={{ height: skill.skillIconHeight, width: skill.skillIconWidth }} src={skill.imageUrl} alt={skill.name} />
-                <h3>{skill.name}</h3>
-                <h6 className="skill-level">{skill.level}</h6>
+                <img id='desktop-skill-image' className='max-md:hidden' style={{ height: skill.desktopSkillIconHeight, width: skill.desktopSkillIconWidth }} src={skill.imageUrl} alt={skill.name} />
+
+                <img id='mobile-skill-image' className='md:hidden' style={{ height: skill.mobileSkillIconHeight, width: skill.mobileSkillIconWidth }} src={skill.imageUrl} alt={skill.name} />
+                <p id='skill-name'>{skill.name}</p>
+                <p id='skill-level' className="skill-level">{skill.level}</p>
             </a>
         </div>
     );
 
-    return (
-        <section id="skills" className="h-[calc(100vh-4rem)] bg-primary mx-auto flex flex-col justify-evenly items-center">
-            <header id='skillsHeader' className='text-center text-secondary'>
-                <h1 className="skillsPageTitle">Skills</h1>
-                <h5 className="skillsPageDesc">My Expertise</h5>
+    return <section id="skills" className=" bg-primary mx-auto flex flex-col items-center justify-evenly p-4">
+
+        <div id="skills-container" className="container h-full">
+            <header id='skills-header' className=' w-full text-center text-secondary'>
+                <h1 id="skills-page-title">Skills</h1>
+                <h5 id="skills-page-desc">My Expertise</h5>
             </header>
 
-            <div className="container h-[85%] flex flex-col justify-evenly items-center p-4 gap-4 bg-white rounded-2xl">
-                <h2>Frontend</h2>
-                <div className="skill-list w-full flex gap-4">
+            <div id='skills-wrapper' className=" w-full flex flex-col p-2 bg-white rounded-2xl text-center gap-2">
+                <h4>Frontend</h4>
+                <div id='skills-list'>
                     {frontendSkills.map(renderSkillBox)}
                 </div>
 
-                <h2>Backend</h2>
-                <div className="skill-list w-full flex gap-4">
+                <h4>Backend</h4>
+                <div id='skills-list'>
                     {backendSkills.map(renderSkillBox)}
                 </div>
 
-                <h2>Others</h2>
-                <div className="skill-list w-full flex gap-4">
+                <h4>Others</h4>
+                <div id='skills-list'>
                     {otherSkills.map(renderSkillBox)}
                 </div>
             </div>
-        </section>
-    );
+        </div>
+
+
+    </section>
 };
 
 export default Skills;

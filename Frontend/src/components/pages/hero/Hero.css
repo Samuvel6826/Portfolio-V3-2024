@@ -20,37 +20,53 @@
 
 	/* Media query for screens up to 640px wide: max-sm */
 	@media screen and (min-width: 640px) {
-		#hero {
-			@apply p-0;
-		}
-
 		#dp-pic {
 			@apply w-[50%];
 		}
 
 		#hero-text-container {
-			@apply leading-[3.5em];
+			@apply leading-normal;
 		}
 
 		#intro-text {
-			@apply text-[3.2em];
+			@apply text-3xl;
 		}
 
 		#intro-name {
-			@apply text-[1.6em];
+			@apply text-6xl;
 		}
 
 		#web-dev {
-			@apply text-[2.6em];
+			@apply text-[2.65rem];
 		}
 
 		#intro-para {
-			@apply leading-relaxed text-[1.2em];
+			@apply leading-relaxed text-xl;
 		}
 	}
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
+		#hero {
+			@apply px-10;
+		}
+
+		#intro-text {
+			@apply text-2xl;
+		}
+
+		#intro-name {
+			@apply text-5xl;
+		}
+
+		#web-dev {
+			@apply text-[1.8rem];
+		}
+
+		#intro-para {
+			@apply leading-relaxed text-lg;
+		}
+
 		#hero-container {
 			@apply justify-between;
 		}
@@ -59,8 +75,8 @@
 			@apply mr-4 text-xl;
 		}
 
-		#wrapper {
-			@apply w-[95%] flex-row-reverse justify-between;
+		#hero-wrapper {
+			@apply w-[90%] h-[30rem] flex-row-reverse justify-between;
 		}
 
 		#dp-container {
@@ -82,10 +98,48 @@
 
 	/* Media query for screens between 769px and 1024px wide: max-lg */
 	@media screen and (min-width: 1024px) {
+		#hero-text-container {
+			@apply mb-3;
+		}
+
+		#intro-text {
+			@apply text-3xl;
+		}
+
+		#intro-name {
+			@apply text-6xl mb-3;
+		}
+
+		#web-dev {
+			@apply text-[2.4rem];
+		}
+
+		#intro-para {
+			@apply leading-relaxed text-lg;
+		}
 	}
 
 	/* Media query for screens between 1025px and 1280px wide: max-xl */
 	@media screen and (min-width: 1280px) {
+		#hero-text-container {
+			@apply mb-5;
+		}
+
+		#intro-text {
+			@apply text-3xl mb-4;
+		}
+
+		#intro-name {
+			@apply text-7xl mb-4;
+		}
+
+		#web-dev {
+			@apply text-[3.2rem];
+		}
+
+		#intro-para {
+			@apply leading-relaxed text-lg;
+		}
 	}
 
 	/* Media query for screens between 1281px and 1536px wide: max-2xl */
