@@ -37,7 +37,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <p id='about-para' className=' text-justify text-base leading-6'>
+                    <p id='about-para' className=' text-justify text-base leading-10'>
                         I Proficient in HTML, CSS, and JavaScript, I specialize in frontend development. Leveraging frameworks like Bootstrap and Tailwind CSS, I streamline the design responsive websites. I'm well-versed in backend technologies, including Node.js, Express.js, and MongoDB, Handling everything from server-side logic to database management. Furthermore experience with version control systems like Git and GitHub, ensuring efficient collaboration and code management. Please find below the list of skills I possess.
                     </p>
                     <button id='about-resume-btn'>

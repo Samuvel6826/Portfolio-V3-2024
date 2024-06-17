@@ -20,7 +20,7 @@ const Cryptos = () => {
     };
 
     return (
-        <div className="flex flex-col items-center space-y-4 p-4">
+        <div className="flex flex-col items-center gap-4 p-4 bg-primary">
             {data.map((item, index) => (
                 <div key={index} className="flex items-center space-x-4 bg-gray-100 p-4 rounded-lg shadow-md w-full max-w-md">
                     <div className="flex-grow text-lg">{item.displayText}</div>

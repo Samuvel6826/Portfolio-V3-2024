@@ -28,78 +28,86 @@ const Footer = () => {
         </div>
     );
 
-    return <section id='footer' className='bg-tertiary mx-auto text-letter'>
-        <div id="container" className="container mx-auto py-10 flex justify-evenly">
-            <ul id='foot-text'>
+    return <section id='footer' className='bg-tertiary mx-auto flex flex-col text-letter'>
+        <div id="container" className="container text-center mx-auto flex flex-col p-4 gap-5">
+
+            <div id='foot-text-menu' className='max-md:hidden'>
                 <h3>MENU</h3>
-                <li>
-                    <a href="#hero"><i className="uil uil-estate"></i>Home</a>
-                </li>
-                <li>
-                    <a href="#about"><i className="uil uil-user"></i>About
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills"><i className="uil uil-file-alt"></i>Skills</a>
-                </li>
-                <li>
-                    <a href="#projects"><i className="uil uil-briefcase-alt"></i>Projects</a>
 
-                </li>
-                <li>
-                    <a href="#portfolio"><i className="uil uil-scenery"></i>Portfolio</a>
-                </li>
-                <li>
-                    <a href="#contact"><i className="uil uil-message"></i>Contact</a>
-                </li>
-            </ul>
+                <a href="#hero"><i className="uil uil-estate"></i>Home</a>
 
 
-            <div id='foot-text'>
-
-                <h3>SOCIALS</h3>
-
-                <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
-                    <FaInstagram /> Instagram
+                <a href="#about"><i className="uil uil-user"></i>About
                 </a>
 
-                <a href="https://www.facebook.com/samuvel68" target='blank'>
-                    <FaFacebook /> Facebook
-                </a>
 
-                <a href="https://x.com/samuvel6826" target='blank'>
-                    <FaSquareXTwitter /> X (Twitter)
-                </a>
+                <a href="#skills"><i className="uil uil-file-alt"></i>Skills</a>
 
-                <a href="https://www.linkedin.com/in/samuvelantony/" target='blank'>
-                    <FaLinkedin /> Linkedin
-                </a>
 
-                <a href="https://github.com/Samuvel6826" target='blank'>
-                    <FaGithub /> Github
-                </a>
+                <a href="#projects"><i className="uil uil-briefcase-alt"></i>Projects</a>
 
-                <a href="https://github.com/Samuvel6826" target='blank'>
-                    <FaDiscord /> Discord
-                </a>
+
+
+                <a href="#portfolio"><i className="uil uil-scenery"></i>Portfolio</a>
+
+
+                <a href="#contact"><i className="uil uil-message"></i>Contact</a>
 
             </div>
 
-            <div id='foot-text'>
+            <div id='foot-text-connect'>
 
                 <h3>CONNECT</h3>
+                <div id="connect-container">
+                    <button>
+                        <a href="https://wa.me/+919043251797?text=Hey%20Samuvel" target='blank'>
+                            <ImWhatsapp /> Whatsapp
+                        </a>
+                    </button>
 
-                <a href="https://wa.me/+919043251797?text=Hey%20Samuvel" target='blank'>
-                    <ImWhatsapp /> Whatsapp
-                </a>
+                    <button>
+                        <a href="tel:+919043251797" target='blank'>
+                            <BiSolidPhoneCall /> +91 9043251797
+                        </a>
+                    </button>
 
-                <a href="tel:+919043251797" target='blank'>
-                    <BiSolidPhoneCall /> +91 9043251797
-                </a>
+                    <button>
+                        <a href="mailto:samuvel6826@gmail.com" target='blank'>
+                            <SiGmail /> samuvel6826@gmail.com
+                        </a>
+                    </button>
+                </div>
+            </div>
 
-                <a href="mailto:samuvel6826@gmail.com" target='blank'>
-                    <SiGmail /> samuvel6826@gmail.com
-                </a>
+            <div id='foot-text-socials'>
+
+                <h3>SOCIALS</h3>
+
+                <button id='socials-container'>
+                    <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
+                        <FaInstagram />
+                    </a>
+
+                    <a href="https://www.facebook.com/samuvel68" target='blank'>
+                        <FaFacebook />
+                    </a>
+
+                    <a href="https://x.com/samuvel6826" target='blank'>
+                        <FaSquareXTwitter />
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/samuvelantony/" target='blank'>
+                        <FaLinkedin />
+                    </a>
+
+                    <a href="https://github.com/Samuvel6826" target='blank'>
+                        <FaGithub />
+                    </a>
+
+                    <a href="https://github.com/Samuvel6826" target='blank'>
+                        <FaDiscord />
+                    </a>
+                </button>
 
             </div>
 
@@ -108,11 +116,11 @@ const Footer = () => {
                 <h3>PAYMENT</h3>
 
                 <button>
-                    <a href=""><LuIndianRupee />  Indian Currency</a>
+                    <a href=""><LuIndianRupee />Indian Currency</a>
                 </button>
 
                 <button>
-                    <a href=""><BiDollar />  Foreign Currency</a>
+                    <a href=""><BiDollar />Foreign Currency</a>
                 </button>
 
                 <Space wrap>
@@ -138,8 +146,8 @@ const Footer = () => {
         </div>
 
         <footer className="flex border-t-2 flex-col items-center justify-center">
-            <p className='flex items-center gap-2'>Made with <FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb /></p>
-            <p>
+            <p className='flex items-center gap-2 mt-4'>Made with <FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb /></p>
+            <p className=' px-4 mb-4 text-center'>
                 Made by Samuvel Antony. Copyrights &#169; 2024. All rights reserved.
             </p>
         </footer>
