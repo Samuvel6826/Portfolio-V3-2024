@@ -1,51 +1,80 @@
 /* Contact */
-#contactForm {
-	@apply w-[48%] flex flex-col justify-between;
-}
-
-#nameContainer,
-#mobileContainer,
-#emailContainer {
-	@apply w-full h-[10%] p-2 bg-tertiary flex;
-}
-
-#msgContainer {
-	@apply w-full h-[40%] p-2 bg-tertiary flex;
-}
-
-#your_name,
-#your_mobile,
-#your_email,
-#message {
-	@apply w-full h-full bg-letter p-2 text-tertiary;
-}
-
-#your_name::placeholder,
-#your_mobile::placeholder,
-#your_email::placeholder,
-#message::placeholder {
-	@apply text-cyan-900;
-}
-
-#require {
-	@apply flex items-center p-2;
-}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-	/* Media query for screens up to 640px wide: sm */
-	@media screen and (max-width: 640px) {
+	/* Default styles for all screen sizes */
+
+	#contact-page-title {
+		@apply text-2xl;
+	}
+
+	#contact-page-desc {
+		@apply text-sm;
+	}
+
+	#contact-form {
+		@apply flex flex-col gap-2;
+	}
+
+	#nameContainer,
+	#mobileContainer,
+	#emailContainer {
+		@apply w-full h-[10%] p-2 bg-tertiary flex;
+	}
+
+	#msgContainer {
+		@apply w-full h-full p-2 bg-tertiary flex;
+	}
+
+	#your_name,
+	#your_mobile,
+	#your_email,
+	#message {
+		@apply w-full h-full bg-letter p-2 text-tertiary;
+	}
+
+	#your_name::placeholder,
+	#your_mobile::placeholder,
+	#your_email::placeholder,
+	#message::placeholder {
+		@apply text-cyan-900;
+	}
+
+	#require {
+		@apply flex items-center p-2;
 	}
 
 	/* Media query for screens up to 640px wide: max-sm */
 	@media screen and (min-width: 640px) {
+		#contact-page-title {
+			@apply text-4xl;
+		}
+
+		#contact-page-desc {
+			@apply text-base;
+		}
 	}
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
+		#contact {
+			@apply px-10;
+		}
+
+		#contact-wrapper {
+			@apply flex-row gap-5;
+		}
+
+		#contact-form {
+			@apply w-1/2;
+		}
+
+		#map-container {
+			@apply w-1/2;
+		}
 	}
 
 	/* Media query for screens between 769px and 1024px wide: max-lg */

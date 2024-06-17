@@ -234,12 +234,12 @@ const Skills = () => {
         </div>
     );
 
-    return <section id="skills" className=" bg-primary mx-auto p-4">
+    return <section id="skills" className=" bg-primary mx-auto flex p-4">
 
         <div id="skills-container" className="container h-full mx-auto">
             <header id='skills-header' className=' w-full text-center text-secondary'>
                 <h1 id="skills-page-title">Skills</h1>
-                <h5 id="skills-page-desc">My Expertise</h5>
+                <p id="skills-page-desc">My Expertise</p>
             </header>
 
             <div id='skills-wrapper' className=" w-full flex flex-col p-2 bg-white rounded-2xl text-center gap-2">

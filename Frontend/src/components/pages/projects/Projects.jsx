@@ -67,7 +67,7 @@ const Projects = () => {
         <div id='projects-container' className='container mx-auto flex flex-col items-center gap-3'>
             <header id='projects-header' className='text-center text-tertiary'>
                 <h1 id="projects-page-title">Projects</h1>
-                <h5 id="projects-page-desc">Recent Works</h5>
+                <p id="projects-page-desc">Recent Works</p>
             </header>
             {/* <Segmented className='w-1/2' options={[123, 456, 'longtext-longtext-longtext-longtext']} block /> */}
             <div id='cards-container' className='w-full h-full flex flex-col justify-between gap-3'>

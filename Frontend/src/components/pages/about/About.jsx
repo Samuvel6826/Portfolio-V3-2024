@@ -5,7 +5,7 @@ import { FaAward } from "react-icons/fa";
 import { LiaFileDownloadSolid } from "react-icons/lia";
 
 const About = () => {
-    return <section id='about' className=' bg-primary text-white mx-auto flex flex-col p-4'>
+    return <section id='about' className=' bg-primary text-white mx-auto flex p-4'>
 
         <div id='about-container' className=' container w-full mx-auto flex flex-col gap-3'>
 

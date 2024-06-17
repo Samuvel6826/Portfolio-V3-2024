@@ -45,6 +45,10 @@
 			@apply text-base;
 		}
 
+		#skills-header {
+			@apply mb-4;
+		}
+
 		#skills-wrapper {
 			@apply p-4;
 		}

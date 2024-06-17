@@ -1,7 +1,4 @@
 /* Projects */
-.active {
-	@apply bg-secondary;
-}
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +6,10 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
+
+	.active {
+		@apply bg-secondary;
+	}
 
 	#projects-page-title {
 		@apply text-2xl;
