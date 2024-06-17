@@ -8,16 +8,36 @@
 @tailwind utilities;
 
 @layer components {
-	/* Media query for screens up to 640px wide: sm */
-	@media screen and (max-width: 640px) {
+	/* Default styles for all screen sizes */
+
+	#projects-page-title {
+		@apply text-2xl;
+	}
+
+	#projects-page-desc {
+		@apply text-sm;
 	}
 
 	/* Media query for screens up to 640px wide: max-sm */
 	@media screen and (min-width: 640px) {
+		#projects-page-title {
+			@apply text-4xl;
+		}
+
+		#projects-page-desc {
+			@apply text-base;
+		}
 	}
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
+		#projects {
+			@apply px-10;
+		}
+
+		#cards-container {
+			@apply flex-row;
+		}
 	}
 
 	/* Media query for screens between 769px and 1024px wide: max-lg */
@@ -26,6 +46,9 @@
 
 	/* Media query for screens between 1025px and 1280px wide: max-xl */
 	@media screen and (min-width: 1280px) {
+		#card {
+			@apply max-w-96;
+		}
 	}
 
 	/* Media query for screens between 1281px and 1536px wide: max-2xl */

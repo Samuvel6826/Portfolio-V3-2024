@@ -9,7 +9,7 @@ const Education = () => {
         setCurrent(value);
     };
     return (
-        <section id='education' className=' bg-secondary mx-auto flex flex-col items-center justify-evenly p-4'>
+        <section id='education' className=' bg-secondary mx-auto p-4'>
 
             <div id="education-container" className="container h-full mx-auto flex flex-col justify-evenly">
 

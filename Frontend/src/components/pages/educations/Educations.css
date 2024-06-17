@@ -25,8 +25,8 @@
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
-		#education-container {
-			@apply h-[30rem];
+		#education {
+			@apply px-10;
 		}
 
 		#education-page-title {

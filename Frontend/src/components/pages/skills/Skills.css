@@ -41,6 +41,10 @@
 			@apply text-4xl;
 		}
 
+		#skills-page-desc {
+			@apply text-base;
+		}
+
 		#skills-wrapper {
 			@apply p-4;
 		}
@@ -60,6 +64,10 @@
 
 	/* Media query for screens between 641px and 768px wide: max-md */
 	@media screen and (min-width: 768px) {
+		#skills {
+			@apply px-10;
+		}
+
 		#skills-wrapper h4 {
 			@apply text-3xl;
 		}

@@ -234,9 +234,9 @@ const Skills = () => {
         </div>
     );
 
-    return <section id="skills" className=" bg-primary mx-auto flex flex-col items-center justify-evenly p-4">
+    return <section id="skills" className=" bg-primary mx-auto p-4">
 
-        <div id="skills-container" className="container h-full">
+        <div id="skills-container" className="container h-full mx-auto">
             <header id='skills-header' className=' w-full text-center text-secondary'>
                 <h1 id="skills-page-title">Skills</h1>
                 <h5 id="skills-page-desc">My Expertise</h5>
