@@ -98,16 +98,12 @@
 
 	/* Media query for screens between 769px and 1024px wide: max-lg */
 	@media screen and (min-width: 1024px) {
-		#hero-text-container {
-			@apply mb-3;
-		}
-
 		#intro-text {
 			@apply text-3xl;
 		}
 
 		#intro-name {
-			@apply text-6xl mb-3;
+			@apply text-6xl;
 		}
 
 		#web-dev {
@@ -121,16 +117,12 @@
 
 	/* Media query for screens between 1025px and 1280px wide: max-xl */
 	@media screen and (min-width: 1280px) {
-		#hero-text-container {
-			@apply mb-5;
-		}
-
 		#intro-text {
-			@apply text-3xl mb-4;
+			@apply text-3xl;
 		}
 
 		#intro-name {
-			@apply text-7xl mb-4;
+			@apply text-7xl;
 		}
 
 		#web-dev {
