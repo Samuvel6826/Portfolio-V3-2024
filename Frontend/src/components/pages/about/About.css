@@ -15,7 +15,7 @@
 	}
 
 	#s-box {
-		@apply h-full w-full border-2 border-secondary rounded-2xl p-2 flex flex-col items-center justify-center;
+		@apply h-full w-full border-2 border-secondary rounded-2xl p-2 flex flex-col items-center justify-center gap-1;
 	}
 
 	#s-box h4,

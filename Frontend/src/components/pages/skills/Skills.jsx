@@ -236,7 +236,7 @@ const Skills = () => {
 
     return <section id="skills" className=" bg-primary mx-auto flex p-4">
 
-        <div id="skills-container" className="container h-full mx-auto gap-3">
+        <div id="skills-container" className="container h-full mx-auto flex flex-col gap-3">
             <header id='skills-header' className=' w-full text-center text-secondary'>
                 <h1 id="skills-page-title">Skills</h1>
                 <p id="skills-page-desc">My Expertise</p>

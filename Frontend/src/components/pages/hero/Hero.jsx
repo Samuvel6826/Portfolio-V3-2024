@@ -28,7 +28,7 @@ const Hero = () => {
 
                 <div id='dp-container' className="relative w-full flex items-center justify-center">
 
-                    <div id='hero-social-links' className='absolute h-[21vh] w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start  md:hidden'>
+                    <div id='hero-social-links' className='absolute h-40 w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start  md:hidden'>
                         <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
                             <FaInstagram />
                         </a>
@@ -47,7 +47,7 @@ const Hero = () => {
                         alt="Avatar"
                     />
 
-                    <div id='hero-content-scrollBtn' className='absolute h-[32vh] w-5 z-10 right-0 top-3 md:hidden'>
+                    <div id='hero-content-scrollBtn' className='absolute h-60 w-5 z-10 right-0 top-3 md:hidden'>
                         <a href="#about">
                             <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "35px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 

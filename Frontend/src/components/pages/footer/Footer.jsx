@@ -28,8 +28,8 @@ const Footer = () => {
         </div>
     );
 
-    return <section id='footer' className='bg-tertiary mx-auto flex flex-col text-letter px-4'>
-        <div id="footer-container" className="container text-center mx-auto flex flex-col gap-5 py-4">
+    return <section id='footer' className='bg-tertiary mx-auto flex flex-col text-letter'>
+        <div id="footer-container" className="container text-center mx-auto flex flex-col gap-5 p-4">
 
             <div id='foot-text-menu' className='max-md:hidden'>
                 <h3>MENU</h3>
@@ -155,7 +155,7 @@ const Footer = () => {
 
         </div>
 
-        <footer id='footer-footer' className="flex border-t-2 flex-col items-center justify-center text-center p-2">
+        <footer id='footer-footer' className="flex border-t-2 flex-col items-center justify-center text-center p-2 text-sm">
             <p className='flex items-center gap-2'>Made with <FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb /></p>
             <p>
                 Made by Samuvel Antony. Copyrights &#169; 2024. All rights reserved.

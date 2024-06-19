@@ -34,9 +34,9 @@ const Projects = () => {
         const handleResize = () => {
             const width = window.innerWidth;
             if (width >= 1537) {
-                setCardsPerPage(4);
+                setCardsPerPage(5);
             } else if (width >= 1280 && width < 1536) {
-                setCardsPerPage(3);
+                setCardsPerPage(4);
             } else if (width >= 1024 && width < 1280) {
                 setCardsPerPage(3);
             } else if (width >= 768 && width < 1024) {
@@ -72,9 +72,9 @@ const Projects = () => {
             {/* <Segmented className='w-1/2' options={[123, 456, 'longtext-longtext-longtext-longtext']} block /> */}
             <div id='cards-container' className='w-full h-full flex flex-col justify-between gap-3'>
                 {loading ? (
-                    <Spinner />
+                    <div className='mx-auto'><Spinner /></div>
                 ) : error ? (
-                    <div className="error-message">{error}</div>
+                    <div className="error-message mx-auto">{error}</div>
                 ) : (
                     projects.slice(indexOfFirstCard, indexOfLastCard).map((project, index) => (
                         <div key={index} id='card' className='h-full w-full flex flex-grow flex-col rounded-2xl p-4 text-white bg-primary gap-3'>
