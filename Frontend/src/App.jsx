@@ -1,27 +1,94 @@
-import React from 'react'
+import React from 'react';
 import './styles/App.css'
-import Navbar from './components/common/Navbar'
-import Hero from './components/pages/hero/Hero'
-import About from './components/pages/about/About'
-import Skills from './components/pages/skills/Skills'
-import Projects from './components/pages/projects/Projects'
-import Contact from './components/pages/contact/Contact'
-import Footer from './components/pages/footer/Footer'
-import Educations from './components/pages/educations/Educations'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/common/Navbar';
+import Hero from './components/pages/public/hero/Hero';
+import About from './components/pages/public/about/About';
+import Skills from './components/pages/public/skills/Skills';
+import Projects from './components/pages/public/projects/Projects';
+import Contact from './components/pages/public/contact/Contact';
+import Footer from './components/pages/public/footer/Footer';
+import Educations from './components/pages/public/educations/Educations';
+import ErrorBoundary from './components/common/ErrorBoundary';
+import ScrollToTopButton from './components/common/ScrollTopBtn';
+import AdminHero from './components/pages/admin/AdminHero';
+import Login from './components/authentication/Login';
+import Signup from './components/authentication/Signup';
+import ProtectedRoute from "./components/authentication/ProtectedRoute";
+import { UserAuthContextProvider } from "./components/authentication/UserAuthContext";
 
 function App() {
-  return <div id='App'>
-    <Navbar />
+  return (
+    <UserAuthContextProvider>
+      <Router>
+        <div id='App'>
+
+          <Navbar />
+
+          <Routes>
+
+            {/* Authentication Routes */}
+            <Route path="/login" element={
+              <ErrorBoundary>
+                <Login />
+              </ErrorBoundary>} />
+
+            <Route path="/signup" element={
+              <ErrorBoundary>
+                <Signup />
+              </ErrorBoundary>} />
+
+
+
+            {/* Public Routes */}
+            <Route path="*" element={
+              <ErrorBoundary>
+                <PublicRoutes />
+              </ErrorBoundary>
+            } />
+
+
+
+            {/* Admin Routes */}
+            <Route path="/admin/*" element={
+              <ErrorBoundary>
+                <ProtectedRoute>
+                  <AdminRoutes />
+                </ProtectedRoute>
+              </ErrorBoundary>} />
+
+          </Routes>
+        </div>
+      </Router>
+    </UserAuthContextProvider>
+  );
+}
+
+function PublicRoutes() {
+  return (
     <main className='main'>
+      <ScrollToTopButton />
       <Hero />
       <About />
       <Educations />
       <Skills />
       <Projects />
       <Contact />
-      <Footer />
+      <ErrorBoundary>
+        <Footer />
+      </ErrorBoundary>
     </main>
-  </div>
+  );
 }
 
-export default App
+function AdminRoutes() {
+
+  return (
+    <main className="main">
+      <AdminHero />
+
+    </main>
+  );
+}
+
+export default App;

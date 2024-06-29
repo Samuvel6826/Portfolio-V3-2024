@@ -1,5 +1,11 @@
 import React from 'react'
 import './Footer.css'
+
+import { Popover, Space } from 'antd';
+import Cryptos from './Cryptos';
+
+import Razorpay from './Razorpay';
+
 import { ImWhatsapp } from "react-icons/im";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -9,7 +15,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BiSolidPhoneCall } from "react-icons/bi";
-import { LuIndianRupee } from "react-icons/lu";
 import { BiDollar } from "react-icons/bi";
 import { FaCoffee } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
@@ -17,8 +22,6 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
-import Cryptos from './Cryptos';
-import { Popover, Space } from 'antd';
 
 const Footer = () => {
 
@@ -114,17 +117,16 @@ const Footer = () => {
 
                     <h3>PAYMENT</h3>
 
-                    <a href="">
-                        <button>
-                            <LuIndianRupee />Indian Currency
-                        </button>
-                    </a>
+                    <Razorpay />
 
                     <a href="">
                         <button>
                             <BiDollar />Foreign Currency
                         </button>
                     </a>
+
+                    <div>
+                    </div>
 
                     <Space wrap>
                         <Popover content={content} trigger="click">

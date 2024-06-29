@@ -1,43 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { QuestionCircleOutlined, SyncOutlined } from '@ant-design/icons';
-import { FloatButton } from 'antd';
+import React, { useEffect } from 'react';
 
 const ScrollToTopButton = () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    // Event listener for scroll position
-    const handleScroll = () => {
-        const scrollTop = window.scrollY;
-        setIsVisible(scrollTop > 100); // Adjust threshold as needed (e.g., 200)
-    };
-
-    // Event listener for click (optional for accessibility)
-    const handleClick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        const scrollToTopButton = document.getElementById('scroll-to-top-btn-container');
 
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []); // Cleanup effect to prevent memory leaks
+        const scrollFunction = () => {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
 
-    return (
+        window.addEventListener('scroll', scrollFunction);
 
-        <FloatButton.Group
-            className={`fixed ${isVisible ? 'opacity-100' : 'hidden'
-                }`}
-            onClick={handleClick}
-            aria-label="Scroll to Top"
-            shape="circle"
-            style={{
-                right: 16,
-            }}
-        >
-            <FloatButton.BackTop />
-        </FloatButton.Group>
+        return () => {
+            window.removeEventListener('scroll', scrollFunction);
+        };
+    }, []);
 
-    );
+    const topFunction = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    return <>
+        <div id="scroll-to-top-btn-container" className='hidden'>
+            <button
+                id="scroll-to-top-btn"
+                onClick={topFunction}
+                title="Go to top"
+                className='fixed bottom-8 right-8 z-50 w-10 h-10 flex justify-center items-center bg-tertiary text-white text-xl leading-none rounded'
+            >
+                ^
+            </button>
+        </div>
+    </>
 };
 
 export default ScrollToTopButton;
+
+

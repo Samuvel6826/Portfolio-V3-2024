@@ -3,7 +3,7 @@ import './Educations.css'
 import { Steps } from 'antd';
 
 const Education = () => {
-    const [current, setCurrent] = useState(4);
+    const [current, setCurrent] = useState(3);
     const onChange = (value) => {
         console.log('onChange:', value);
         setCurrent(value);
@@ -15,8 +15,8 @@ const Education = () => {
                 <h1 id="education-page-title" className='text-center text-2xl text-tertiary mb-3'>Educations & Qualifications</h1>
 
                 <div id="education-wrapper" className="h-[90%] flex justify-center border-2 border-primary rounded-2xl">
-                    <Steps
 
+                    <Steps
                         className='h-full w-full p-2'
                         onChange={onChange}
                         current={current}
@@ -41,6 +41,7 @@ const Education = () => {
                             }
                         ]}
                     />
+
                 </div>
             </div>
         </section>

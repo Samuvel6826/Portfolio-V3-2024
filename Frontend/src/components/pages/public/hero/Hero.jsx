@@ -1,6 +1,5 @@
 import React from 'react'
 import './Hero.css'
-import ScrollToTopButton from '../../common/ScrollTopBtn';
 import { GoArrowDown } from "react-icons/go";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -110,8 +109,6 @@ const Hero = () => {
             </div>
 
         </div>
-
-        <ScrollToTopButton />
 
     </section>
 }

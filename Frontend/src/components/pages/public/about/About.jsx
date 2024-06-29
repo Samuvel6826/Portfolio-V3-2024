@@ -1,6 +1,5 @@
 import React from 'react'
 import './About.css'
-import AboutImg from "../../../assets/about.jpg"
 import { FaAward } from "react-icons/fa";
 import { LiaFileDownloadSolid } from "react-icons/lia";
 
@@ -16,7 +15,7 @@ const About = () => {
 
             <div id="about-wrapper" className=" w-full flex flex-col gap-3">
 
-                <img id='about-img' className='w-full h-[30%] rounded-2xl' src={AboutImg} alt="" />
+                <img id='about-img' className='w-full h-[30%] rounded-2xl' src="https://thispersondoesnotexist.com" alt="about-img" />
 
                 <div id='about-content' className='w-full flex flex-col gap-2'>
                     <div id='about-box-container' className=' w-full grid grid-cols-3 gap-2'>

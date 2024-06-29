@@ -1,4 +1,4 @@
-/* Education*/
+/* Education */
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,6 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-
 	#education-page-title {
 		@apply text-2xl;
 	}
@@ -19,11 +18,11 @@
 		@apply text-base font-bold;
 	}
 
-	/* Media query for screens up to 640px wide: max-sm */
+	/* Media query for screens 640px and up: sm */
 	@media screen and (min-width: 640px) {
 	}
 
-	/* Media query for screens between 641px and 768px wide: max-md */
+	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
 		#education {
 			@apply px-10;
@@ -46,19 +45,15 @@
 		}
 	}
 
-	/* Media query for screens between 769px and 1024px wide: max-lg */
+	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
 	}
 
-	/* Media query for screens between 1025px and 1280px wide: max-xl */
+	/* Media query for screens 1280px and up: xl */
 	@media screen and (min-width: 1280px) {
 	}
 
-	/* Media query for screens between 1281px and 1536px wide: max-2xl */
+	/* Media query for screens 1536px and up: 2xl */
 	@media screen and (min-width: 1536px) {
-	}
-
-	/* Media query for screens wider than 1536px - 2xl*/
-	@media screen and (min-width: 1537px) {
 	}
 }

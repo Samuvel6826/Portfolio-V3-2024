@@ -3,7 +3,7 @@ import './Contact.css'
 import emailjs from '@emailjs/browser';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Spinner from '../../common/Spinner'
+import Loader from '../../../common/Loader'
 
 const Contact = () => {
     const [loading, setLoading] = useState(false)
@@ -113,7 +113,7 @@ const Contact = () => {
                         </textarea>
                         {formikQuery.touched.message && formikQuery.errors.message ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.message}</div> : <></>}
                     </div>
-                    <button className='bg-tertiary text-secondary rounded-none border-none' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Spinner /> : "Submit"}</button>
+                    <button className='bg-tertiary text-secondary rounded-none border-none' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
                 </form>
 
                 <div id='map-container'>

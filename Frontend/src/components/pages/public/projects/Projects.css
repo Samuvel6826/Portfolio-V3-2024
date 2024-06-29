@@ -19,7 +19,11 @@
 		@apply text-sm;
 	}
 
-	/* Media query for screens up to 640px wide: max-sm */
+	#pagination-btns {
+		@apply flex items-center justify-center gap-2 rounded-full;
+	}
+
+	/* Media query for screens 640px and up: sm */
 	@media screen and (min-width: 640px) {
 		#projects-page-title {
 			@apply text-4xl;
@@ -28,9 +32,21 @@
 		#projects-page-desc {
 			@apply text-base;
 		}
+
+		#pagination {
+			@apply gap-4;
+		}
+
+		#pagination-btns {
+			@apply w-32;
+		}
+
+		#pagination-pages-btns {
+			@apply gap-2;
+		}
 	}
 
-	/* Media query for screens between 641px and 768px wide: max-md */
+	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
 		#projects {
 			@apply px-10;
@@ -41,22 +57,18 @@
 		}
 	}
 
-	/* Media query for screens between 769px and 1024px wide: max-lg */
+	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
 	}
 
-	/* Media query for screens between 1025px and 1280px wide: max-xl */
+	/* Media query for screens 1280px and up: xl */
 	@media screen and (min-width: 1280px) {
 		#card {
 			@apply max-w-96;
 		}
 	}
 
-	/* Media query for screens between 1281px and 1536px wide: max-2xl */
+	/* Media query for screens 1536px and up: 2xl */
 	@media screen and (min-width: 1536px) {
-	}
-
-	/* Media query for screens wider than 1536px - 2xl*/
-	@media screen and (min-width: 1537px) {
 	}
 }
