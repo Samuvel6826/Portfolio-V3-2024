@@ -7,6 +7,8 @@ import {
 } from "@material-tailwind/react";
 import { IoMdDownload } from "react-icons/io";
 import { IoSettings } from "react-icons/io5";
+import { useNavigate } from "react-router";
+import { useUserAuth } from "../authentication/UserAuthContext";
 
 const Navbar = () => {
 
@@ -14,6 +16,17 @@ const Navbar = () => {
 
 	const openDrawerRight = () => setOpenRight(true);
 	const closeDrawerRight = () => setOpenRight(false);
+
+	const { logOut, user } = useUserAuth();
+	const navigate = useNavigate();
+	const handleLogout = async () => {
+		try {
+			await logOut();
+			navigate("/login");
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
 
 	return (
 		<header id='topBar' className='h-16 w-full sticky top-0 left-0 max-md:px-4 bg-tertiary flex justify-center items-center text-xl z-[20!important]'>
@@ -32,7 +45,10 @@ const Navbar = () => {
 						<a href="#" className='flex justify-center items-center'>Resume <IoMdDownload /></a>
 					</button>
 					<button className="flex justify-center items-center border-0">
-						<a href="/login" className='flex justify-center items-center' target="_blank">Admin Panel <IoSettings /></a>
+						<a href="/login" className='flex justify-center items-center'>Admin Panel <IoSettings /></a>
+					</button>
+					<button className="flex justify-center items-center border-0" onClick={handleLogout}>
+						Log Out
 					</button>
 				</div>
 
