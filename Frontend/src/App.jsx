@@ -38,10 +38,10 @@ function App() {
               <Login />
             </ErrorBoundary>} />
 
-          {/* <Route path="/signup" element={
-              <ErrorBoundary>
-                <Signup />
-              </ErrorBoundary>} /> */}
+          <Route path="/signup" element={
+            <ErrorBoundary>
+              <Signup />
+            </ErrorBoundary>} />
 
 
 
