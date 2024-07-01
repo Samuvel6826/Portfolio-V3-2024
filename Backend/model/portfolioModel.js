@@ -22,7 +22,8 @@ const HeroSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+},
+    { versionKey: false });
 
 // Define the About schema
 const AboutSchema = new mongoose.Schema({
@@ -38,7 +39,8 @@ const AboutSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+},
+    { versionKey: false });
 
 // Define the Experience schema
 const ExperienceSchema = new mongoose.Schema({
@@ -58,7 +60,8 @@ const ExperienceSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+},
+    { versionKey: false });
 
 // Define the Projects schema
 const ProjectsSchema = new mongoose.Schema({
@@ -82,7 +85,8 @@ const ProjectsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-});
+},
+    { versionKey: false });
 
 // Define the Educations schema
 const EducationsSchema = new mongoose.Schema({
@@ -102,7 +106,8 @@ const EducationsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-});
+},
+    { versionKey: false });
 
 // Define the Contact schema
 const ContactSchema = new mongoose.Schema({
@@ -130,7 +135,9 @@ const ContactSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-});
+},
+    { versionKey: false }
+);
 
 // Create models from the schemas
 const HeroModel = mongoose.model('Hero', HeroSchema);

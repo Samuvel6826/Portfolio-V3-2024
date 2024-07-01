@@ -8,7 +8,6 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
 import indexRouter from './routes/index.js';
-import razorpayRouter from './routes/razorpay.js';
 import connectToDatabase from './config/dbConfig.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', indexRouter);
-app.use('/api/payment', razorpayRouter);
 
 // Error handling
 app.use((req, res, next) => {

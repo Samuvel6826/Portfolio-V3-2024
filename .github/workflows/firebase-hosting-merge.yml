@@ -19,10 +19,21 @@ jobs:
       - name: Install dependencies
         run: cd Frontend && npm install
 
+      - name: Print Environment Variables
+        run: printenv | grep VITE
+
       # Build the project
       - name: Build the project
-        # env:
-        #   VITE_APP_API_URL: ${{ vars.VITE_APP_API_URL }}
+        env:
+          VITE_BACKEND_HOST_URL: ${{ env.VITE_BACKEND_HOST_URL }}
+          VITE_RAZORPAY_KEY_ID: ${{ env.VITE_RAZORPAY_KEY_ID }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ env.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ env.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ env.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ env.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ env.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_MEASUREMENT_ID: ${{ env.VITE_FIREBASE_MEASUREMENT_ID }}
         run: cd Frontend && npm run build
 
       # Login to Firebase using a service account
