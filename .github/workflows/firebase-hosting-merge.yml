@@ -17,12 +17,12 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: cd Frontend && npm install
+        run: cd Client && npm install
 
       # Build the project
       - name: Build the project
         env:
-          VITE_BACKEND_HOST_URL: ${{ vars.VITE_BACKEND_HOST_URL }}
+          VITE_SERVER_HOST_URL: ${{ vars.VITE_SERVER_HOST_URL }}
           VITE_RAZORPAY_KEY_ID: ${{ vars.VITE_RAZORPAY_KEY_ID }}
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.VITE_FIREBASE_AUTH_DOMAIN }}
@@ -31,7 +31,7 @@ jobs:
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.VITE_FIREBASE_MESSAGING_SENDER_ID }}
           VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ vars.VITE_FIREBASE_MEASUREMENT_ID }}
-        run: cd Frontend && npm run build
+        run: cd Client && npm run build
 
       # Login to Firebase using a service account
       - name: Login to Firebase with service account
@@ -42,7 +42,7 @@ jobs:
       # Deploy to Firebase Hosting
       - name: Deploy to Firebase Hosting
         run: |
-          cd Frontend
+          cd Client
           firebase deploy
 
       # Success notification (optional)
