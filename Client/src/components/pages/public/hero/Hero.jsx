@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 
 
 const Hero = () => {
-    return <section id="hero" className=' w-full p-4 bg-secondary'>
+    return <section id="hero" className=' w-full p-4 sm:p-10 bg-secondary'>
 
         <div id="hero-container" className="container h-full mx-auto flex items-center">
 
@@ -27,7 +27,7 @@ const Hero = () => {
 
                 <div id='dp-container' className="relative w-full flex items-center justify-center">
 
-                    <div id='hero-social-links' className='absolute h-40 w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start  md:hidden'>
+                    <div id='hero-social-links' className='absolute h-32 w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start  md:hidden'>
                         <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank'>
                             <FaInstagram />
                         </a>
@@ -46,7 +46,7 @@ const Hero = () => {
                         alt="Avatar"
                     />
 
-                    <div id='hero-content-scrollBtn' className='absolute h-60 w-5 z-10 right-0 top-3 md:hidden'>
+                    <div id='hero-content-scrollBtn' className='absolute h-52 w-5 z-10 right-0 top-3 md:hidden'>
                         <a href="#about">
                             <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "35px", height: "40px" }} loop autoplay direction="1" mode="normal"></lottie-player>
 
@@ -69,10 +69,10 @@ const Hero = () => {
                             I'm
                             <span id='intro-name' className=" text-4xl text-tertiary font-bold"> Samuvel</span>
                         </p>
-                        <p id='web-dev' className='text-[1.45rem] font-bold'>MERN Stack Web Developer</p>
+                        <p id='web-dev' className='text-[1.28rem] font-bold'>MERN Stack Web Developer</p>
                     </div>
 
-                    <p id='intro-para' className=" text-justify leading-[1.4] mb-2 text-lg ">
+                    <p id='intro-para' className=" text-justify text-[1rem] leading-[1.4] mb-2 text-lg ">
                         Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India, I'm a passionate web developer and designer. Seeking an Assistant Web Developer role or internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss web development!..Feel free to contact me.
                     </p>
 

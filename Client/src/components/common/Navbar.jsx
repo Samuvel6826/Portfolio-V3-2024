@@ -38,8 +38,7 @@ const Navbar = () => {
 						<li><a href="#about">About</a></li>
 						<li><a href="#skills">Skills</a></li>
 						<li><a href="#projects">Projects</a></li>
-						<li><a href="#portfolio">Portfolio</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#footer">Contact</a></li>
 					</ul>
 					<button className="flex justify-center items-center border-0">
 						<a href="#" className='flex justify-center items-center'>Resume <IoMdDownload /></a>
@@ -70,7 +69,7 @@ const Navbar = () => {
 						>
 							<div className="mb-6 flex items-center justify-between">
 								<Typography variant="h5" color="blue-gray">
-									Material Tailwind
+									Menus
 								</Typography>
 								<IconButton
 									variant="text"
@@ -93,14 +92,39 @@ const Navbar = () => {
 									</svg>
 								</IconButton>
 							</div>
-							<div color="gray" className="mb-8 pr-4 font-normal">
-								<ul id='mobileMenu-list' className="flex flex-col gap-4 mt-5 w-full h-full text-3xl">
-									<li><a href="#hero"><i className="uil uil-estate"></i>Home</a></li>
-									<li><a href="#about"><i className="uil uil-user"></i>About</a></li>
-									<li><a href="#skills"><i className="uil uil-file-alt"></i>Skills</a></li>
-									<li><a href="#projects"><i className="uil uil-briefcase-alt"></i>Projects</a></li>
-									<li><a href="#portfolio"><i className="uil uil-scenery"></i>Portfolio</a></li>
-									<li><a href="#contact"><i className="uil uil-message"></i>Contact</a></li>
+
+							<div className="mb-8 pr-4 font-normal text-gray-600">
+								<ul id="mobileMenu-list" className="flex flex-col gap-6 mt-5 w-full h-full text-2xl">
+									<li className="group">
+										<a href="#hero" className="flex items-center space-x-3 hover:text-primary transition-colors duration-300">
+											<i className="uil uil-estate text-primary group-hover:text-secondary text-xl"></i>
+											<span>Home</span>
+										</a>
+									</li>
+									<li className="group">
+										<a href="#about" className="flex items-center space-x-3 hover:text-primary transition-colors duration-300">
+											<i className="uil uil-user text-primary group-hover:text-secondary text-xl"></i>
+											<span>About</span>
+										</a>
+									</li>
+									<li className="group">
+										<a href="#skills" className="flex items-center space-x-3 hover:text-primary transition-colors duration-300">
+											<i className="uil uil-file-alt text-primary group-hover:text-secondary text-xl"></i>
+											<span>Skills</span>
+										</a>
+									</li>
+									<li className="group">
+										<a href="#projects" className="flex items-center space-x-3 hover:text-primary transition-colors duration-300">
+											<i className="uil uil-briefcase-alt text-primary group-hover:text-secondary text-xl"></i>
+											<span>Projects</span>
+										</a>
+									</li>
+									<li className="group">
+										<a href="#footer" className="flex items-center space-x-3 hover:text-primary transition-colors duration-300">
+											<i className="uil uil-message text-primary group-hover:text-secondary text-xl"></i>
+											<span>Contact</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 							{/* <div className="flex gap-2">
