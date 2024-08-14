@@ -49,9 +49,9 @@ const Contact = () => {
             });
     };
 
-    return <section id='contact' className='  bg-primary mx-auto flex p-4'>
+    return <section id='contact' className='  bg-secondary mx-auto flex p-4'>
         <div id="contact-container" className="container h-full mx-auto flex flex-col items-center gap-3">
-            <header id='contact-header' className='text-center text-secondary'>
+            <header id='contact-header' className='text-center text-primary'>
                 <h1 id="contact-page-title">Contact Me</h1>
                 <p id="contact-page-desc">Please fill out the form below to discuss any work opportunities.</p>
             </header>
@@ -113,7 +113,7 @@ const Contact = () => {
                         </textarea>
                         {formikQuery.touched.message && formikQuery.errors.message ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.message}</div> : <></>}
                     </div>
-                    <button className='bg-tertiary text-secondary rounded-none border-none' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
+                    <button className='bg-tertiary text-primary rounded-none border-none' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
                 </form>
 
                 <div id='map-container'>

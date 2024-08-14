@@ -109,7 +109,7 @@ const Projects = () => {
     };
 
     return (
-        <section id='projects' className='bg-secondary mx-auto flex p-4'>
+        <section id='projects' className='bg-primary mx-auto flex p-4'>
             <div id='projects-container' className='container mx-auto flex flex-col items-center gap-3'>
                 <header id='projects-header' className='text-center text-tertiary'>
                     <h1 id='projects-page-title'>Projects</h1>
@@ -122,7 +122,7 @@ const Projects = () => {
                         <div className='error-message mx-auto text-2xl text-white bg-red-800 rounded-full p-5'>{error}</div>
                     ) : (
                         projects.slice(indexOfFirstCard, indexOfLastCard).map((project, index) => (
-                            <div key={index} id='card' className='h-full w-full flex flex-grow flex-col rounded-2xl p-4 text-white bg-primary gap-3'>
+                            <div key={index} id='card' className='h-full w-full flex flex-grow flex-col rounded-2xl p-4 text-white bg-secondary gap-3'>
                                 <div className='border-b-2'>
                                     {project.name}
                                 </div>
@@ -150,7 +150,7 @@ const Projects = () => {
                         <Button
                             id='pagination-btns'
                             variant='text'
-                            className='w-[4.5rem]'
+                            className='w-[4.5rem] bg-secondary text-white'
                             onClick={prev}
                             disabled={active === 1}
                         >
@@ -164,7 +164,7 @@ const Projects = () => {
                         <Button
                             id='pagination-btns'
                             variant='text'
-                            className='w-[4.5rem]'
+                            className='w-[4.5rem] bg-secondary text-white'
                             onClick={next}
                             disabled={active === totalPages}
                         >

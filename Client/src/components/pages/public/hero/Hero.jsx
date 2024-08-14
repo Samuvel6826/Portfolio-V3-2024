@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 
 
 const Hero = () => {
-    return <section id="hero" className=' w-full p-4 sm:p-10 bg-secondary'>
+    return <section id="hero" className=' w-full p-4 sm:p-10 bg-primary'>
 
         <div id="hero-container" className="container h-full mx-auto flex items-center">
 
@@ -72,13 +72,13 @@ const Hero = () => {
                         <p id='web-dev' className='text-[1.28rem] font-bold'>MERN Stack Web Developer</p>
                     </div>
 
-                    <p id='intro-para' className=" text-justify text-[1rem] leading-[1.4] mb-2 text-lg ">
+                    <p id='intro-para' className=" text-justify text-[0.95rem] leading-[1.8] mb-2 text-lg ">
                         Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India, I'm a passionate web developer and designer. Seeking an Assistant Web Developer role or internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss web development!..Feel free to contact me.
                     </p>
 
                     <div id='hero-content-btns-container' className=" flex text-base items-center justify-between">
                         <button id='hero-content-btns' className="flex justify-center items-center">
-                            <a href="#portfolio" className='flex justify-center items-center'>
+                            <a href="#projects" className='flex justify-center items-center'>
                                 <img className='mr-2' width="25" height="25" src="https://img.icons8.com/pastel-glyph/64/suitcase--v3.png" alt="suitcase--v3" />
                                 My Works
                             </a>

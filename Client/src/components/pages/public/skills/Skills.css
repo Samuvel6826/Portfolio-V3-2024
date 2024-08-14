@@ -1,41 +1,56 @@
 /* Skills */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
 	/* Default styles for all screen sizes */
-
 	#skills-page-title {
-		@apply text-2xl;
+		@apply text-2xl font-bold text-primary;
 	}
 
 	#skills-page-desc {
-		@apply text-sm;
+		@apply text-sm text-gray-500;
 	}
 
 	#skills-list {
-		@apply w-full flex flex-row flex-wrap gap-2;
+		@apply flex flex-wrap gap-4 justify-center;
 	}
 
-	#skills-box {
-		@apply border-2 border-secondary rounded-2xl px-2 py-1 flex flex-col justify-center items-center flex-grow;
+	.skills-box {
+		@apply bg-blue-gray-100 border-2 border-primary rounded-xl p-4 flex flex-col items-center text-center flex-grow;
+		@apply transition-transform duration-300 ease-in-out transform-gpu;
+		@apply shadow-lg;
+		@apply hover:bg-primary;
+		@apply hover:text-letter;
+		@apply relative;
 	}
 
-	#skills-box a {
-		@apply flex flex-col items-center justify-center text-center;
+	.skills-box:hover {
+		@apply scale-110 shadow-xl;
+		z-index: 10;
 	}
 
-	#skill-name {
-		@apply text-[0.8rem] font-semibold;
+	.skill-image {
+		@apply mb-2;
+		width: 7.5rem;
+		height: 4.5rem;
+		max-width: 10rem;
+		max-height: 5rem;
+		object-fit: contain;
+		@apply transition-transform duration-300 ease-in-out;
 	}
 
-	#skill-level {
-		@apply text-[0.7rem];
+	.skills-box:hover .skill-image {
+		@apply scale-125;
 	}
 
-	/* Media query for screens 640px and up: sm */
+	.skill-level {
+		@apply text-xs text-gray-700;
+		@apply transition-colors duration-700 ease-in-out;
+	}
+
+	/* Media queries for responsiveness */
 	@media screen and (min-width: 640px) {
 		#skills-page-title {
 			@apply text-4xl;
@@ -46,61 +61,48 @@
 		}
 
 		#skills-wrapper {
-			@apply p-4;
+			@apply p-6;
 		}
 
-		#skills-wrapper h4 {
-			@apply text-2xl;
+		.skills-box {
+			@apply p-5;
 		}
 
-		#skill-name {
-			@apply text-[0.9rem] font-semibold;
-		}
-
-		#skill-level {
-			@apply text-[0.8rem];
+		.skill-level {
+			@apply text-sm;
 		}
 	}
 
-	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
 		#skills {
-			@apply px-10;
+			@apply px-12;
 		}
 
-		#skills-wrapper h4 {
-			@apply text-3xl;
-		}
-
-		#skill-name {
-			@apply text-[1rem] font-semibold;
-		}
-
-		#skill-level {
-			@apply text-[0.9rem];
+		.skill-level {
+			@apply text-base;
 		}
 	}
 
-	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
-		#skills-wrapper h4 {
-			@apply text-4xl;
-		}
-
-		#skill-name {
-			@apply text-[1.2rem] font-semibold;
-		}
-
-		#skill-level {
-			@apply text-[1rem];
+		#skills-wrapper {
+			@apply p-8;
 		}
 	}
 
-	/* Media query for screens 1280px and up: xl */
-	@media screen and (min-width: 1280px) {
-	}
+	/* Mobile-specific styles */
+	@media screen and (max-width: 639px) {
+		.skills-box {
+			@apply p-3; /* Reduce padding */
+			width: calc(50% - 0.5rem); /* Two boxes per row */
+		}
 
-	/* Media query for screens 1536px and up: 2xl */
-	@media screen and (min-width: 1536px) {
+		.skill-image {
+			width: 5.5rem; /* Reduce width */
+			height: 3rem; /* Reduce height */
+		}
+
+		.skill-level {
+			@apply text-xs; /* Smaller text */
+		}
 	}
 }

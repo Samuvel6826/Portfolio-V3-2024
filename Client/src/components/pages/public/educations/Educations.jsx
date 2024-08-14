@@ -9,12 +9,12 @@ const Education = () => {
         setCurrent(value);
     };
     return (
-        <section id='education' className=' bg-secondary mx-auto p-4'>
+        <section id='education' className=' bg-primary mx-auto p-4'>
 
             <div id="education-container" className="container h-full mx-auto flex flex-col justify-evenly">
                 <h1 id="education-page-title" className='text-center text-2xl text-tertiary mb-3'>Educations & Qualifications</h1>
 
-                <div id="education-wrapper" className="h-[90%] flex justify-center border-2 border-primary rounded-2xl">
+                <div id="education-wrapper" className="h-[90%] flex justify-center border-2 border-secondary rounded-2xl">
 
                     <Steps
                         className='h-full w-full p-2'

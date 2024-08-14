@@ -8,7 +8,7 @@
 	/* Default styles for all screen sizes */
 
 	.active {
-		@apply bg-secondary;
+		@apply bg-primary;
 	}
 
 	#projects-page-title {

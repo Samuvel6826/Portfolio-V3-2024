@@ -7,28 +7,28 @@
 @layer components {
 	/* Default styles for all screen sizes */
 	#about-page-title {
-		@apply text-2xl;
+		@apply text-2xl sm:text-3xl;
 	}
 
 	#about-page-desc {
-		@apply text-sm;
+		@apply text-sm sm:text-base;
 	}
 
 	#s-box {
-		@apply h-full w-full border-2 border-secondary rounded-2xl p-2 flex flex-col items-center justify-center gap-1;
+		@apply h-full w-full border-2 border-primary rounded-2xl p-2 flex flex-col items-center justify-center gap-1;
 	}
 
 	#s-box h4,
 	#s-box p {
-		@apply text-[4vw];
+		@apply text-[4vw] sm:text-lg;
 	}
 
 	#about-resume-btn {
-		@apply border-2 bg-primary text-white border-secondary w-full flex p-2 gap-2 text-2xl items-center justify-center;
+		@apply border-2 bg-secondary text-white border-primary w-full flex p-2 gap-2 text-2xl items-center justify-center;
 	}
 
 	#about-resume-btn a {
-		@apply text-white;
+		@apply flex items-center justify-center text-center text-white w-full;
 	}
 
 	/* Media query for screens 640px and up: sm */
@@ -58,10 +58,6 @@
 
 		#about-header {
 			@apply my-2;
-		}
-
-		#about-wrapper {
-			@apply h-[35rem] flex-row justify-between mb-4;
 		}
 
 		#about-img {
@@ -116,9 +112,5 @@
 		#about-para {
 			@apply text-xl leading-loose;
 		}
-	}
-
-	/* Media query for screens 1536px and up: 2xl */
-	@media screen and (min-width: 1536px) {
 	}
 }

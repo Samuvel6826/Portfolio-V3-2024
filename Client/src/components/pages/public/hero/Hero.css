@@ -7,7 +7,7 @@
 @layer components {
 	/* Default styles for all screen sizes */
 	#hero-content-btns-container button {
-		@apply h-14 border-primary;
+		@apply h-14 border-secondary;
 	}
 
 	#hero-content-btns {
