@@ -77,9 +77,9 @@ function PublicRoutes() {
     <Skills />
     <Projects />
     <Contact />
-    <ErrorBoundary>
-      <Footer />
-    </ErrorBoundary>
+    {/* <ErrorBoundary> */}
+    <Footer />
+    {/* </ErrorBoundary> */}
   </main>
 }
 
