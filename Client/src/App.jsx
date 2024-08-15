@@ -56,11 +56,11 @@ function App() {
 
           {/* Admin Routes */}
           <Route path="/admin/*" element={
-            <ErrorBoundary>
-              <ProtectedRoute>
-                <AdminRoutes />
-              </ProtectedRoute>
-            </ErrorBoundary>} />
+
+            <ProtectedRoute>
+              <AdminRoutes />
+            </ProtectedRoute>
+          } />
 
         </Routes>
       </main>
