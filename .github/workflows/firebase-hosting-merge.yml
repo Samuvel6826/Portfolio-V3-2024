@@ -11,12 +11,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # Use the latest LTS version of Node.js
+
       # Cache node modules
       - name: Cache node modules
         uses: actions/cache@v3
         with:
           path: Client/node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('Client/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-npm-
 
