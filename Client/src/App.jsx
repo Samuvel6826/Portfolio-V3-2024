@@ -47,9 +47,9 @@ function App() {
 
           {/* Public Routes */}
           <Route path="*" element={
-            <ErrorBoundary>
-              <PublicRoutes />
-            </ErrorBoundary>
+            // <ErrorBoundary>
+            <PublicRoutes />
+            // </ErrorBoundary>
           } />
 
 
