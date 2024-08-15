@@ -25,7 +25,10 @@ const Razorpay = () => {
         setIsLoading(true);
 
         try {
-            const res = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/order`, {
+            const url = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/order`;
+            console.log("Creating payment order with URL:", url);
+
+            const res = await axios.post(url, {
                 amount: parseInt(amount)
             }, {
                 headers: {
@@ -55,7 +58,10 @@ const Razorpay = () => {
             order_id: data.id,
             handler: async (response) => {
                 try {
-                    const res = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/verify`, {
+                    const url = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/verify`;
+                    console.log("Verifying payment with URL:", url);
+
+                    const res = await axios.post(url, {
                         razorpay_order_id: response.razorpay_order_id,
                         razorpay_payment_id: response.razorpay_payment_id,
                         razorpay_signature: response.razorpay_signature,
