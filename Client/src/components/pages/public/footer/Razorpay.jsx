@@ -25,7 +25,7 @@ const Razorpay = () => {
         setIsLoading(true);
 
         try {
-            const url = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/order`;
+            const url = `${import.meta.env.VITE_SERVER_HOST_URL}/api/payment/order`;
             console.log("Creating payment order with URL:", url);
 
             const res = await axios.post(url, {
@@ -58,7 +58,7 @@ const Razorpay = () => {
             order_id: data.id,
             handler: async (response) => {
                 try {
-                    const url = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/verify`;
+                    const url = `${import.meta.env.VITE_SERVER_HOST_URL}/api/payment/verify`;
                     console.log("Verifying payment with URL:", url);
 
                     const res = await axios.post(url, {
