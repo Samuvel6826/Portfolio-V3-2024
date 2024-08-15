@@ -13,9 +13,17 @@ import { LuIndianRupee } from "react-icons/lu";
 
 const Razorpay = () => {
     const [amount, setAmount] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     // handlePayment Function
     const handlePayment = async () => {
+        if (!amount || parseInt(amount) <= 0) {
+            toast.error("Please enter a valid amount");
+            return;
+        }
+
+        setIsLoading(true);
+
         try {
             const res = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/order`, {
                 amount: parseInt(amount)
@@ -26,10 +34,12 @@ const Razorpay = () => {
             });
 
             const data = res.data;
-            console.log(data);
             handlePaymentVerify(data.data);
         } catch (error) {
-            console.log(error);
+            console.error("Error creating payment order:", error);
+            toast.error("Failed to create payment order. Please try again.");
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -44,8 +54,6 @@ const Razorpay = () => {
             // image: "https://example.com/your_logo",
             order_id: data.id,
             handler: async (response) => {
-                // console.log("Razorpay handler response:", response); // Log the response received from Razorpay
-
                 try {
                     const res = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/api/payment/verify`, {
                         razorpay_order_id: response.razorpay_order_id,
@@ -59,21 +67,14 @@ const Razorpay = () => {
 
                     const verifyData = res.data;
 
-                    console.log("Payment verification response:", verifyData); // Log the response received from the backend
-
                     if (verifyData.message) {
                         toast.success(verifyData.message);
                     }
                 } catch (error) {
                     console.error("Error during payment verification:", error);
-                    toast.error("Payment verification failed");
+                    toast.error("Payment verification failed. Please try again.");
                 }
             },
-            // prefill: {
-            //     name: "samuvel",
-            //     email: "samuvel6826@gmail.com",
-            //     contact: "+919043251797"
-            // },
             notes: {
                 address: "Sam's Corporate Office"
             },
@@ -81,6 +82,7 @@ const Razorpay = () => {
                 color: "#3399cc"
             }
         };
+
         const rzp1 = new window.Razorpay(options);
         rzp1.open();
     };
@@ -89,8 +91,8 @@ const Razorpay = () => {
         <div>
             <Popover placement="bottom">
                 <PopoverHandler>
-                    <button id="rzp-button1">
-                        <LuIndianRupee /> Pay with Razorpay
+                    <button id="rzp-button1" disabled={isLoading} className={isLoading ? "opacity-50 cursor-not-allowed" : ""}>
+                        <LuIndianRupee /> {isLoading ? "Processing..." : "Pay with Razorpay"}
                     </button>
                 </PopoverHandler>
                 <PopoverContent className="w-96">
@@ -115,9 +117,10 @@ const Razorpay = () => {
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
+                            disabled={isLoading}
                         />
-                        <Button variant="gradient" className="flex-shrink-0" onClick={handlePayment}>
-                            Pay
+                        <Button variant="gradient" className="flex-shrink-0" onClick={handlePayment} disabled={isLoading}>
+                            {isLoading ? "Processing..." : "Pay"}
                         </Button>
                     </div>
                 </PopoverContent>

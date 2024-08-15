@@ -3,6 +3,7 @@ import razorpayModel from '../model/razorpay.js';
 import crypto from 'crypto';
 import dayjs from 'dayjs';
 import { isString, isNumber } from '../common/Sanitize.js';
+import logger from '../common/logger.js';  // Import the logger
 
 // Destructure environment variables
 const { RAZORPAY_KEY_ID, RAZORPAY_SECRET } = process.env;
@@ -15,12 +16,13 @@ const razorpayInstance = new Razorpay({
 
 // Function to handle client errors
 const handleClientError = (res, message) => {
+    logger.warn(`Client error: ${message}`); // Log the client error
     res.status(400).send({ message });
 };
 
 // Function to handle server errors
 const handleServerError = (res, error) => {
-    console.error('Error:', error.message);
+    logger.error(`Server error: ${error.message}`); // Log the server error
     res.status(500).send({
         message: 'Internal Server Error',
         errorMessage: error.message,
@@ -29,7 +31,9 @@ const handleServerError = (res, error) => {
 
 // Endpoint to retrieve payment details
 const getPayment = async (req, res) => {
+    // Respond with a simple message for payment details endpoint
     res.json("Payment Details");
+    logger.info('Payment details retrieved'); // Log the retrieval
 };
 
 // Endpoint to create a new payment order
@@ -54,14 +58,14 @@ const createOrder = async (req, res) => {
         // Create order using Razorpay API
         razorpayInstance.orders.create(options, (error, order) => {
             if (error) {
-                console.error('Razorpay order creation error:', error);
+                logger.error('Razorpay order creation error:', error);
                 return handleServerError(res, error);
             }
             res.status(200).json({ data: order });
-            console.log('Razorpay order created:', order); // Razorpay order created
+            logger.info('Razorpay order created:', order); // Log the successful order creation
         });
     } catch (error) {
-        console.error('Internal server error:', error);
+        logger.error('Internal server error:', error);
         handleServerError(res, error);
     }
 };
@@ -82,7 +86,7 @@ const verifyPayment = async (req, res) => {
 
         // Check if the secret is undefined
         if (!RAZORPAY_SECRET) {
-            console.error('Razorpay secret key is undefined');
+            logger.error('Razorpay secret key is undefined');
             return res.status(500).json({ message: 'Internal Server Error!' });
         }
 
@@ -99,7 +103,7 @@ const verifyPayment = async (req, res) => {
 
         // Handle the result of signature verification
         if (isAuthentic) {
-            // Save payment details to database
+            // Save payment details to the database
             const payment = new razorpayModel({
                 razorpay_order_id: sanitizedOrderId,
                 razorpay_payment_id: sanitizedPaymentId,
@@ -108,15 +112,18 @@ const verifyPayment = async (req, res) => {
             });
             await payment.save();
 
+            // Log the successful payment
+            logger.info(`Payment verified and saved: ${sanitizedPaymentId}`);
+
             // Send success message along with date_time
             res.json({ message: 'Payment Successful', date_time: payment.date_time });
         } else {
-            // Invalid signature
+            // Log the invalid signature attempt
+            logger.warn('Invalid Signature');
             res.status(400).json({ message: 'Invalid Signature' });
         }
     } catch (error) {
-        // Handle server errors
-        console.error('Internal server error:', error);
+        logger.error('Internal server error:', error);
         res.status(500).json({ message: 'Internal Server Error!' });
     }
 };
