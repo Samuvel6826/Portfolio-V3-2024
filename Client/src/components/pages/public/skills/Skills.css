@@ -34,9 +34,7 @@
 	.skill-image {
 		@apply mb-2;
 		width: 7.5rem;
-		height: 4.5rem;
-		max-width: 10rem;
-		max-height: 5rem;
+		height: 4rem;
 		object-fit: contain;
 		@apply transition-transform duration-300 ease-in-out;
 	}

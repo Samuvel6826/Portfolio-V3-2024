@@ -1,26 +1,39 @@
 /* Projects */
 
+/* Base and Tailwind utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
 	/* Default styles for all screen sizes */
-
 	.active {
 		@apply bg-primary;
 	}
 
 	#projects-page-title {
-		@apply text-2xl;
+		@apply text-2xl font-bold;
 	}
 
 	#projects-page-desc {
-		@apply text-sm;
+		@apply text-sm text-secondary;
 	}
 
 	#pagination-btns {
-		@apply flex items-center justify-center gap-2 rounded-full;
+		@apply flex items-center justify-center gap-2 rounded-full text-white bg-secondary hover:bg-primary transition-all duration-300;
+	}
+
+	#card:hover {
+		@apply transform scale-105 shadow-lg;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	#pagination-btns[disabled] {
+		@apply bg-gray-600 text-gray-300 cursor-not-allowed;
+	}
+
+	.error-message {
+		@apply text-2xl text-white bg-red-800 rounded-full p-5 shadow-md;
 	}
 
 	/* Media query for screens 640px and up: sm */
@@ -57,18 +70,10 @@
 		}
 	}
 
-	/* Media query for screens 1024px and up: lg */
-	@media screen and (min-width: 1024px) {
-	}
-
 	/* Media query for screens 1280px and up: xl */
 	@media screen and (min-width: 1280px) {
 		#card {
 			@apply max-w-96;
 		}
-	}
-
-	/* Media query for screens 1536px and up: 2xl */
-	@media screen and (min-width: 1536px) {
 	}
 }

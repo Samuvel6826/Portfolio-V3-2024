@@ -7,7 +7,7 @@
 @layer components {
 	/* Default styles for all screen sizes */
 	#hero-content-btns-container button {
-		@apply h-14 border-secondary;
+		@apply w-full border-2 border-secondary rounded-2xl p-4 flex items-center justify-center text-center transition-transform transform hover:scale-105;
 	}
 
 	#hero-content-btns {
@@ -21,7 +21,7 @@
 	/* Media query for screens 640px and up: sm */
 	@media screen and (min-width: 640px) {
 		#dp-pic {
-			@apply w-[50%];
+			@apply w-[50%] rounded-full shadow-lg;
 		}
 
 		#hero-text-container {
@@ -47,7 +47,7 @@
 
 	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
-		#hero {
+		#home {
 			@apply px-10;
 		}
 
@@ -136,6 +136,6 @@
 
 	/* Media query for screens 1536px and up: 2xl */
 	@media screen and (min-width: 1536px) {
-		/* CSS styles for screens 1536px and up */
+		/* Additional styles for larger screens can be added here */
 	}
 }

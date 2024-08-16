@@ -113,7 +113,7 @@ const Contact = () => {
                         </textarea>
                         {formikQuery.touched.message && formikQuery.errors.message ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.message}</div> : <></>}
                     </div>
-                    <button className='bg-tertiary text-primary rounded-none border-none' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
+                    <button className='bg-tertiary text-primary p-2 text-lg' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
                 </form>
 
                 <div id='map-container'>

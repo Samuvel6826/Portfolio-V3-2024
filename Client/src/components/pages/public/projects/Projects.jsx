@@ -134,7 +134,7 @@ const Projects = () => {
                                         {project.description}
                                     </div>
                                     <div>
-                                        {project.id}
+                                        Project ID: {project.id}
                                     </div>
                                 </div>
                                 <div>

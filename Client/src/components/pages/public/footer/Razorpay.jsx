@@ -97,8 +97,17 @@ const Razorpay = () => {
         <div>
             <Popover placement="bottom">
                 <PopoverHandler>
-                    <button id="rzp-button1" disabled={isLoading} className={isLoading ? "opacity-50 cursor-not-allowed" : ""}>
-                        <LuIndianRupee /> {isLoading ? "Processing..." : "Pay with Razorpay"}
+                    <button
+                        id="rzp-button1"
+                        disabled={isLoading}
+                        className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-white transition-colors duration-300 
+        ${isLoading ? "bg-gray-500 opacity-50 cursor-not-allowed" : "hover:bg-primary-dark"}`
+                        }
+                        aria-busy={isLoading}
+                        aria-label={isLoading ? "Processing payment" : "Pay with Razorpay"}
+                    >
+                        <svg className={`text-lg ${isLoading ? "animate-spin" : ""}`} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M549-120 280-400v-80h140q53 0 91.5-34.5T558-600H240v-80h306q-17-35-50.5-57.5T420-760H240v-80h480v80H590q14 17 25 37t17 43h88v80h-81q-8 85-70 142.5T420-400h-29l269 280H549Z" /></svg>
+                        {isLoading ? "Processing..." : "Pay with Razorpay"}
                     </button>
                 </PopoverHandler>
                 <PopoverContent className="w-96">

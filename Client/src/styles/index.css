@@ -24,10 +24,6 @@
 		@apply no-underline hover:text-blue-700;
 	}
 
-	button {
-		@apply border-2 rounded-2xl p-4;
-	}
-
 	/* Heading styles */
 	h1 {
 		@apply font-bold text-4xl;
