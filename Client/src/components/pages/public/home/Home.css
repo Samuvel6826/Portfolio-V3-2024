@@ -1,4 +1,4 @@
-/* Hero */
+/* Home */
 
 @tailwind base;
 @tailwind components;
@@ -6,15 +6,15 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-	#hero-content-btns-container button {
+	#home-content-btns-container button {
 		@apply w-full border-2 border-secondary rounded-2xl p-4 flex items-center justify-center text-center transition-transform transform hover:scale-105;
 	}
 
-	#hero-content-btns {
+	#home-content-btns {
 		@apply p-4;
 	}
 
-	#hero-content-scrollBtn a {
+	#home-content-scrollBtn a {
 		@apply h-full w-full flex flex-col justify-between items-center;
 	}
 
@@ -24,7 +24,7 @@
 			@apply w-[50%] rounded-full shadow-lg;
 		}
 
-		#hero-text-container {
+		#home-text-container {
 			@apply leading-normal;
 		}
 
@@ -67,15 +67,15 @@
 			@apply leading-relaxed text-lg;
 		}
 
-		#hero-container {
+		#home-container {
 			@apply justify-between;
 		}
 
-		#hero-social-links {
+		#home-social-links {
 			@apply mr-4 text-xl;
 		}
 
-		#hero-wrapper {
+		#home-wrapper {
 			@apply w-[90%] h-[30rem] flex-row-reverse justify-between;
 		}
 
@@ -87,11 +87,11 @@
 			@apply w-[95%];
 		}
 
-		#hero-content {
+		#home-content {
 			@apply w-[64%] justify-center;
 		}
 
-		#hero-content-btns-container {
+		#home-content-btns-container {
 			@apply justify-start gap-4;
 		}
 	}

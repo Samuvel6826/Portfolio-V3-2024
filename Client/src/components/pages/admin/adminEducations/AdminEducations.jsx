@@ -2,17 +2,17 @@ import React from 'react'
 import './AdminEducations.css'
 
 const AdminEducations = () => {
-    return <section id='educations' className=' bg-primary text-white mx-auto flex p-4'>
+    return <section id='educations' className='flex p-4 mx-auto text-white  bg-primary'>
 
-        <div id='admin-educations-container' className=' container w-full mx-auto flex flex-col gap-3'>
+        <div id='admin-educations-container' className='container flex flex-col w-full mx-auto  gap-3'>
 
-            <header id='admin-educations-header' className=' w-full text-secondary text-center'>
+            <header id='admin-educations-header' className='w-full text-center  text-secondary'>
                 <h1 id='admin-educations-page-title'>Admin Educations</h1>
             </header>
 
             <main id="main-wrapper" className="flex justify-between">
 
-                <form id="text-wrapper" className=" flex flex-col gap-6">
+                <form id="text-wrapper" className="flex flex-col  gap-6">
                     <h2>Educations Descriptions</h2>
 
                     <div>

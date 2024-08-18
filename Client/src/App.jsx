@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
-import Hero from './components/pages/public/hero/Hero';
+import Home from './components/pages/public/home/Home';
 import About from './components/pages/public/about/About';
 import Skills from './components/pages/public/skills/Skills';
 import Projects from './components/pages/public/projects/Projects';
@@ -71,7 +71,7 @@ function App() {
 function PublicRoutes() {
   return <main className='main'>
     <ScrollToTopButton />
-    <Hero />
+    <Home />
     <About />
     <Educations />
     <Skills />

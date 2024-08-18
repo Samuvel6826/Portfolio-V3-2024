@@ -3,19 +3,19 @@ import './AdminHero.css'
 
 const AdminHero = () => {
 
-    return <section id='hero' className=' bg-primary text-white mx-auto flex p-4'>
+    return <section id='hero' className='flex p-4 mx-auto text-white  bg-primary'>
 
-        <div id='admin-hero-container' className=' container w-full mx-auto flex flex-col gap-3'>
+        <div id='admin-hero-container' className='container flex flex-col w-full mx-auto  gap-3'>
 
-            <header id='admin-hero-header' className=' w-full text-secondary text-center'>
+            <header id='admin-hero-header' className='w-full text-center  text-secondary'>
                 <h1 id='admin-hero-page-title'>Admin Hero</h1>
             </header>
 
             <main id="main-wrapper" className="flex justify-between">
 
-                <div id="content-container" className=" w-1/2 p-4">
+                <div id="content-container" className="w-1/2 p-4 ">
 
-                    <form className="form-example flex flex-col gap-6">
+                    <form className="flex flex-col form-example gap-6">
                         <div id="text-wrapper" className="flex flex-col gap-3">
                             <h2>Hero Descriptions</h2>
                             <div>
@@ -73,7 +73,7 @@ const AdminHero = () => {
 
                 </div>
 
-                <div id="dp-container" className=" w-1/2 p-4 flex flex-col gap-3">
+                <div id="dp-container" className="flex flex-col w-1/2 p-4  gap-3">
                     <h2>Profile Pic</h2>
                     <img src="" alt="Profile Pic" />
                     <div>

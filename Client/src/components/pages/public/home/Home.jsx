@@ -1,36 +1,36 @@
 import React from 'react';
-import './Hero.css';
+import './Home.css';
 import { GoArrowDown } from "react-icons/go";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
-const Hero = () => {
+const Home = () => {
     return (
-        <section id="home" className='w-full p-4 sm:p-10 bg-primary'>
-            <div id="hero-container" className="container h-full mx-auto flex items-center">
+        <section id="home" className='w-full bg-primary p-4 sm:p-10'>
+            <div id="home-container" className="container mx-auto flex h-full items-center">
 
-                <section id='hero-social-links' className='hidden md:flex h-60 w-5 flex-col justify-between items-center'>
-                    <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank' title='Instagram' className="hover:text-tertiary transition-colors">
+                <section id='home-social-links' className='hidden h-60 w-5 flex-col items-center justify-between md:flex'>
+                    <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank' title='Instagram' className="transition-colors hover:text-tertiary">
                         <FaInstagram />
                     </a>
-                    <a href="https://www.linkedin.com/in/samuvelantony/" target='blank' title='LinkedIn' className="hover:text-tertiary transition-colors">
+                    <a href="https://www.linkedin.com/in/samuvelantony/" target='blank' title='LinkedIn' className="transition-colors hover:text-tertiary">
                         <FaLinkedin />
                     </a>
-                    <a href="https://github.com/Samuvel6826" target='blank' title='Github' className="hover:text-tertiary transition-colors">
+                    <a href="https://github.com/Samuvel6826" target='blank' title='Github' className="transition-colors hover:text-tertiary">
                         <FaGithub />
                     </a>
                 </section>
 
-                <section id='hero-wrapper' className='flex flex-col items-center'>
-                    <div id='dp-container' className="relative w-full flex items-center justify-center">
+                <section id='home-wrapper' className='flex flex-col items-center'>
+                    <div id='dp-container' className="relative flex w-full items-center justify-center">
 
-                        <div id='hero-social-links' className='absolute h-32 w-5 z-10 left-0 top-5 text-xl flex flex-col justify-between items-start md:hidden'>
-                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank' title='Instagram' className="hover:text-tertiary transition-colors">
+                        <div id='home-social-links' className='absolute left-0 top-5 z-10 flex h-32 w-5 flex-col items-start justify-between text-xl md:hidden'>
+                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank' title='Instagram' className="transition-colors hover:text-tertiary">
                                 <FaInstagram />
                             </a>
-                            <a href="https://www.linkedin.com/in/samuvelantony/" target='blank' title='LinkedIn' className="hover:text-tertiary transition-colors">
+                            <a href="https://www.linkedin.com/in/samuvelantony/" target='blank' title='LinkedIn' className="transition-colors hover:text-tertiary">
                                 <FaLinkedin />
                             </a>
-                            <a href="https://github.com/Samuvel6826" target='blank' title='Github' className="hover:text-tertiary transition-colors">
+                            <a href="https://github.com/Samuvel6826" target='blank' title='Github' className="transition-colors hover:text-tertiary">
                                 <FaGithub />
                             </a>
                         </div>
@@ -42,10 +42,10 @@ const Hero = () => {
                             alt="Avatar"
                         />
 
-                        <div id='hero-content-scrollBtn' className='absolute h-52 w-5 z-10 right-0 top-3 md:hidden'>
-                            <a href="#about" className="hover:text-tertiary transition-colors">
+                        <div id='home-content-scrollBtn' className='absolute right-0 top-3 z-10 h-52 w-5 md:hidden'>
+                            <a href="#about" className="transition-colors hover:text-tertiary">
                                 <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "35px", height: "40px" }} loop autoplay></lottie-player>
-                                <div className='m-0 -rotate-90 flex flex-row gap-2'>
+                                <div className='m-0 flex -rotate-90 flex-row gap-2'>
                                     <span className='tracking-widest'>Scroll</span>
                                     <span className='tracking-widest'>Down</span>
                                 </div>
@@ -54,31 +54,31 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <div id='hero-content' className="w-full text-base flex flex-col">
-                        <div id='hero-text-container' className='leading-8 text-base font-semibold'>
+                    <div id='home-content' className="flex w-full flex-col text-base">
+                        <div id='home-text-container' className='text-base font-semibold leading-8'>
                             <p id='intro-text' className="text-xl">
                                 Hello!👋🏻
                                 <br />
                                 I'm
-                                <span id='intro-name' className="text-4xl text-tertiary font-bold"> Samuvel</span>
+                                <span id='intro-name' className="text-4xl font-bold text-tertiary"> Samuvel</span>
                             </p>
-                            <p id='web-dev' className='text-[1.28rem] font-bold'>MERN Stack Web Developer</p>
+                            <p id='web-dev' className='text-[1.26rem] font-bold'>MERN Stack Web Developer</p>
                         </div>
 
-                        <p id='intro-para' className="text-justify text-[0.95rem] leading-[1.8] mb-2 text-lg">
+                        <p id='intro-para' className="mb-2 text-justify text-[0.95rem] text-lg leading-[1.8]">
                             Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India, I'm a passionate web developer and designer. Seeking an Assistant Web Developer role or internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss web development!..Feel free to contact me.
                         </p>
 
-                        <div id='hero-content-btns-container' className="flex text-base items-center justify-between">
-                            <button id='hero-content-btns'>
-                                <a href="#projects" className='flex justify-center items-center'>
+                        <div id='home-content-btns-container' className="flex items-center justify-between text-base">
+                            <button id='home-content-btns'>
+                                <a href="#projects" className='flex items-center justify-center'>
                                     <img className='mr-2' width="25" height="25" src="https://img.icons8.com/pastel-glyph/64/suitcase--v3.png" alt="suitcase--v3" />
                                     My Works
                                 </a>
                             </button>
 
-                            <button id='hero-content-btns'>
-                                <a href="#contact" className='flex justify-center items-center'>
+                            <button id='home-content-btns'>
+                                <a href="#contact" className='flex items-center justify-center'>
                                     <img className='mr-2' width="25" height="25" src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="user-male-circle" />
                                     Hire Me
                                 </a>
@@ -87,10 +87,10 @@ const Hero = () => {
                     </div>
                 </section>
 
-                <div id='hero-content-scrollBtn' className='h-60 w-5 hidden md:flex'>
-                    <a href="#about" className="hover:text-tertiary transition-colors">
+                <div id='home-content-scrollBtn' className='hidden h-60 w-5 md:flex'>
+                    <a href="#about" className="transition-colors hover:text-tertiary">
                         <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay></lottie-player>
-                        <div className='m-0 -rotate-90 flex flex-row gap-2'>
+                        <div className='m-0 flex -rotate-90 flex-row gap-2'>
                             <span className='tracking-widest'>Scroll</span>
                             <span className='tracking-widest'>Down</span>
                         </div>
@@ -102,4 +102,4 @@ const Hero = () => {
     );
 }
 
-export default Hero;
+export default Home;

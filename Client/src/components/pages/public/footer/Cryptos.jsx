@@ -22,7 +22,7 @@ const Cryptos = () => {
     return (
         <div className="flex flex-col items-center gap-4 p-4 bg-secondary">
             {data.map((item, index) => (
-                <div key={index} className="flex items-center space-x-4 bg-gray-100 p-4 rounded-lg shadow-md w-full max-w-md">
+                <div key={index} className="flex items-center w-full max-w-md p-4 space-x-4 bg-gray-100 rounded-lg shadow-md">
                     <div className="flex-grow text-lg">{item.displayText}</div>
                     <CopyToClipboard text={item.copyText} onCopy={() => handleCopy(index)}>
                         <button

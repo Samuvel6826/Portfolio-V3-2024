@@ -33,8 +33,8 @@ const Footer = () => {
     );
 
     return (
-        <section id='footer' className='bg-tertiary mx-auto flex flex-col text-letter'>
-            <div id="footer-container" className="container text-center mx-auto flex flex-col gap-5 p-4">
+        <section id='footer' className='flex flex-col mx-auto bg-tertiary text-letter'>
+            <div id="footer-container" className="container flex flex-col gap-5 p-4 mx-auto text-center">
 
                 {/* Footer navigation menu */}
                 <div id='foot-text-menu' className='max-md:hidden'>
@@ -105,7 +105,7 @@ const Footer = () => {
 
 
                     {/* Footer social media links */}
-                    <div id='foot-text-socials' className='text-center mt-6'>
+                    <div id='foot-text-socials' className='mt-6 text-center'>
                         <div id='socials-container' className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
                             <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="Instagram">
                                 <FaInstagram />
@@ -133,7 +133,7 @@ const Footer = () => {
             </div>
 
             {/* Footer bottom section */}
-            <footer id='footer-footer' className="flex border-t-2 flex-col items-center justify-center text-center p-2 text-sm">
+            <footer id='footer-footer' className="flex flex-col items-center justify-center p-2 text-sm text-center border-t-2">
                 <p className='flex items-center gap-2'>
                     Made with <FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb />
                 </p>

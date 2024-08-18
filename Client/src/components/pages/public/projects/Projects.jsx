@@ -52,6 +52,7 @@ const Projects = () => {
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
+            // console.log('Window width:', width);  // Log the width to the console
             if (width >= 1537) {
                 setCardsPerPage(5);
             } else if (width >= 1280) {
@@ -109,25 +110,25 @@ const Projects = () => {
     };
 
     return (
-        <section id='projects' className='bg-primary mx-auto flex p-4'>
+        <section id='projects' className='mx-auto flex bg-primary p-4'>
             <div id='projects-container' className='container mx-auto flex flex-col items-center gap-3'>
                 <header id='projects-header' className='text-center text-tertiary'>
                     <h1 id='projects-page-title'>Projects</h1>
                     <p id='projects-page-desc'>Recent Works</p>
                 </header>
-                <div id='cards-container' className='w-full h-full flex flex-col justify-between gap-3'>
+                <div id='cards-container' className='flex h-full w-full flex-col justify-between gap-3'>
                     {loading ? (
                         <div className='mx-auto'><Loader /></div>
                     ) : error ? (
-                        <div className='error-message mx-auto text-2xl text-white bg-red-800 rounded-full p-5'>{error}</div>
+                        <div className='error-message mx-auto rounded-full bg-red-800 p-5 text-2xl text-white'>{error}</div>
                     ) : (
                         projects.slice(indexOfFirstCard, indexOfLastCard).map((project, index) => (
-                            <div key={index} id='card' className='h-full w-full flex flex-grow flex-col rounded-2xl p-4 text-white bg-secondary gap-3'>
+                            <div key={index} id='card' className='flex h-full w-full flex-grow flex-col gap-3 rounded-2xl bg-secondary p-4 text-white'>
                                 <div className='border-b-2'>
                                     {project.name}
                                 </div>
                                 <div className='flex'>
-                                    <img className='h-full flex flex-grow' src={project.imgUrl} alt={`${project.name} project`} />
+                                    <img className='flex h-full flex-grow' src={project.imgUrl} alt={`${project.name} project`} />
                                 </div>
                                 <div className='border-b-2'>
                                     <div className='border-b-2'>

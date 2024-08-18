@@ -52,34 +52,34 @@ const Skills = () => {
     );
 
     return (
-        <section id="skills" className="bg-secondary p-6 md:p-8 lg:p-12">
-            <div className="container mx-auto flex flex-col gap-6">
+        <section id="skills" className="p-6 bg-secondary md:p-8 lg:p-12">
+            <div className="container flex flex-col gap-6 mx-auto">
                 <header className="text-center">
-                    <h1 id="skills-page-title" className="text-3xl md:text-4xl lg:text-5xl font-bold">Skills</h1>
+                    <h1 id="skills-page-title" className="text-3xl font-bold md:text-4xl lg:text-5xl">Skills</h1>
                     <p id="skills-page-desc" className="text-md md:text-lg lg:text-xl">My Expertise</p>
                 </header>
-                <div id="skills-wrapper" className="bg-background-light rounded-2xl p-6 shadow-md text-center">
+                <div id="skills-wrapper" className="p-6 text-center shadow-md rounded-2xl bg-background-light">
                     <div className="mb-8">
-                        <h4 className="text-2xl md:text-3xl font-semibold capitalize text-primary mb-4">Frontend Skills</h4>
-                        <div id="skills-list" className="flex flex-wrap gap-6 justify-center">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Frontend Skills</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.frontend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="text-2xl md:text-3xl font-semibold capitalize text-primary mb-4">Backend Skills</h4>
-                        <div id="skills-list" className="flex flex-wrap gap-6 justify-center">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Backend Skills</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.backend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="text-2xl md:text-3xl font-semibold capitalize text-primary mb-4">Cloud Services & Deployment Tool</h4>
-                        <div id="skills-list" className="flex flex-wrap gap-6 justify-center">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Cloud Services & Deployment Tool</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.cloudDeployment.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="text-2xl md:text-3xl font-semibold capitalize text-primary mb-4">Other Tools</h4>
-                        <div id="skills-list" className="flex flex-wrap gap-6 justify-center">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Other Tools</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.other.map(renderSkillBox)}
                         </div>
                     </div>

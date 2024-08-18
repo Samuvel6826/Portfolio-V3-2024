@@ -9,15 +9,15 @@ const Education = () => {
         setCurrent(value);
     };
     return (
-        <section id='education' className=' bg-primary mx-auto p-4'>
+        <section id='education' className='p-4 mx-auto bg-primary'>
 
-            <div id="education-container" className="container h-full mx-auto flex flex-col justify-evenly">
-                <h1 id="education-page-title" className='text-center text-2xl text-tertiary mb-3'>Educations & Qualifications</h1>
+            <div id="education-container" className="container flex flex-col h-full mx-auto justify-evenly">
+                <h1 id="education-page-title" className='mb-3 text-2xl text-center text-tertiary'>Educations & Qualifications</h1>
 
-                <div id="education-wrapper" className="h-[90%] flex justify-center border-2 border-secondary rounded-2xl">
+                <div id="education-wrapper" className="flex h-[90%] justify-center rounded-2xl border-2 border-secondary">
 
                     <Steps
-                        className='h-full w-full p-2'
+                        className='w-full h-full p-2'
                         onChange={onChange}
                         current={current}
                         size="default"
