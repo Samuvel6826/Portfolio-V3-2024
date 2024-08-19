@@ -10,18 +10,25 @@ export default withMT({
     // Responsive breakpoints
     screens: {
       // Min-width breakpoints
-      'sm': { 'min': '640px' }, // => @media (min-width: 640px) { ... }
-      'md': { 'min': '768px' }, // => @media (min-width: 768px) { ... }
-      'lg': { 'min': '1024px' }, // => @media (min-width: 1024px) { ... }
-      'xl': { 'min': '1280px' }, // => @media (min-width: 1280px) { ... }
-      '2xl': { 'min': '1536px' }, // => @media (min-width: 1536px) { ... }
+      'sm-mobile': { 'min': '360px' },    // Small Mobile
+      'md-mobile': { 'min': '390px' },    // Medium Mobile
+      'lg-mobile': { 'min': '414px' },    // Large Mobile
+      'sm': { 'min': '640px' },           // Small devices like large smartphones, small tablets
+      'md': { 'min': '768px' },           // Medium devices like tablets
+      'lg': { 'min': '1024px' },          // Large devices like small laptops, tablets in landscape
+      'xl': { 'min': '1280px' },          // Extra-large devices like desktops, large laptops
+      '2xl': { 'min': '1536px' },         // Extra-extra-large devices like high-resolution monitors
+      'xl-desktop': { 'min': '1600px' },  // Large Desktop / Widescreen Monitor
+      '2xl-desktop': { 'min': '1920px' }, // Extra-Large Desktop / High-Resolution Displays
 
       // Max-width breakpoints
-      'max-sm': { 'max': '639px' }, // => @media (max-width: 639px) { ... }
-      'max-md': { 'max': '767px' }, // => @media (max-width: 767px) { ... }
-      'max-lg': { 'max': '1023px' }, // => @media (max-width: 1023px) { ... }
-      'max-xl': { 'max': '1279px' }, // => @media (max-width: 1279px) { ... }
-      'max-2xl': { 'max': '1535px' }, // => @media (max-width: 1535px) { ... }
+      'max-sm': { 'max': '639px' },       // Max-width for small devices
+      'max-md': { 'max': '767px' },       // Max-width for medium devices
+      'max-lg': { 'max': '1023px' },      // Max-width for large devices
+      'max-xl': { 'max': '1279px' },      // Max-width for extra-large devices
+      'max-2xl': { 'max': '1535px' },     // Max-width for extra-extra-large devices
+      'max-xl-desktop': { 'max': '1599px' }, // Max-width for large desktops
+      'max-2xl-desktop': { 'max': '1919px' }, // Max-width for extra-large desktops
     },
     // Extending the default theme
     extend: {

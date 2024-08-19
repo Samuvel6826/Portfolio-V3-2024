@@ -3,11 +3,11 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Cryptos = () => {
     const data = [
-        { displayText: 'Bitcoin (BTC)', copyText: 'Copy Text 1' },
-        { displayText: 'Ethereum (ETH)', copyText: 'Copy Text 2' },
-        { displayText: 'Tether (USDT)', copyText: 'Copy Text 3' },
-        { displayText: 'Binance Coin (BNB)', copyText: 'Copy Text 4' },
-        { displayText: 'Tron Coin (TRX)', copyText: 'Copy Text 5' },
+        { displayText: 'Bitcoin (BTC)', copyText: 'bc1qkggjyesxukz6lajf9536jf9rqen8k745x3xddcwvs02fwklxac5q89wswd' },
+        { displayText: 'Ethereum (ETH/ERC20)', copyText: '0xead666fc8a3ce2f16e26cc12d526c950f6946e95' },
+        { displayText: 'Tether (USDT/TRC20)', copyText: 'TAWFTxfmRWC5QPK6T61SpNBX1ba6CKdZdA' },
+        { displayText: 'Binance Coin (BNB)', copyText: '0xead666fc8a3ce2f16e26cc12d526c950f6946e95' },
+        { displayText: 'Tron Coin (TRX)', copyText: 'TAWFTxfmRWC5QPK6T61SpNBX1ba6CKdZdA' },
     ];
 
     const [copied, setCopied] = useState(null);
@@ -20,9 +20,9 @@ const Cryptos = () => {
     };
 
     return (
-        <div className="flex flex-col items-center gap-4 p-4 bg-secondary">
+        <div className="flex flex-col items-center gap-4 bg-secondary p-4">
             {data.map((item, index) => (
-                <div key={index} className="flex items-center w-full max-w-md p-4 space-x-4 bg-gray-100 rounded-lg shadow-md">
+                <div key={index} className="flex w-full max-w-md items-center space-x-4 rounded-lg bg-gray-100 p-4 shadow-md">
                     <div className="flex-grow text-lg">{item.displayText}</div>
                     <CopyToClipboard text={item.copyText} onCopy={() => handleCopy(index)}>
                         <button
