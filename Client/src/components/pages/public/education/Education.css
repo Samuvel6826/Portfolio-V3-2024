@@ -7,25 +7,30 @@
 @layer components {
 	/* Default styles for all screen sizes */
 	#education-page-title {
-		@apply text-2xl;
+		@apply text-2xl font-bold mb-4 text-tertiary;
 	}
 
 	#step-title {
-		@apply text-xl font-extrabold;
+		@apply text-xl font-extrabold text-secondary;
 	}
 
 	#step-description {
-		@apply text-base font-bold;
+		@apply text-base font-bold list-disc pl-5; /* Added list-disc and padding-left for bullets */
+	}
+
+	#step-description li {
+		@apply mb-2; /* Add spacing between list items */
 	}
 
 	/* Media query for screens 640px and up: sm */
 	@media screen and (min-width: 640px) {
+		/* Add any small screen specific styles here */
 	}
 
 	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
 		#education {
-			@apply px-10;
+			@apply px-10 py-6;
 		}
 
 		#education-page-title {
@@ -33,27 +38,36 @@
 		}
 
 		#education-wrapper {
-			@apply p-4;
+			@apply p-6;
 		}
 
 		#step-title {
-			@apply text-3xl font-extrabold;
+			@apply text-3xl;
 		}
 
 		#step-description {
-			@apply text-xl font-bold;
+			@apply text-xl;
 		}
 	}
 
 	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
+		#education {
+			@apply px-12 py-8;
+		}
+
+		#education-wrapper {
+			@apply p-8;
+		}
 	}
 
 	/* Media query for screens 1280px and up: xl */
 	@media screen and (min-width: 1280px) {
+		/* Add any extra-large screen specific styles here */
 	}
 
 	/* Media query for screens 1536px and up: 2xl */
 	@media screen and (min-width: 1536px) {
+		/* Add any extra-extra-large screen specific styles here */
 	}
 }

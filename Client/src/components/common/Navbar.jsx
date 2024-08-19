@@ -33,7 +33,7 @@ const Navbar = () => {
 	return (
 		<header id='topBar' className='sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-xl shadow-lg'>
 			<nav id='nav-header' className='container flex items-center justify-between text-letter'>
-				<div id='desktopMenu' className='items-center justify-between hidden w-full md:flex'>
+				<div id='desktopMenu' className='hidden w-full items-center justify-between md:flex'>
 					<a href="" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
 
 					{/* Conditionally render the ul element */}
@@ -48,8 +48,8 @@ const Navbar = () => {
 					)}
 
 					<div className="flex gap-6">
-						<button className="flex items-center px-4 py-2 transition-all duration-300 bg-transparent border rounded-full border-primary text-primary hover:bg-primary hover:text-white">
-							<a href="https://drive.google.com/file/d/1RaVJu04Z-fqG1k0h5sXJ_gWzUNBZnyH6/view?usp=sharing" target="blank" className='flex items-center'>
+						<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
+							<a href="https://drive.google.com/file/d/1goVab10JqRzmFbJUuUZM6TtUVkCoEoD6/view?usp=sharing" target="blank" className='flex items-center'>
 								Resume&nbsp;<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
 								</svg>
@@ -59,14 +59,14 @@ const Navbar = () => {
 						{user ? (
 							<>
 								<button
-									className="flex items-center px-4 py-2 transition-all duration-300 bg-transparent border rounded-full border-primary text-primary hover:bg-primary hover:text-white"
+									className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
 									onClick={handleLogout}
 								>
 									Log Out
 								</button>
 							</>
 						) : (
-							<button className="flex items-center px-4 py-2 transition-all duration-300 bg-transparent border rounded-full border-primary text-primary hover:bg-primary hover:text-white">
+							<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
 								<a href="/login" className='flex items-center'>
 									Admin Panel <IoSettings className="ml-2 text-lg" />
 								</a>
@@ -75,15 +75,15 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<div id='mobileMenu' className='flex flex-col items-center w-full text-xl md:hidden'>
-					<div className='flex items-center justify-between w-full'>
+				<div id='mobileMenu' className='flex w-full flex-col items-center text-xl md:hidden'>
+					<div className='flex w-full items-center justify-between'>
 						<a href="index.html" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
 						<button
-							className='flex items-center p-2 transition-colors duration-300 rounded-lg hover:bg-gray-800'
+							className='flex items-center rounded-lg p-2 transition-colors duration-300 hover:bg-gray-800'
 							onClick={openDrawerRight}
 							aria-label="Open menu"
 						>
-							<i className="text-xl uil uil-apps"></i>
+							<i className="uil uil-apps text-xl"></i>
 							<span className="ml-2">Menu</span>
 						</button>
 					</div>
@@ -92,9 +92,9 @@ const Navbar = () => {
 						placement="right"
 						open={openRight}
 						onClose={closeDrawerRight}
-						className="p-6 rounded-lg shadow-lg bg-tertiary text-letter"
+						className="rounded-lg bg-tertiary p-6 text-letter shadow-lg"
 					>
-						<div className="flex items-center justify-between mb-6">
+						<div className="mb-6 flex items-center justify-between">
 							<Typography variant="h5" color="blue-gray" className="font-bold">
 								Menu
 							</Typography>
@@ -110,7 +110,7 @@ const Navbar = () => {
 									viewBox="0 0 24 24"
 									strokeWidth={2}
 									stroke="currentColor"
-									className="w-6 h-6 text-primary"
+									className="h-6 w-6 text-primary"
 								>
 									<path
 										strokeLinecap="round"
@@ -121,8 +121,8 @@ const Navbar = () => {
 							</IconButton>
 						</div>
 
-						<div className="pr-4 mb-8 font-normal text-gray-600">
-							<ul id="mobileMenu-list" className="flex flex-col gap-6 mt-5 text-xl">
+						<div className="mb-8 pr-4 font-normal text-gray-600">
+							<ul id="mobileMenu-list" className="mt-5 flex flex-col gap-6 text-xl">
 								{['home', 'about', 'skills', 'projects', 'contact'].map((section, index) => (
 									<li key={index} className="group">
 										<a
@@ -140,7 +140,7 @@ const Navbar = () => {
 											href="/login"
 											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
 										>
-											<i className="text-xl uil uil-settings text-primary group-hover:text-secondary"></i>
+											<i className="uil uil-settings text-xl text-primary group-hover:text-secondary"></i>
 											<span>Admin Panel</span>
 										</a>
 									</li>
@@ -151,7 +151,7 @@ const Navbar = () => {
 											onClick={handleLogout}
 											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
 										>
-											<i className="text-xl uil uil-sign-out-alt text-primary group-hover:text-secondary"></i>
+											<i className="uil uil-sign-out-alt text-xl text-primary group-hover:text-secondary"></i>
 											<span>Log Out</span>
 										</button>
 									</li>
@@ -161,7 +161,7 @@ const Navbar = () => {
 											href="/login"
 											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
 										>
-											<i className="text-xl uil uil-sign-in-alt text-primary group-hover:text-secondary"></i>
+											<i className="uil uil-sign-in-alt text-xl text-primary group-hover:text-secondary"></i>
 											<span>Log In</span>
 										</a>
 									</li>

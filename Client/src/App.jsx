@@ -8,7 +8,7 @@ import Skills from './components/pages/public/skills/Skills';
 import Projects from './components/pages/public/projects/Projects';
 import Contact from './components/pages/public/contact/Contact';
 import Footer from './components/pages/public/footer/Footer';
-import Educations from './components/pages/public/educations/Educations';
+import Education from './components/pages/public/education/Education';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import ScrollToTopButton from './components/common/ScrollTopBtn';
 import AdminHero from './components/pages/admin/adminHero/AdminHero';
@@ -73,7 +73,7 @@ function PublicRoutes() {
     <ScrollToTopButton />
     <Home />
     <About />
-    <Educations />
+    <Education />
     <Skills />
     <Projects />
     <Contact />
