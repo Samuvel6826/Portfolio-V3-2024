@@ -27,26 +27,60 @@ const Navbar = () => {
 	const isLoginPage = location.pathname === "/login";
 
 	return (
-		<header id='topBar' className='sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-xl shadow-lg'>
-			<nav id='nav-header' className='container flex items-center justify-between text-letter'>
-				<div id='desktopMenu' className='hidden w-full items-center justify-between md:flex'>
-					<a href="#" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
+		<header
+			id="topBar"
+			className="sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-xl shadow-lg"
+		>
+			<nav
+				id="nav-header"
+				className="container flex items-center justify-between text-letter"
+			>
+				<div
+					id="desktopMenu"
+					className="hidden w-full items-center justify-between md:flex"
+				>
+					<a
+						href="#"
+						id="logo"
+						className="font-['aldrich'] text-2xl font-bold transition-transform duration-300 hover:scale-110"
+						style={{
+							fontSize: "1.8rem",
+							background: "linear-gradient(90deg, #00c6ff, #0072ff)",
+							WebkitBackgroundClip: "text",
+							color: "transparent",
+							textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+						}}
+					>
+						Samtocode24
+					</a>
 
 					{/* Conditionally render the ul element */}
 					{!isLoginPage && (
 						<ul className="flex gap-8">
-							{['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
-								<li key={index}>
-									<a href={`#${item.toLowerCase()}`} className="transition-colors duration-300 hover:text-primary">{item}</a>
-								</li>
-							))}
+							{['Home', 'About', 'Skills', 'Projects', 'Contact'].map(
+								(item, index) => (
+									<li key={index}>
+										<a
+											href={`#${item.toLowerCase()}`}
+											className="transition-colors duration-300 hover:text-primary"
+										>
+											{item}
+										</a>
+									</li>
+								)
+							)}
 						</ul>
 					)}
 
 					<div className="flex gap-6">
 						<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
-							<a href="https://drive.google.com/file/d/1goVab10JqRzmFbJUuUZM6TtUVkCoEoD6/view?usp=sharing" target="blank" className='flex items-center'>
-								Resume&nbsp;<IoMdDownload className="text-lg" />
+							<a
+								href="https://drive.google.com/file/d/1goVab10JqRzmFbJUuUZM6TtUVkCoEoD6/view?usp=sharing"
+								target="blank"
+								className="flex items-center"
+							>
+								Resume&nbsp;
+								<IoMdDownload className="text-lg" />
 							</a>
 						</button>
 						{user ? (
@@ -59,7 +93,7 @@ const Navbar = () => {
 							</button>
 						) : (
 							<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
-								<a href="/login" className='flex items-center'>
+								<a href="/login" className="flex items-center">
 									Admin Panel <IoSettings className="ml-2 text-lg" />
 								</a>
 							</button>
@@ -67,16 +101,31 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<div id='mobileMenu' className='flex w-full flex-col items-center text-xl md:hidden'>
-					<div className='flex w-full items-center justify-between'>
-						<a href="#" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
+				<div
+					id="mobileMenu"
+					className="flex w-full flex-col items-center text-xl md:hidden"
+				>
+					<div className="flex w-full items-center justify-between">
+						<a
+							href="#"
+							id="logo"
+							className="font-['aldrich'] text-2xl font-bold transition-transform duration-300 hover:scale-110"
+							style={{
+								fontSize: "1.8rem",
+								background: "linear-gradient(90deg, #00c6ff, #0072ff)",
+								WebkitBackgroundClip: "text",
+								color: "transparent",
+								textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+							}}
+						>
+							Samtocode24
+						</a>
 						<button
-							className='flex items-center rounded-lg border-2 border-primary p-2 transition-colors duration-300 hover:bg-gray-800'
+							className="flex items-center rounded-lg border-2 border-primary p-2 transition-colors duration-300 hover:bg-gray-800"
 							onClick={openDrawerRight}
 							aria-label="Open menu"
 						>
 							<i className="uil uil-apps text-xl"></i>
-							{/* <span className="ml-2">Menu</span> */}
 						</button>
 					</div>
 
@@ -115,23 +164,36 @@ const Navbar = () => {
 
 						<div className="mb-8 h-full pr-4 font-normal text-gray-600">
 							<ul id="mobileMenu-list" className="flex h-full flex-col text-xl">
-								<div className="flex h-full flex-col" id='mob-lists'>
+								<div className="flex h-full flex-col" id="mob-lists">
 									{/* Conditionally render the ul element */}
 									{!isLoginPage && (
 										<>
-											{['home', 'about', 'skills', 'projects', 'contact'].map((section, index) => (
-												<li key={index} className="group flex h-full items-center">
-													<a
-														href={`#${section}`}
-														className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
-													>
-														<i className={`uil uil-${section === 'home' ? 'estate' : section === 'about' ? 'user' : section === 'skills' ? 'file-alt' : section === 'projects' ? 'briefcase-alt' : 'message'} text-primary group-hover:text-primary text-xl`}></i>
-														<span className="group-hover:text-primary">
-															{section.charAt(0).toUpperCase() + section.slice(1)}
-														</span>
-													</a>
-												</li>
-											))}
+											{['home', 'about', 'skills', 'projects', 'contact'].map(
+												(section, index) => (
+													<li key={index} className="group flex h-full items-center">
+														<a
+															href={`#${section}`}
+															className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
+														>
+															<i
+																className={`uil uil-${section === "home"
+																	? "estate"
+																	: section === "about"
+																		? "user"
+																		: section === "skills"
+																			? "file-alt"
+																			: section === "projects"
+																				? "briefcase-alt"
+																				: "message"
+																	} text-primary group-hover:text-primary text-xl`}
+															></i>
+															<span className="group-hover:text-primary">
+																{section.charAt(0).toUpperCase() + section.slice(1)}
+															</span>
+														</a>
+													</li>
+												)
+											)}
 										</>
 									)}
 									{user ? (

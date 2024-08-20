@@ -5,13 +5,17 @@
 @tailwind utilities;
 
 @layer components {
-	/* Default styles for all screen sizes */
-	#home-content-btns-container button {
-		@apply w-full border-2 border-secondary rounded-2xl p-4 flex items-center justify-center text-center transition-transform transform hover:scale-105;
+	/* Default (mobile-first) styles */
+	#dp-pic {
+		@apply w-[60%] rounded-full shadow-lg;
+	}
+
+	#home-content-btns-container {
+		@apply flex w-full items-center justify-between text-base;
 	}
 
 	#home-content-btns {
-		@apply p-4;
+		@apply w-full border-2 border-secondary rounded-2xl p-4 text-center transition-transform transform hover:scale-105;
 	}
 
 	#home-content-scrollBtn a {
@@ -21,7 +25,7 @@
 	/* Media query for screens 640px and up: sm */
 	@media screen and (min-width: 640px) {
 		#dp-pic {
-			@apply w-[50%] rounded-full shadow-lg;
+			@apply w-[50%];
 		}
 
 		#home-text-container {
@@ -41,7 +45,7 @@
 		}
 
 		#intro-para {
-			@apply leading-relaxed text-xl;
+			@apply leading-relaxed text-2xl;
 		}
 	}
 
@@ -64,7 +68,7 @@
 		}
 
 		#intro-para {
-			@apply leading-relaxed text-lg;
+			@apply leading-relaxed text-xl;
 		}
 
 		#home-container {
@@ -111,7 +115,7 @@
 		}
 
 		#intro-para {
-			@apply leading-relaxed text-lg;
+			@apply leading-relaxed text-xl;
 		}
 	}
 
@@ -126,11 +130,11 @@
 		}
 
 		#web-dev {
-			@apply text-[3.2rem];
+			@apply text-[2.9rem];
 		}
 
 		#intro-para {
-			@apply leading-relaxed text-lg;
+			@apply leading-relaxed text-xl;
 		}
 	}
 
