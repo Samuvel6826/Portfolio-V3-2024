@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import {
-	Drawer,
-	Typography,
-	IconButton,
-} from "@material-tailwind/react";
+import { Drawer, Typography, IconButton } from "@material-tailwind/react";
 import { IoMdDownload } from "react-icons/io";
 import { IoSettings } from "react-icons/io5";
 import { useNavigate, useLocation } from "react-router";
@@ -34,7 +30,7 @@ const Navbar = () => {
 		<header id='topBar' className='sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-xl shadow-lg'>
 			<nav id='nav-header' className='container flex items-center justify-between text-letter'>
 				<div id='desktopMenu' className='hidden w-full items-center justify-between md:flex'>
-					<a href="" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
+					<a href="#" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
 
 					{/* Conditionally render the ul element */}
 					{!isLoginPage && (
@@ -50,21 +46,17 @@ const Navbar = () => {
 					<div className="flex gap-6">
 						<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
 							<a href="https://drive.google.com/file/d/1goVab10JqRzmFbJUuUZM6TtUVkCoEoD6/view?usp=sharing" target="blank" className='flex items-center'>
-								Resume&nbsp;<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-									<path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-								</svg>
-
+								Resume&nbsp;<IoMdDownload className="text-lg" />
 							</a>
 						</button>
 						{user ? (
-							<>
-								<button
-									className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-									onClick={handleLogout}
-								>
-									Log Out
-								</button>
-							</>
+							<button
+								className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+								onClick={handleLogout}
+								aria-label="Log Out"
+							>
+								Log Out
+							</button>
 						) : (
 							<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
 								<a href="/login" className='flex items-center'>
@@ -77,7 +69,7 @@ const Navbar = () => {
 
 				<div id='mobileMenu' className='flex w-full flex-col items-center text-xl md:hidden'>
 					<div className='flex w-full items-center justify-between'>
-						<a href="index.html" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
+						<a href="#" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
 						<button
 							className='flex items-center rounded-lg p-2 transition-colors duration-300 hover:bg-gray-800'
 							onClick={openDrawerRight}
@@ -92,10 +84,10 @@ const Navbar = () => {
 						placement="right"
 						open={openRight}
 						onClose={closeDrawerRight}
-						className="rounded-lg bg-tertiary p-6 text-letter shadow-lg"
+						className="bg-tertiary p-6 text-letter shadow-lg"
 					>
 						<div className="mb-6 flex items-center justify-between">
-							<Typography variant="h5" color="blue-gray" className="font-bold">
+							<Typography variant="h5" color="blue" className="font-bold">
 								Menu
 							</Typography>
 							<IconButton
@@ -121,51 +113,46 @@ const Navbar = () => {
 							</IconButton>
 						</div>
 
-						<div className="mb-8 pr-4 font-normal text-gray-600">
-							<ul id="mobileMenu-list" className="mt-5 flex flex-col gap-6 text-xl">
-								{['home', 'about', 'skills', 'projects', 'contact'].map((section, index) => (
-									<li key={index} className="group">
-										<a
-											href={`#${section}`}
-											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
-										>
-											<i className={`uil uil-${section === 'home' ? 'estate' : section === 'about' ? 'user' : section === 'skills' ? 'file-alt' : section === 'projects' ? 'briefcase-alt' : 'message'} text-primary group-hover:text-secondary text-xl`}></i>
-											<span>{section.charAt(0).toUpperCase() + section.slice(1)}</span>
-										</a>
-									</li>
-								))}
-								{user && (
-									<li className="group">
-										<a
-											href="/login"
-											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
-										>
-											<i className="uil uil-settings text-xl text-primary group-hover:text-secondary"></i>
-											<span>Admin Panel</span>
-										</a>
-									</li>
-								)}
-								{user ? (
-									<li className="group">
-										<button
-											onClick={handleLogout}
-											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
-										>
-											<i className="uil uil-sign-out-alt text-xl text-primary group-hover:text-secondary"></i>
-											<span>Log Out</span>
-										</button>
-									</li>
-								) : (
-									<li className="group">
-										<a
-											href="/login"
-											className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
-										>
-											<i className="uil uil-sign-in-alt text-xl text-primary group-hover:text-secondary"></i>
-											<span>Log In</span>
-										</a>
-									</li>
-								)}
+						<div className="mb-8 h-full pr-4 font-normal text-gray-600">
+							<ul id="mobileMenu-list" className="flex h-full flex-col justify-between text-xl">
+								<div className="flex flex-col space-y-6">
+									{['home', 'about', 'skills', 'projects', 'contact'].map((section, index) => (
+										<li key={index} className="group">
+											<a
+												href={`#${section}`}
+												className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
+											>
+												<i className={`uil uil-${section === 'home' ? 'estate' : section === 'about' ? 'user' : section === 'skills' ? 'file-alt' : section === 'projects' ? 'briefcase-alt' : 'message'} text-primary group-hover:text-secondary text-xl`}></i>
+												<span className="group-hover:text-secondary group-hover:underline">
+													{section.charAt(0).toUpperCase() + section.slice(1)}
+												</span>
+											</a>
+										</li>
+									))}
+
+									{user ? (
+										<li className="group">
+											<button
+												onClick={handleLogout}
+												className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
+												aria-label="Log Out"
+											>
+												<i className="uil uil-sign-out-alt text-xl text-primary group-hover:text-secondary"></i>
+												<span className="group-hover:text-secondary group-hover:underline">Log Out</span>
+											</button>
+										</li>
+									) : (
+										<li className="group">
+											<a
+												href="/login"
+												className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
+											>
+												<i className="uil uil-sign-in-alt text-xl text-primary group-hover:text-secondary"></i>
+												<span className="group-hover:text-secondary group-hover:underline">Admin Panel</span>
+											</a>
+										</li>
+									)}
+								</div>
 							</ul>
 						</div>
 					</Drawer>

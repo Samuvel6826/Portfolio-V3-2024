@@ -43,7 +43,7 @@ export const educationData = [
                 link: "https://www.pioneerkumaraswamycollege.com",
             },
             { text: "Field of Study: B.Sc. Computer Science" },
-            { text: "Score: 85% (First Two Semesters)" },
+            { text: "GCPA: 85% (First Two Semesters)" },
             { text: "Completion Year: 2026 (Expected)" },
         ],
     },
