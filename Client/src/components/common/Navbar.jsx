@@ -71,12 +71,12 @@ const Navbar = () => {
 					<div className='flex w-full items-center justify-between'>
 						<a href="#" className='text-2xl font-bold transition-colors duration-300 hover:text-primary'>samtocode24</a>
 						<button
-							className='flex items-center rounded-lg p-2 transition-colors duration-300 hover:bg-gray-800'
+							className='flex items-center rounded-lg border-2 border-primary p-2 transition-colors duration-300 hover:bg-gray-800'
 							onClick={openDrawerRight}
 							aria-label="Open menu"
 						>
 							<i className="uil uil-apps text-xl"></i>
-							<span className="ml-2">Menu</span>
+							{/* <span className="ml-2">Menu</span> */}
 						</button>
 					</div>
 
@@ -86,7 +86,7 @@ const Navbar = () => {
 						onClose={closeDrawerRight}
 						className="bg-tertiary p-6 text-letter shadow-lg"
 					>
-						<div className="mb-6 flex items-center justify-between">
+						<div className="mb-6 flex items-center justify-between pl-6 pr-4">
 							<Typography variant="h5" color="blue" className="font-bold">
 								Menu
 							</Typography>
@@ -114,41 +114,45 @@ const Navbar = () => {
 						</div>
 
 						<div className="mb-8 h-full pr-4 font-normal text-gray-600">
-							<ul id="mobileMenu-list" className="flex h-full flex-col justify-between text-xl">
-								<div className="flex flex-col space-y-6">
-									{['home', 'about', 'skills', 'projects', 'contact'].map((section, index) => (
-										<li key={index} className="group">
-											<a
-												href={`#${section}`}
-												className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
-											>
-												<i className={`uil uil-${section === 'home' ? 'estate' : section === 'about' ? 'user' : section === 'skills' ? 'file-alt' : section === 'projects' ? 'briefcase-alt' : 'message'} text-primary group-hover:text-secondary text-xl`}></i>
-												<span className="group-hover:text-secondary group-hover:underline">
-													{section.charAt(0).toUpperCase() + section.slice(1)}
-												</span>
-											</a>
-										</li>
-									))}
-
+							<ul id="mobileMenu-list" className="flex h-full flex-col text-xl">
+								<div className="flex h-full flex-col" id='mob-lists'>
+									{/* Conditionally render the ul element */}
+									{!isLoginPage && (
+										<>
+											{['home', 'about', 'skills', 'projects', 'contact'].map((section, index) => (
+												<li key={index} className="group flex h-full items-center">
+													<a
+														href={`#${section}`}
+														className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
+													>
+														<i className={`uil uil-${section === 'home' ? 'estate' : section === 'about' ? 'user' : section === 'skills' ? 'file-alt' : section === 'projects' ? 'briefcase-alt' : 'message'} text-primary group-hover:text-primary text-xl`}></i>
+														<span className="group-hover:text-primary">
+															{section.charAt(0).toUpperCase() + section.slice(1)}
+														</span>
+													</a>
+												</li>
+											))}
+										</>
+									)}
 									{user ? (
-										<li className="group">
+										<li className="group flex h-full items-center">
 											<button
 												onClick={handleLogout}
-												className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
+												className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
 												aria-label="Log Out"
 											>
-												<i className="uil uil-sign-out-alt text-xl text-primary group-hover:text-secondary"></i>
-												<span className="group-hover:text-secondary group-hover:underline">Log Out</span>
+												<i className="uil uil-sign-out-alt text-xl text-primary group-hover:text-primary"></i>
+												<span className="group-hover:text-primary">Log Out</span>
 											</button>
 										</li>
 									) : (
-										<li className="group">
+										<li className="group flex h-full items-center">
 											<a
 												href="/login"
-												className="flex items-center space-x-3 transition-colors duration-300 hover:text-primary"
+												className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
 											>
-												<i className="uil uil-sign-in-alt text-xl text-primary group-hover:text-secondary"></i>
-												<span className="group-hover:text-secondary group-hover:underline">Admin Panel</span>
+												<i className="uil uil-sign-in-alt text-xl text-primary group-hover:text-primary"></i>
+												<span className="group-hover:text-primary">Admin Panel</span>
 											</a>
 										</li>
 									)}
