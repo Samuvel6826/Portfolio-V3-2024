@@ -23,7 +23,7 @@ const About = () => {
 
                 <div id='about-content' className='flex flex-col flex-1 gap-6'>
 
-                    <div id='about-box-container' className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+                    <div id='about-box-container' className='grid grid-rows gap-6 sm:grid-cols-2 lg:grid-cols-3'>
                         <div id='s-box' className='flex flex-col items-center p-4 text-center rounded-lg shadow-md bg-tertiary'>
                             <FaAward className='mb-2 text-3xl text-primary sm:text-4xl' />
                             <h4 className='mb-1 text-lg font-semibold'>Experience</h4>
