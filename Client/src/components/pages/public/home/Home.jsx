@@ -1,35 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Home.css';
 import { GoArrowDown } from "react-icons/go";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
-const Home = () => {
+const Home = ({ className = '' }) => {
     return (
-        <section id="home" className='w-full bg-primary p-4 sm:p-10'>
-            <div id="home-container" className="container mx-auto flex h-full items-center">
-
-                <section id='home-social-links' className='hidden h-60 w-5 flex-col items-center justify-between md:flex'>
-                    <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank' title='Instagram' className="text-xl">
+        <section id="home" className={`w-full bg-primary p-4 sm:p-10 ${className}`}>
+            <div id="home-container" className="container mx-auto flex h-full w-full items-center">
+                {/* Social Links (Landscape) */}
+                <div id='home-social-links-landscape' className='mr-6 hidden h-80 w-5 flex-col items-center justify-between lg:flex'>
+                    <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" title='Instagram' className="text-2xl">
                         <FaInstagram />
                     </a>
-                    <a href="https://www.linkedin.com/in/samuvelantony/" target='blank' title='LinkedIn' className="text-xl">
+                    <a href="https://www.linkedin.com/in/samuvelantony/" target='_blank' rel="noopener noreferrer" title='LinkedIn' className="text-2xl">
                         <FaLinkedin />
                     </a>
-                    <a href="https://github.com/Samuvel6826" target='blank' title='Github' className="text-xl">
+                    <a href="https://github.com/Samuvel6826" target='_blank' rel="noopener noreferrer" title='Github' className="text-2xl">
                         <FaGithub />
                     </a>
-                </section>
+                </div>
 
-                <section id='home-wrapper' className='flex w-full flex-col items-center justify-center md:flex-row-reverse'>
+                <main id='home-wrapper' className='flex w-full flex-col items-center justify-center lg:flex-row-reverse'>
+                    {/* Profile Picture and Scroll Button */}
                     <div id='dp-container' className="relative flex w-full items-center justify-center">
-                        <div id='home-social-links' className='absolute left-0 top-5 z-10 flex h-44 w-5 flex-col items-start justify-between text-xl md:hidden'>
-                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='blank' title='Instagram'>
+                        <div id='home-social-links' className='absolute left-0 top-5 z-10 flex h-44 w-5 flex-col items-start justify-between text-2xl lg:hidden'>
+                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" title='Instagram'>
                                 <FaInstagram />
                             </a>
-                            <a href="https://www.linkedin.com/in/samuvelantony/" target='blank' title='LinkedIn'>
+                            <a href="https://www.linkedin.com/in/samuvelantony/" target='_blank' rel="noopener noreferrer" title='LinkedIn'>
                                 <FaLinkedin />
                             </a>
-                            <a href="https://github.com/Samuvel6826" target='blank' title='Github'>
+                            <a href="https://github.com/Samuvel6826" target='_blank' rel="noopener noreferrer" title='Github'>
                                 <FaGithub />
                             </a>
                         </div>
@@ -41,28 +43,24 @@ const Home = () => {
                             alt="Avatar"
                         />
 
-                        <div id='home-content-scrollBtn' className='absolute right-0 top-3 z-10 h-72 w-5 md:hidden'>
+                        <div id='home-content-scrollBtn' className='absolute right-0 top-3 z-10 h-72 w-5 text-xl lg:hidden'>
                             <a href="#about" className="flex h-full w-full flex-col items-center justify-between">
-                                <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "35px", height: "40px" }} loop autoplay></lottie-player>
+                                <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay></lottie-player>
                                 <div className='m-0 flex -rotate-90 flex-row gap-2'>
-                                    <span>Scroll</span>
-                                    <span>Down</span>
+                                    <p>Scroll&nbsp;Down</p>
                                 </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="M480-83 240-323l42-42 198 198 198-198 42 42L480-83Zm0-246L240-569l42-42 198 198 198-198 42 42-240 240Zm0-246L240-815l42-42 198 198 198-198 42 42-240 240Z" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="50px" fill="#000000"><path d="M480-83 240-323l42-42 198 198 198-198 42 42L480-83Zm0-246L240-569l42-42 198 198 198-198 42 42-240 240Z" /></svg>
                             </a>
                         </div>
                     </div>
 
+                    {/* Content Section */}
                     <div id='home-content' className="flex w-full flex-col justify-center gap-4 text-base">
-
-                        <p id='intro-text' className='text-3xl font-semibold'>Hello!👋🏻</p>
-
-                        <p id='intro-text' className='text-3xl font-semibold'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-[900]'> Samuvel A</span></p>
-
-                        <p id='web-dev' className='text-[1.7rem] font-semibold'>MERN Stack Web Developer</p>
-
+                        <p id='intro-text' className='text-3xl font-medium'>Hello!👋🏻</p>
+                        <p id='intro-text' className='text-3xl font-medium'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-black'> Samuvel A</span></p>
+                        <p id='web-dev' className='text-[1.7rem] font-bold'>MERN Stack Web Developer</p>
                         <p id='intro-para' className='text-justify text-lg leading-relaxed'>
-                            Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India, I'm a passionate web developer and designer. Seeking an Assistant Web Developer role or internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss web development!..Feel free to contact me.
+                            Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India. I'm a passionate web developer. Seeking an Assistant Web Developer role or Internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss. Feel free to contact me at anytime.
                         </p>
 
                         <div id='home-content-btns-container' className="flex items-center justify-between gap-4 text-lg">
@@ -81,21 +79,25 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                </section>
+                </main>
 
-                <div id='home-content-scrollBtn' className='hidden h-60 w-5 md:flex'>
+                {/* Scroll Button (Landscape) */}
+                <div id='home-content-scrollBtn-landscape' className='hidden h-80 w-5 text-xl lg:flex'>
                     <a href="#about" className="flex h-full w-full flex-col items-center justify-between">
-                        <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay></lottie-player>
+                        <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "60px", height: "50px" }} loop autoplay></lottie-player>
                         <div className='m-0 flex -rotate-90 flex-row gap-2'>
-                            <span>Scroll</span>
-                            <span>Down</span>
+                            <p>Scroll&nbsp;Down</p>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="M480-83 240-323l42-42 198 198 198-198 42 42L480-83Zm0-246L240-569l42-42 198 198 198-198 42 42-240 240Zm0-246L240-815l42-42 198 198 198-198 42 42-240 240Z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="50px" fill="#000000"><path d="M480-83 240-323l42-42 198 198 198-198 42 42L480-83Zm0-246L240-569l42-42 198 198 198-198 42 42-240 240Z" /></svg>
                     </a>
                 </div>
-            </div >
-        </section >
+            </div>
+        </section>
     );
 }
+
+Home.propTypes = {
+    className: PropTypes.string
+};
 
 export default Home;

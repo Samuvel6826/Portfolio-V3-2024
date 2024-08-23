@@ -1,5 +1,3 @@
-/* Home */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,124 +20,193 @@
 		@apply h-full w-full flex flex-col justify-between items-center;
 	}
 
-	/* Media query for screens 640px and up: sm */
-	@media screen and (min-width: 640px) {
+	/* sm (640px) */
+	@media (min-width: 640px) {
 		#dp-pic {
-			@apply w-[50%];
+			@apply w-[40%];
 		}
-
-		#home-text-container {
-			@apply leading-normal;
+		#home-social-links {
+			@apply h-44;
 		}
-
+		#home-content-scrollBtn {
+			@apply h-80;
+		}
 		#intro-text {
 			@apply text-3xl;
 		}
-
-		#intro-name {
-			@apply text-6xl;
-		}
-
-		#web-dev {
-			@apply text-[2.65rem];
-		}
-
-		#intro-para {
-			@apply leading-relaxed text-2xl;
-		}
-	}
-
-	/* Media query for screens 768px and up: md */
-	@media screen and (min-width: 768px) {
-		#home {
-			@apply px-10;
-		}
-
-		#intro-text {
-			@apply text-2xl;
-		}
-
 		#intro-name {
 			@apply text-5xl;
 		}
-
 		#web-dev {
-			@apply text-[1.8rem];
+			@apply text-[2.2rem];
 		}
-
 		#intro-para {
-			@apply leading-relaxed text-xl;
+			@apply text-xl leading-relaxed;
 		}
+	}
 
-		#home-container {
-			@apply justify-between;
-		}
-
-		#home-social-links {
-			@apply mr-4 text-xl;
-		}
-
-		#home-wrapper {
-			@apply w-[90%] h-[30rem] flex-row-reverse justify-between;
-		}
-
-		#dp-container {
+	/* md (768px) */
+	@media (min-width: 768px) {
+		#dp-pic {
 			@apply w-[35%];
 		}
+		#home-social-links {
+			@apply h-44;
+		}
+		#home-content-scrollBtn {
+			@apply h-80;
+		}
+		#intro-text {
+			@apply text-3xl;
+		}
+		#intro-name {
+			@apply text-5xl;
+		}
+		#web-dev {
+			@apply text-[2.6rem];
+		}
+		#intro-para {
+			@apply text-xl leading-relaxed;
+		}
+	}
 
+	/* lg (1024px) */
+	@media (min-width: 1024px) {
+		#dp-container {
+			@apply w-[40%];
+		}
 		#dp-pic {
-			@apply w-[95%];
+			@apply w-[90%];
 		}
-
-		#home-content {
-			@apply w-[64%] justify-center;
+		#home-social-links-landscape {
+			@apply mr-8;
 		}
-
-		#home-content-btns-container {
-			@apply justify-start gap-4;
+		#home-content-scrollBtn-landscape {
+			@apply ml-2;
 		}
-	}
-
-	/* Media query for screens 1024px and up: lg */
-	@media screen and (min-width: 1024px) {
 		#intro-text {
 			@apply text-3xl;
 		}
-
 		#intro-name {
-			@apply text-6xl;
+			@apply text-5xl;
 		}
-
 		#web-dev {
-			@apply text-[2.4rem];
+			@apply text-[2.6rem];
 		}
-
 		#intro-para {
-			@apply leading-relaxed text-xl;
+			@apply text-xl leading-relaxed;
 		}
 	}
 
-	/* Media query for screens 1280px and up: xl */
-	@media screen and (min-width: 1280px) {
+	/* xl (1280px) */
+	@media (min-width: 1280px) {
+		#dp-container {
+			@apply w-[40%];
+		}
+		#dp-pic {
+			@apply w-[90%];
+		}
+		#home-social-links-landscape {
+			@apply mr-10;
+		}
+		#home-content-scrollBtn-landscape {
+			@apply ml-4;
+		}
 		#intro-text {
 			@apply text-3xl;
 		}
-
 		#intro-name {
-			@apply text-7xl;
+			@apply text-5xl;
 		}
-
 		#web-dev {
-			@apply text-[2.9rem];
+			@apply text-[3rem];
 		}
-
 		#intro-para {
-			@apply leading-relaxed text-xl;
+			@apply text-xl leading-relaxed;
 		}
 	}
 
-	/* Media query for screens 1536px and up: 2xl */
-	@media screen and (min-width: 1536px) {
-		/* Additional styles for larger screens can be added here */
+	/* 2xl (1536px) */
+	@media (min-width: 1536px) {
+		#dp-container {
+			@apply w-[40%];
+		}
+		#dp-pic {
+			@apply w-[90%];
+		}
+		#home-social-links-landscape {
+			@apply mr-10;
+		}
+		#home-content-scrollBtn-landscape {
+			@apply ml-4;
+		}
+		#intro-text {
+			@apply text-3xl;
+		}
+		#intro-name {
+			@apply text-5xl;
+		}
+		#web-dev {
+			@apply text-[2.6rem];
+		}
+		#intro-para {
+			@apply text-xl leading-relaxed;
+		}
+	}
+
+	/* xl-desktop (1600px) */
+	@media (min-width: 1600px) {
+		#dp-container {
+			@apply w-[40%];
+		}
+		#dp-pic {
+			@apply w-[90%];
+		}
+		#home-social-links-landscape {
+			@apply mr-10;
+		}
+		#home-content-scrollBtn-landscape {
+			@apply ml-4;
+		}
+		#intro-text {
+			@apply text-3xl;
+		}
+		#intro-name {
+			@apply text-5xl;
+		}
+		#web-dev {
+			@apply text-[2.6rem];
+		}
+		#intro-para {
+			@apply text-xl leading-relaxed;
+		}
+	}
+
+	/* 2xl-desktop (1920px) */
+	@media (min-width: 1920px) {
+		#dp-container {
+			@apply w-[40%];
+		}
+		#dp-pic {
+			@apply w-[90%];
+		}
+		#home-social-links-landscape {
+			@apply mr-10;
+		}
+		#home-content-scrollBtn-landscape {
+			@apply ml-4;
+		}
+		#intro-text {
+			@apply text-3xl;
+		}
+		#intro-name {
+			@apply text-5xl;
+		}
+		#web-dev {
+			@apply text-[2.6rem];
+		}
+		#intro-para {
+			@apply text-xl leading-relaxed;
+		}
 	}
 }

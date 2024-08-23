@@ -3,6 +3,7 @@ import './Footer.css';
 import { Popover, Space } from 'antd';
 import Cryptos from './Cryptos';
 import Razorpay from './Razorpay';
+import PdfThumbnail from './PdfThumbnail';
 
 import { ImWhatsapp } from "react-icons/im";
 import { FaInstagram } from "react-icons/fa";
@@ -33,8 +34,8 @@ const Footer = () => {
     );
 
     return (
-        <section id='footer' className='flex flex-col mx-auto bg-tertiary text-letter'>
-            <div id="footer-container" className="container flex flex-col gap-5 p-4 mx-auto text-center">
+        <section id='footer' className='mx-auto flex flex-col bg-tertiary text-letter'>
+            <div id="footer-container" className="container mx-auto flex flex-col gap-5 p-4 text-center">
 
                 {/* Footer navigation menu */}
                 <div id='foot-text-menu' className='max-md:hidden'>
@@ -107,22 +108,22 @@ const Footer = () => {
                     {/* Footer social media links */}
                     <div id='foot-text-socials' className='mt-6 text-center'>
                         <div id='socials-container' className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
-                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="Instagram">
+                            <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" className="transform text-2xl transition-transform hover:scale-110 hover:text-primary" title="Instagram">
                                 <FaInstagram />
                             </a>
-                            <a href="https://www.facebook.com/samuvel68" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="Facebook">
+                            <a href="https://www.facebook.com/samuvel68" target='_blank' rel="noopener noreferrer" className="transform text-2xl transition-transform hover:scale-110 hover:text-primary" title="Facebook">
                                 <FaFacebook />
                             </a>
-                            <a href="https://x.com/samuvel6826" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="X">
+                            <a href="https://x.com/samuvel6826" target='_blank' rel="noopener noreferrer" className="transform text-2xl transition-transform hover:scale-110 hover:text-primary" title="X">
                                 <FaSquareXTwitter />
                             </a>
-                            <a href="https://www.linkedin.com/in/samuvelantony/" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/samuvelantony/" target='_blank' rel="noopener noreferrer" className="transform text-2xl transition-transform hover:scale-110 hover:text-primary" title="LinkedIn">
                                 <FaLinkedin />
                             </a>
-                            <a href="https://github.com/Samuvel6826" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="GitHub">
+                            <a href="https://github.com/Samuvel6826" target='_blank' rel="noopener noreferrer" className="transform text-2xl transition-transform hover:scale-110 hover:text-primary" title="GitHub">
                                 <FaGithub />
                             </a>
-                            <a href="https://discord.com/invite/your-invite-link" target='_blank' rel="noopener noreferrer" className="text-2xl transition-transform transform hover:scale-110 hover:text-primary" title="Discord">
+                            <a href="https://discord.com/invite/your-invite-link" target='_blank' rel="noopener noreferrer" className="transform text-2xl transition-transform hover:scale-110 hover:text-primary" title="Discord">
                                 <FaDiscord />
                             </a>
                         </div>
@@ -133,7 +134,7 @@ const Footer = () => {
             </div>
 
             {/* Footer bottom section */}
-            <footer id='footer-footer' className="flex flex-col items-center justify-center p-2 text-sm text-center border-t-2">
+            <footer id='footer-footer' className="flex flex-col items-center justify-center border-t-2 p-2 text-center text-sm">
                 <p className='flex items-center gap-2'>
                     Made with <FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb />
                 </p>
@@ -141,6 +142,7 @@ const Footer = () => {
                     Made by Samuvel Antony. Copyright &#169; 2024. All rights reserved.
                 </p>
             </footer>
+            {/* <PdfThumbnail /> */}
         </section>
     );
 }

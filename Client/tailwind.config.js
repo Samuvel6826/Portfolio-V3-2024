@@ -65,7 +65,8 @@ export default withMT({
       // Custom fonts
       fontFamily: {
         'sans': ['Open Sans', 'sans-serif'], // Sans-serif font
-        'poppins': ['Poppins', 'sans-serif'] // Poppins font
+        'poppins': ['Poppins', 'sans-serif'], // Poppins font
+        'aldrich': ['Aldrich', 'sans-serif'] // Aldrich font
       }
     },
   },
