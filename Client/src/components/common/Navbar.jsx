@@ -48,12 +48,6 @@ const Navbar = () => {
 					<div className="flex gap-6">
 						<MenuList openMenu={openMenu} toggleMenu={toggleMenu} />
 
-						<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
-							<a href="https://drive.google.com/file/d/1goVab10JqRzmFbJUuUZM6TtUVkCoEoD6/view?usp=sharing" target="_blank" className="flex items-center">
-								Resume&nbsp;<IoMdDownload className="text-lg" />
-							</a>
-						</button>
-
 						{user ? (
 							<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white" onClick={handleLogout} aria-label="Log Out">
 								Log Out

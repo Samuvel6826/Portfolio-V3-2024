@@ -60,7 +60,7 @@ const Home = ({ className = '' }) => {
                         <p id='intro-text' className='text-3xl font-medium'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-black'> Samuvel A</span></p>
                         <p id='web-dev' className='text-[1.7rem] font-bold'>MERN Stack Web Developer</p>
                         <p id='intro-para' className='text-justify text-lg leading-relaxed'>
-                            Hailing from the beautiful coastal town of Kanyakumari, Tamil Nadu, India. I'm a passionate web developer. Seeking an Assistant Web Developer role or Internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss. Feel free to contact me at anytime.
+                            I hail from the beautiful coastal town of Kanyakumari, Tamil Nadu, India. I'm a passionate web developer. I am seeking an Assistant Web Developer role or Internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss. Feel free to contact me at any time.
                         </p>
 
                         <div id='home-content-btns-container' className="flex items-center justify-between gap-4 text-lg">

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Drawer, IconButton, Typography } from "@material-tailwind/react";
 import { IoSettings } from "react-icons/io5";
 import { IoMdDownload } from "react-icons/io";
+import ResumePdf from '../../assets/Resume/Samuvel-Resume.pdf';
 
 const MobileMenu = ({
     openRight = false,
@@ -71,7 +72,7 @@ const MobileMenu = ({
 
                         <li className="group flex h-full items-center">
                             <a
-                                href="https://drive.google.com/file/d/1goVab10JqRzmFbJUuUZM6TtUVkCoEoD6/view?usp=sharing"
+                                href={ResumePdf}
                                 target="_blank"
                                 className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
                             >

@@ -3,7 +3,6 @@ import './Footer.css';
 import { Popover, Space } from 'antd';
 import Cryptos from './Cryptos';
 import Razorpay from './Razorpay';
-import PdfThumbnail from './PdfThumbnail';
 
 import { ImWhatsapp } from "react-icons/im";
 import { FaInstagram } from "react-icons/fa";
@@ -14,8 +13,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BiSolidPhoneCall } from "react-icons/bi";
-import { BiDollar } from "react-icons/bi";
-import { BiBitcoin } from "react-icons/bi";
 import { FaCoffee } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -142,7 +139,6 @@ const Footer = () => {
                     Made by Samuvel Antony. Copyright &#169; 2024. All rights reserved.
                 </p>
             </footer>
-            {/* <PdfThumbnail /> */}
         </section>
     );
 }
