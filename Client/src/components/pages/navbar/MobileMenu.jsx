@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Drawer, IconButton, Typography } from "@material-tailwind/react";
 import { IoSettings } from "react-icons/io5";
 import { IoMdDownload } from "react-icons/io";
-import ResumePdf from '../../assets/Resume/Samuvel-Resume.pdf';
+import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
 import { Link } from "react-scroll"; // Import Link from react-scroll
 import './Navbar.css'
 

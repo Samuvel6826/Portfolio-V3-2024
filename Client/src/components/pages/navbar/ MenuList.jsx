@@ -6,8 +6,8 @@ import {
 } from "@material-tailwind/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { IoMdDownload } from "react-icons/io";
-import ResumePdf from '../../assets/Resume/Samuvel-Resume.pdf';
-import ResumePng from '../../assets/Resume/Samuvel-Resume.png';
+import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
+import ResumePng from '../../../assets/Resume/Samuvel-Resume.png';
 
 const menuItems = [
     { title: "Download as PDF", description: ResumePdf },

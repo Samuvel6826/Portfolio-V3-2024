@@ -9,6 +9,7 @@
 	font-weight: 500; /* font-medium */
 	transition: color 300ms;
 	color: white; /* Default text color */
+	cursor: pointer;
 }
 
 .desktopMenuListItem::after {
@@ -40,6 +41,7 @@
 	gap: 4rem; /* Space between menu items */
 	padding: 1rem; /* Padding for mobile menu */
 	height: 100%; /* Ensure full height */
+	cursor: pointer;
 }
 
 .mobileMenuListItem {

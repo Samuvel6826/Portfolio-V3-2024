@@ -1,32 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 
-const ErrorBoundary = ({ children }) => {
-    const [hasError, setHasError] = useState(false);
-
-    useEffect(() => {
-        const handleError = (error, errorInfo) => {
-            console.error('Error caught by error boundary:', error, errorInfo);
-            setHasError(true);
-        };
-
-        const errorListener = (event) => {
-            handleError(event.error, event.errorInfo);
-        };
-
-        window.addEventListener('error', errorListener);
-        window.addEventListener('unhandledrejection', errorListener);
-
-        return () => {
-            window.removeEventListener('error', errorListener);
-            window.removeEventListener('unhandledrejection', errorListener);
-        };
-    }, []);
-
-    if (hasError) {
-        return <h1>Something went wrong in this particular component. Please refresh the page or check the code.</h1>;
+class ErrorBoundary extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null, errorInfo: null };
     }
 
-    return children;
+    static getDerivedStateFromError(error) {
+        // Update state so the next render will show the fallback UI
+        return { hasError: true, error };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        // You can also log error messages to an error reporting service
+        console.error('Error caught by error boundary:', error, errorInfo);
+        this.setState({ error, errorInfo });
+    }
+
+    render() {
+        if (this.state.hasError) {
+            // Render fallback UI
+            return (
+                <div>
+                    <h1>Something went wrong.</h1>
+                    <details style={{ whiteSpace: 'pre-wrap' }}>
+                        {this.state.error && this.state.error.toString()}
+                        <br />
+                        {this.state.errorInfo.componentStack}
+                    </details>
+                </div>
+            );
+        }
+
+        return this.props.children;
+    }
+}
+
+ErrorBoundary.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 export default ErrorBoundary;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/common/Navbar';
+import Navbar from './components/pages/navbar/Navbar';
 import Home from './components/pages/public/home/Home';
 import About from './components/pages/public/about/About';
 import Skills from './components/pages/public/skills/Skills';
@@ -27,41 +27,35 @@ function App() {
   return <UserAuthContextProvider>
     <Router>
       <main id='App'>
-
         <Navbar />
-
         <Routes>
-
           {/* Authentication Routes */}
           <Route path="/login" element={
             <ErrorBoundary>
               <Login />
-            </ErrorBoundary>} />
-          {/* 
+            </ErrorBoundary>
+          } />
           <Route path="/signup" element={
             <ErrorBoundary>
               <Signup />
-            </ErrorBoundary>} /> */}
-
-
+            </ErrorBoundary>
+          } />
 
           {/* Public Routes */}
           <Route path="*" element={
-            // <ErrorBoundary>
-            <PublicRoutes />
-            // </ErrorBoundary>
+            <ErrorBoundary>
+              <PublicRoutes />
+            </ErrorBoundary>
           } />
-
-
 
           {/* Admin Routes */}
           <Route path="/admin/*" element={
-
             <ProtectedRoute>
-              <AdminRoutes />
+              <ErrorBoundary>
+                <AdminRoutes />
+              </ErrorBoundary>
             </ProtectedRoute>
           } />
-
         </Routes>
       </main>
     </Router>
@@ -77,9 +71,9 @@ function PublicRoutes() {
     <Skills />
     <Projects />
     <Contact />
-    {/* <ErrorBoundary> */}
-    <Footer />
-    {/* </ErrorBoundary> */}
+    <ErrorBoundary>
+      <Footer />
+    </ErrorBoundary>
   </main>
 }
 

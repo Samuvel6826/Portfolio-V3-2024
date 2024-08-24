@@ -54,7 +54,7 @@ const Home = ({ className = '' }) => {
                     </div>
 
                     {/* Content Section */}
-                    <div id='home-content' className="flex w-full flex-col justify-center gap-4 text-base">
+                    <div id='home-content' className="flex w-full flex-col justify-center gap-3 text-base">
                         <p id='intro-text' className='text-2xl font-medium'>Hello!👋🏻</p>
                         <p id='intro-text' className='text-2xl font-medium'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-black'> Samuvel A</span></p>
                         <p id='web-dev' className='text-[1.7rem] font-bold'>MERN Stack Web Developer</p>

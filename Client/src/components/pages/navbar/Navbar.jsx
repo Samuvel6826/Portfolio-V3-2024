@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router";
-import { useUserAuth } from "../authentication/UserAuthContext";
+import { useUserAuth } from "../../authentication/UserAuthContext";
 import { IoSettings } from "react-icons/io5";
-import { IoMdDownload } from "react-icons/io";
 import MenuList from "./ MenuList";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-scroll"; // Import Link from react-scroll
@@ -39,19 +38,19 @@ const Navbar = () => {
 
 					{!isLoginPage && (
 						<div className="desktopMenu flex gap-6">
-							<Link to="home" spy={true} smooth={true} offset={-68} duration={500} className="desktopMenuListItem">
+							<Link to="home" spy={true} smooth={true} offset={-68} duration={300} className="desktopMenuListItem">
 								Home
 							</Link>
-							<Link to="about" spy={true} smooth={true} offset={-63} duration={500} className="desktopMenuListItem">
+							<Link to="about" spy={true} smooth={true} offset={-63} duration={300} className="desktopMenuListItem">
 								About
 							</Link>
-							<Link to="skills" spy={true} smooth={true} offset={-63} duration={500} className="desktopMenuListItem">
+							<Link to="skills" spy={true} smooth={true} offset={-63} duration={300} className="desktopMenuListItem">
 								Skills
 							</Link>
-							<Link to="projects" spy={true} smooth={true} offset={-63} duration={500} className="desktopMenuListItem">
+							<Link to="projects" spy={true} smooth={true} offset={-63} duration={300} className="desktopMenuListItem">
 								Projects
 							</Link>
-							<Link to="contact" spy={true} smooth={true} offset={-63} duration={500} className="desktopMenuListItem">
+							<Link to="contact" spy={true} smooth={true} offset={-63} duration={300} className="desktopMenuListItem">
 								Contact
 							</Link>
 						</div>

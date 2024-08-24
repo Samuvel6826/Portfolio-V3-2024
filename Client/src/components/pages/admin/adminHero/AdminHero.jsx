@@ -3,28 +3,28 @@ import './AdminHero.css'
 
 const AdminHero = () => {
 
-    return <section id='hero' className='flex p-4 mx-auto text-white  bg-primary'>
+    return <section id='hero' className='mx-auto flex bg-primary p-4 text-white'>
 
-        <div id='admin-hero-container' className='container flex flex-col w-full mx-auto  gap-3'>
+        <div id='admin-hero-container' className='container mx-auto flex w-full flex-col gap-3'>
 
-            <header id='admin-hero-header' className='w-full text-center  text-secondary'>
+            <header id='admin-hero-header' className='w-full text-center text-secondary'>
                 <h1 id='admin-hero-page-title'>Admin Hero</h1>
             </header>
 
             <main id="main-wrapper" className="flex justify-between">
 
-                <div id="content-container" className="w-1/2 p-4 ">
+                <div id="content-container" className="w-1/2 p-4">
 
-                    <form className="flex flex-col form-example gap-6">
+                    <form className="form-example flex flex-col gap-6">
                         <div id="text-wrapper" className="flex flex-col gap-3">
                             <h2>Hero Descriptions</h2>
                             <div>
-                                <label for="caption">Caption: </label>
+                                <label htmlFor="caption">Caption: </label>
                                 <input type="text" name="caption" id="caption" />
                             </div>
 
                             <div>
-                                <label for="description">description: </label>
+                                <label htmlFor="description">description: </label>
                                 <textarea name="description" id="description" cols="20" rows="1"></textarea>
                             </div>
                         </div>
@@ -32,39 +32,39 @@ const AdminHero = () => {
                         <div id="social-links-wrapper" className="flex flex-col gap-3">
                             <h2>Social Links</h2>
                             <div>
-                                <label for="whatsapp">Whatsapp: </label>
+                                <label htmlFor="whatsapp">Whatsapp: </label>
                                 <input type="url" name="whatsapp" id="whatsapp" />
                             </div>
                             <div>
-                                <label for="teleCall">TeleCall: </label>
+                                <label htmlFor="teleCall">TeleCall: </label>
                                 <input type="url" name="teleCall" id="teleCall" />
                             </div>
                             <div>
-                                <label for="mail">Mail: </label>
+                                <label htmlFor="mail">Mail: </label>
                                 <input type="url" name="mail" id="mail" />
                             </div>
                             <div>
-                                <label for="instagram">Instagram: </label>
+                                <label htmlFor="instagram">Instagram: </label>
                                 <input type="url" name="instagram" id="instagram" />
                             </div>
                             <div>
-                                <label for="facebook">Whatsapp: </label>
+                                <label htmlFor="facebook">Whatsapp: </label>
                                 <input type="url" name="facebook" id="facebook" />
                             </div>
                             <div>
-                                <label for="x">X: </label>
+                                <label htmlFor="x">X: </label>
                                 <input type="url" name="x" id="x" />
                             </div>
                             <div>
-                                <label for="linkedin">Linkedin: </label>
+                                <label htmlFor="linkedin">Linkedin: </label>
                                 <input type="url" name="linkedin" id="linkedin" />
                             </div>
                             <div>
-                                <label for="github">Github: </label>
+                                <label htmlFor="github">Github: </label>
                                 <input type="url" name="github" id="github" />
                             </div>
                             <div>
-                                <label for="discord">Discord: </label>
+                                <label htmlFor="discord">Discord: </label>
                                 <input type="url" name="discord" id="discord" />
                             </div>
                             <button type="submit">Submit</button>
@@ -73,11 +73,11 @@ const AdminHero = () => {
 
                 </div>
 
-                <div id="dp-container" className="flex flex-col w-1/2 p-4  gap-3">
+                <div id="dp-container" className="flex w-1/2 flex-col gap-3 p-4">
                     <h2>Profile Pic</h2>
                     <img src="" alt="Profile Pic" />
                     <div>
-                        <label for="profileURL">Profile Pic URL: </label>
+                        <label htmlFor="profileURL">Profile Pic URL: </label>
                         <input type="url" name="profileURL" id="profileURL" />
                     </div>
                     <button type="submit">Submit</button>
