@@ -4,6 +4,8 @@ import { Drawer, IconButton, Typography } from "@material-tailwind/react";
 import { IoSettings } from "react-icons/io5";
 import { IoMdDownload } from "react-icons/io";
 import ResumePdf from '../../assets/Resume/Samuvel-Resume.pdf';
+import { Link } from "react-scroll"; // Import Link from react-scroll
+import './Navbar.css'
 
 const MobileMenu = ({
     openRight = false,
@@ -20,7 +22,7 @@ const MobileMenu = ({
             className="bg-tertiary p-6 text-letter shadow-lg"
         >
             <div className="mb-6 flex items-center justify-between pl-6 pr-4">
-                <Typography variant="h5" color="blue" className="font-bold">
+                <Typography color="blue" className="text-3xl font-bold">
                     Menu
                 </Typography>
                 <IconButton
@@ -35,7 +37,7 @@ const MobileMenu = ({
                         viewBox="0 0 24 24"
                         strokeWidth={2}
                         stroke="currentColor"
-                        className="h-6 w-6 text-primary"
+                        className="h-9 w-9 text-primary"
                     >
                         <path
                             strokeLinecap="round"
@@ -46,65 +48,67 @@ const MobileMenu = ({
                 </IconButton>
             </div>
 
-            <div className="mb-8 h-full pr-4 font-normal text-gray-600">
-                <ul id="mobileMenu-list" className="flex h-full flex-col text-xl">
-                    <div className="flex h-full flex-col" id="mob-lists">
+            <div className="mb-8 h-full pr-4">
+                <div id="mobileMenu-list" className="flex h-full flex-col">
+                    <div className="mobileMenu flex h-full flex-col" id="mob-lists">
                         {!isLoginPage && (
                             <>
-                                {["home", "about", "skills", "projects", "contact"].map((section, index) => (
-                                    <li key={index} className="group flex h-full items-center">
-                                        <a
-                                            href={`#${section}`}
-                                            className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
-                                        >
-                                            <i
-                                                className={`uil uil-${section === "home" ? "estate" : section === "about" ? "user" : section === "skills" ? "file-alt" : section === "projects" ? "briefcase-alt" : "message"} text-primary group-hover:text-primary text-xl`}
-                                            ></i>
-                                            <span className="group-hover:text-primary">
-                                                {section.charAt(0).toUpperCase() + section.slice(1)}
-                                            </span>
-                                        </a>
-                                    </li>
-                                ))}
+                                <Link to="home" spy={true} smooth={true} offset={-68} duration={500} className="mobileMenuListItem">
+                                    <i className="uil uil-estate"></i>
+                                    <span>Home</span>
+                                </Link>
+                                <Link to="about" spy={true} smooth={true} offset={-63} duration={500} className="mobileMenuListItem">
+                                    <i className="uil uil-user"></i>
+                                    <span>About</span>
+                                </Link>
+                                <Link to="skills" spy={true} smooth={true} offset={-63} duration={500} className="mobileMenuListItem">
+                                    <i className="uil uil-file-alt"></i>
+                                    <span>Skills</span>
+                                </Link>
+                                <Link to="projects" spy={true} smooth={true} offset={-63} duration={500} className="mobileMenuListItem">
+                                    <i className="uil uil-briefcase-alt"></i>
+                                    <span>Projects</span>
+                                </Link>
+                                <Link to="contact" spy={true} smooth={true} offset={-63} duration={500} className="mobileMenuListItem">
+                                    <i className="uil uil-message"></i>
+                                    <span>Contact</span>
+                                </Link>
                             </>
                         )}
 
-
-                        <li className="group flex h-full items-center">
-                            <a
-                                href={ResumePdf}
-                                target="_blank"
-                                className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
-                            >
-                                <IoMdDownload className="text-xl text-primary group-hover:text-primary" />
-                                <span className="group-hover:text-primary">Resume</span>
-                            </a>
-                        </li>
+                        <a
+                            href={ResumePdf}
+                            target="_blank"
+                            className="mobileMenuListItem"
+                        >
+                            <IoMdDownload id="ico" />
+                            <span>Resume</span>
+                        </a>
 
                         {user ? (
-                            <li className="group flex h-full items-center">
-                                <button
-                                    onClick={handleLogout}
-                                    className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
-                                    aria-label="Log Out"
-                                >
-                                    <i className="uil uil-sign-out-alt text-xl text-primary group-hover:text-primary"></i>
-                                    <span className="group-hover:text-primary">Log Out</span>
-                                </button>
-                            </li>
+
+                            <button
+                                onClick={handleLogout}
+                                className="mobileMenuListItem"
+                                aria-label="Log Out"
+                            >
+                                <i id="ico" className="uil uil-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </button>
+
                         ) : (
-                            <li className="group flex h-full items-center">
-                                <a
-                                    href="/login"
-                                    className="flex w-full items-center space-x-3 transition-colors duration-300 hover:text-primary"
-                                >
-                                    <IoSettings className="text-xl text-primary group-hover:text-primary" />
-                                    <span className="group-hover:text-primary">Admin Panel</span>
-                                </a>
-                            </li>
+
+                            <a
+                                href="/login"
+                                className="mobileMenuListItem"
+                            >
+                                <IoSettings id="ico" />
+                                <span>Admin Panel</span>
+                            </a>
+
                         )}
                     </div>
-                </ul>
+                </div>
             </div>
         </Drawer>
     );

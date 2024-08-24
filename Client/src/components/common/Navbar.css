@@ -1,0 +1,92 @@
+/* General Styles */
+.active {
+	background-color: transparent !important;
+}
+
+/* Desktop Menu Styles */
+.desktopMenuListItem {
+	position: relative;
+	font-weight: 500; /* font-medium */
+	transition: color 300ms;
+	color: white; /* Default text color */
+}
+
+.desktopMenuListItem::after {
+	content: "";
+	position: absolute;
+	bottom: -0.5rem;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background-color: #66b2ff;
+	transform: scaleX(0);
+	transition: transform 300ms;
+}
+
+/* Hover effect */
+.desktopMenuListItem:hover {
+	color: #66b2ff;
+}
+
+/* Show underline on active link */
+.desktopMenuListItem.active::after {
+	transform: scaleX(1);
+}
+
+/* General Mobile Menu Styles */
+.mobileMenu {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem; /* Space between menu items */
+	padding: 1rem; /* Padding for mobile menu */
+	height: 100%; /* Ensure full height */
+}
+
+.mobileMenuListItem {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	text-decoration: none; /* Remove underline */
+	color: white; /* Default text color */
+	transition: color 0.3s, transform 0.3s;
+	position: relative;
+}
+
+.mobileMenuListItem i {
+	color: #66b2ff; /* Icon color */
+	font-size: 2rem; /* Slightly larger icon size for better visibility */
+	margin-right: 1rem; /* Increased space between icon and text */
+}
+
+.mobileMenuListItem #ico {
+	color: #66b2ff; /* Icon color */
+	font-size: 2rem; /* Slightly larger icon size for better visibility */
+	margin-right: 1rem; /* Increased space between icon and text */
+}
+
+.mobileMenuListItem span {
+	transition: color 0.3s;
+	font-size: 1.5rem; /* Slightly larger text size for better visibility */
+}
+
+/* Hover effects */
+.mobileMenuListItem:hover {
+	color: #66b2ff; /* Text color on hover */
+	transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.mobileMenuListItem::after {
+	content: "";
+	position: absolute;
+	bottom: -1rem;
+	left: 0;
+	height: 2px;
+	width: 100%;
+	background-color: #66b2ff; /* Underline color */
+	transform: scaleX(0);
+	transition: transform 0.3s;
+}
+
+.mobileMenuListItem:hover::after {
+	transform: scaleX(1);
+}

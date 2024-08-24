@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Home.css';
-import { GoArrowDown } from "react-icons/go";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Home = ({ className = '' }) => {
@@ -9,7 +8,7 @@ const Home = ({ className = '' }) => {
         <section id="home" className={`w-full bg-primary p-4 sm:p-10 ${className}`}>
             <div id="home-container" className="container mx-auto flex h-full w-full items-center">
                 {/* Social Links (Landscape) */}
-                <div id='home-social-links-landscape' className='mr-6 hidden h-80 w-5 flex-col items-center justify-between lg:flex'>
+                <div id='home-social-links-landscape' className='mr-10 hidden h-96 w-5 flex-col items-center justify-between lg:flex'>
                     <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" title='Instagram' className="text-2xl">
                         <FaInstagram />
                     </a>
@@ -56,10 +55,10 @@ const Home = ({ className = '' }) => {
 
                     {/* Content Section */}
                     <div id='home-content' className="flex w-full flex-col justify-center gap-4 text-base">
-                        <p id='intro-text' className='text-3xl font-medium'>Hello!👋🏻</p>
-                        <p id='intro-text' className='text-3xl font-medium'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-black'> Samuvel A</span></p>
+                        <p id='intro-text' className='text-2xl font-medium'>Hello!👋🏻</p>
+                        <p id='intro-text' className='text-2xl font-medium'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-black'> Samuvel A</span></p>
                         <p id='web-dev' className='text-[1.7rem] font-bold'>MERN Stack Web Developer</p>
-                        <p id='intro-para' className='text-justify text-lg leading-relaxed'>
+                        <p id='intro-para' className='text-justify text-xl leading-relaxed'>
                             I hail from the beautiful coastal town of Kanyakumari, Tamil Nadu, India. I'm a passionate web developer. I am seeking an Assistant Web Developer role or Internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss. Feel free to contact me at any time.
                         </p>
 
@@ -82,7 +81,7 @@ const Home = ({ className = '' }) => {
                 </main>
 
                 {/* Scroll Button (Landscape) */}
-                <div id='home-content-scrollBtn-landscape' className='hidden h-80 w-5 text-xl lg:flex'>
+                <div id='home-content-scrollBtn-landscape' className='ml-4 hidden h-96 w-5 text-xl lg:flex'>
                     <a href="#about" className="flex h-full w-full flex-col items-center justify-between">
                         <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "60px", height: "50px" }} loop autoplay></lottie-player>
                         <div className='m-0 flex -rotate-90 flex-row gap-2'>

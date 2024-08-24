@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import {
     Menu, MenuHandler, MenuList as MaterialMenuList, MenuItem,
@@ -51,7 +51,7 @@ const CustomMenuList = ({ openMenu, toggleMenu }) => {
                         onMouseLeave={handleMouseLeave}
                         aria-expanded={openMenu || isHovered}
                         aria-label="Toggle Menu"
-                        className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 text-base font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                         Resume
                         <ChevronDownIcon
@@ -63,25 +63,24 @@ const CustomMenuList = ({ openMenu, toggleMenu }) => {
                 <MaterialMenuList
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    className="hidden w-80 grid-cols-1 gap-1 lg:grid"
+                    className="hidden w-80 grid-cols-1 gap-1 bg-tertiary lg:grid"
                 >
                     <Card
                         color="gray"
-                        shadow={false}
-                        className="flex h-full w-full items-center justify-center rounded-xl bg-gray-100 p-2"
+                        className="flex h-full w-full items-center justify-center bg-white"
                     >
                         <a href={ResumePdf} target="_blank" rel="noopener noreferrer">
-                            <img src={ResumePng} alt="Resume Thumbnail" className="h-full w-full rounded-lg" />
+                            <img src={ResumePng} alt="Resume Thumbnail" className="h-full w-full" />
                         </a>
                     </Card>
-                    <ul className="flex w-full flex-col gap-2 rounded-xl p-4 shadow-lg">
+                    <ul className="flex w-full flex-col gap-2 bg-white p-4 shadow-lg">
                         {menuItems.map(({ title, description }) => (
                             <li key={title}>
                                 <a href={description} onClick={(e) => {
                                     e.preventDefault();
                                     handleDownloadClick(description);
                                 }} download>
-                                    <MenuItem className="flex items-center gap-2 rounded-md px-3 py-2 transition-colors duration-200 hover:bg-gray-100">
+                                    <MenuItem className="flex items-center gap-2 rounded-md bg-gray-300 px-3 py-2 transition-colors duration-200 hover:bg-gray-400">
                                         <Typography variant="h6" color="blue-gray" className="flex-1">
                                             {title}
                                         </Typography>
