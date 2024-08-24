@@ -5,7 +5,7 @@
 @layer components {
 	/* Default (mobile-first) styles */
 	#dp-pic {
-		@apply w-[60%] rounded-full shadow-lg;
+		@apply w-[63%] rounded-full shadow-lg;
 	}
 
 	#home-content-btns-container {
@@ -14,10 +14,6 @@
 
 	#home-content-btns {
 		@apply w-full border-2 border-secondary rounded-2xl p-2 text-center transition-transform transform hover:scale-105 flex items-center justify-center flex-row text-xl cursor-pointer;
-	}
-
-	#home-content-scrollBtn a {
-		@apply h-full w-full flex flex-col justify-between items-center;
 	}
 
 	/* sm (640px) */

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { IoMdDownload } from "react-icons/io";
 import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
 import ResumePng from '../../../assets/Resume/Samuvel-Resume.png';
+import Loader from '../../common/Loader'; // Import the Loader component
 
 const menuItems = [
     { title: "Download as PDF", description: ResumePdf },
@@ -12,6 +13,7 @@ const menuItems = [
 const CustomMenuList = ({ handleDownloadClick }) => {
     const [dialogOpen, setDialogOpen] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const handleConfirmDownload = () => {
         if (selectedFile && typeof handleDownloadClick === 'function') {
@@ -22,11 +24,26 @@ const CustomMenuList = ({ handleDownloadClick }) => {
 
     const handleCancelDownload = () => setDialogOpen(false);
 
+    const handleImageLoad = () => {
+        setLoading(false); // Set loading to false when image is loaded
+    };
+
     return (
-        <div className="flex h-full w-full flex-col gap-4 p-4">
-            <div className="flex items-center justify-center bg-white">
+        <div className="relative flex h-full w-full flex-col gap-4 p-4">
+            <div className="relative flex items-center justify-center bg-white">
+                {loading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-white">
+                        <Loader /> {/* Use the imported Loader component */}
+                    </div>
+                )}
                 <a href={ResumePdf} target="_blank" rel="noopener noreferrer">
-                    <img src={ResumePng} alt="Resume Thumbnail" className="h-full w-full object-cover" />
+                    <img
+                        src={ResumePng}
+                        alt="Resume Thumbnail"
+                        className={`h-full w-full object-cover ${loading ? 'opacity-0' : 'opacity-100'}`}
+                        onLoad={handleImageLoad}
+                        onError={() => setLoading(false)} // Hide loader if image fails to load
+                    />
                 </a>
             </div>
             <ul className="m-0 flex w-full flex-col gap-2 bg-white p-4 text-xl">

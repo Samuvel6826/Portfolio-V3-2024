@@ -103,7 +103,7 @@
 
 		#s-box h4,
 		#s-box p {
-			@apply text-2xl;
+			@apply text-[1.35rem];
 		}
 
 		#about-para {

@@ -131,12 +131,21 @@ const Footer = () => {
             </div>
 
             {/* Footer bottom section */}
-            <footer id='footer-footer' className="flex flex-col items-center justify-center border-t-2 p-2 text-center text-sm">
-                <p className='flex items-center gap-2'>
-                    Made with <FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb />
-                </p>
+            <footer id='footer-footer' className="flex flex-col items-center justify-center gap-3 border-t-2 p-4 text-center text-lg">
                 <p>
-                    Made by Samuvel Antony. Copyright &#169; 2024. All rights reserved.
+                    India/English
+                </p>
+                <span className='hidden lg:flex'>&#8195;|&#8195;</span>
+                <p>
+                    Made by Samuvel A
+                </p>
+                <span className='hidden lg:flex'>&#8195;|&#8195;</span>
+                <p className='flex items-center gap-3'>
+                    Made with <span className='flex gap-2 text-xl'><FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb /></span>
+                </p>
+                <span className='hidden lg:flex'>&#8195;|&#8195;</span>
+                <p>
+                    &#169;&nbsp;2024 samtocode24 All rights reserved
                 </p>
             </footer>
         </section>

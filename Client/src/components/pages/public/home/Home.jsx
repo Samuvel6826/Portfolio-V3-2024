@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Home.css';
-import { Link } from "react-scroll"; // Import Link from react-scroll
+import { Link } from "react-scroll";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import Loader from '../../../common/Loader'; // Ensure this path is correct
 
 const Home = ({ className = '' }) => {
+    const [loading, setLoading] = useState(true);
+
+    const handleImageLoad = () => {
+        setLoading(false);
+    };
+
     return (
         <section id="home" className={`w-full h-full bg-primary p-4 lg:py-8 ${className}`}>
             <div id="home-container" className="container mx-auto flex h-full w-full items-center">
@@ -24,6 +31,10 @@ const Home = ({ className = '' }) => {
                 <main id='home-wrapper' className='flex w-full flex-col items-center justify-center lg:flex-row-reverse'>
                     {/* Profile Picture and Scroll Button */}
                     <div id='dp-container' className="relative flex w-full items-center justify-center">
+                        {loading && (
+                            <Loader />
+                        )}
+
                         <div id='home-social-links' className='absolute left-0 top-5 z-10 flex h-44 w-5 flex-col items-start justify-between text-2xl lg:hidden'>
                             <a href="https://www.instagram.com/mr_fun_factory_24/" target='_blank' rel="noopener noreferrer" title='Instagram'>
                                 <FaInstagram />
@@ -38,19 +49,21 @@ const Home = ({ className = '' }) => {
 
                         <img
                             id='dp-pic'
-                            className='rounded-full shadow-lg'
+                            className={`rounded-full shadow-lg transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100'}`}
                             src="https://res.cloudinary.com/dgsucveh2/image/upload/v1704099547/WhatsApp_Image_2024-01-01_at_06.38.56-modified_bjntky.png"
                             alt="Avatar"
+                            onLoad={handleImageLoad}
+                            onError={() => setLoading(false)} // Hide loader if image fails to load
                         />
 
-                        <div id='home-content-scrollBtn' className='absolute right-0 top-3 z-10 h-72 w-5 text-xl lg:hidden'>
-                            <a href="#about" className="flex h-full w-full flex-col items-center justify-between">
+                        <div id='home-content-scrollBtn' className='absolute right-0 top-3 z-10 h-72 w-5 cursor-pointer text-xl lg:hidden'>
+                            <Link to="about" spy={true} smooth={true} offset={-63} duration={200} className="flex h-full w-full flex-col items-center justify-between">
                                 <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "50px", height: "40px" }} loop autoplay></lottie-player>
                                 <div className='m-0 flex -rotate-90 flex-row gap-2'>
                                     <p>Scroll&nbsp;Down</p>
                                 </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="50px" fill="#000000"><path d="M480-83 240-323l42-42 198 198 198-198 42 42L480-83Zm0-246L240-569l42-42 198 198 198-198 42 42-240 240Z" /></svg>
-                            </a>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M480-83 240-323l46.67-46.67 193.33 193 193.33-193L720-323 480-83Zm0-243.33-240-240L286.67-613 480-420l193.33-193L720-566.33l-240 240Zm0-243.34-240-240 46.67-46.66 193.33 193 193.33-193L720-809.67l-240 240Z" /></svg>
+                            </Link>
                         </div>
                     </div>
 
@@ -98,14 +111,15 @@ const Home = ({ className = '' }) => {
                 </main>
 
                 {/* Scroll Button (Landscape) */}
-                <div id='home-content-scrollBtn-landscape' className='ml-4 hidden h-96 w-5 text-xl lg:flex'>
-                    <a href="#about" className="flex h-full w-full flex-col items-center justify-between">
+                <div id='home-content-scrollBtn-landscape' className='ml-4 hidden h-96 w-5 cursor-pointer text-xl lg:flex'>
+                    <Link to="about" spy={true} smooth={true} offset={-63} duration={200} className="flex h-full w-full flex-col items-center justify-between">
                         <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "60px", height: "50px" }} loop autoplay></lottie-player>
                         <div className='m-0 flex -rotate-90 flex-row gap-2'>
                             <p>Scroll&nbsp;Down</p>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="50px" fill="#000000"><path d="M480-83 240-323l42-42 198 198 198-198 42 42L480-83Zm0-246L240-569l42-42 198 198 198-198 42 42-240 240Z" /></svg>
-                    </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M480-83 240-323l46.67-46.67 193.33 193 193.33-193L720-323 480-83Zm0-243.33-240-240L286.67-613 480-420l193.33-193L720-566.33l-240 240Zm0-243.34-240-240 46.67-46.66 193.33 193 193.33-193L720-809.67l-240 240Z" /></svg>
+
+                    </Link>
                 </div>
             </div>
         </section>
