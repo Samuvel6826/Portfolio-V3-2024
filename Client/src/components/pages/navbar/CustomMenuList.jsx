@@ -30,7 +30,7 @@ const CustomMenuList = ({ handleDownloadClick }) => {
 
     return (
         <div className="relative flex h-full w-full flex-col gap-4 p-4">
-            <div className="relative flex items-center justify-center bg-white">
+            <div className="relative flex items-center justify-center bg-white p-4">
                 {loading && (
                     <div className="absolute inset-0 flex items-center justify-center bg-white">
                         <Loader /> {/* Use the imported Loader component */}

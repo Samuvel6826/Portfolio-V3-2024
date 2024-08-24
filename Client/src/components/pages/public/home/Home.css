@@ -5,7 +5,7 @@
 @layer components {
 	/* Default (mobile-first) styles */
 	#dp-pic {
-		@apply w-[63%] rounded-full shadow-lg;
+		@apply w-[64%] rounded-full shadow-lg;
 	}
 
 	#home-content-btns-container {
