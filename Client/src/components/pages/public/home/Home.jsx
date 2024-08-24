@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Home.css';
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Home = ({ className = '' }) => {
     return (
-        <section id="home" className={`w-full bg-primary p-4 sm:p-10 ${className}`}>
+        <section id="home" className={`w-full h-full bg-primary p-4 lg:py-8 ${className}`}>
             <div id="home-container" className="container mx-auto flex h-full w-full items-center">
                 {/* Social Links (Landscape) */}
                 <div id='home-social-links-landscape' className='mr-10 hidden h-96 w-5 flex-col items-center justify-between lg:flex'>
@@ -63,19 +64,35 @@ const Home = ({ className = '' }) => {
                         </p>
 
                         <div id='home-content-btns-container' className="flex items-center justify-between gap-4 text-lg">
-                            <button id='home-content-btns' className='flex w-full transform items-center justify-center rounded-2xl border-2 border-secondary p-4 text-center text-lg transition-transform hover:scale-105'>
-                                <a href="#projects" className='flex items-center justify-center'>
-                                    <img className='mr-2' width="25" height="25" src="https://img.icons8.com/pastel-glyph/64/suitcase--v3.png" alt="suitcase--v3" />
-                                    My Works
-                                </a>
-                            </button>
+                            <Link to="projects" id='home-content-btns' spy={true} smooth={true} offset={-63} duration={300}>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/qmsejndz.json"
+                                    trigger="hover"
+                                    stroke="bold"
+                                    colors="primary:#1b1091,secondary:#cb5eee"
+                                    style={{ width: '35px', height: '35px' }}
+                                />
+                                <span>&nbsp;Projects</span>
+                            </Link>
 
-                            <button id='home-content-btns' className='flex w-full transform items-center justify-center rounded-2xl border-2 border-secondary p-4 text-center text-lg transition-transform hover:scale-105'>
-                                <a href="#contact" className='flex items-center justify-center'>
-                                    <img className='mr-2' width="25" height="25" src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="user-male-circle" />
-                                    Hire Me
-                                </a>
-                            </button>
+                            <Link
+                                to="contact"
+                                spy={true}
+                                smooth={true}
+                                offset={-63}
+                                duration={300}
+                                id="home-content-btns"
+                            >
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/xfzuyvam.json"
+                                    trigger="morph"
+                                    stroke="bold"
+                                    state="hover"
+                                    colors="primary:#1b1091,secondary:#cb5eee"
+                                    style={{ width: '35px', height: '35px' }}
+                                />
+                                <span>&nbsp;Hire Me</span> {/* Add text as a span element */}
+                            </Link>
                         </div>
                     </div>
                 </main>

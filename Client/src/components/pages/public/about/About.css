@@ -6,29 +6,30 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-	#about-page-title {
-		@apply text-2xl sm:text-3xl;
-	}
-
-	#about-page-desc {
-		@apply text-sm sm:text-base;
+	#section-1,
+	#section-2 {
+		@apply w-full;
 	}
 
 	#s-box {
-		@apply h-full w-full border-2 border-primary rounded-2xl p-2 flex flex-col items-center justify-center gap-1;
+		@apply h-full w-full rounded-2xl p-4 flex flex-col items-center justify-center gap-2;
 	}
 
 	#s-box h4,
 	#s-box p {
-		@apply text-[4vw] sm:text-lg;
+		@apply text-lg;
+	}
+
+	#about-para {
+		@apply text-lg leading-relaxed;
 	}
 
 	#about-resume-btn {
-		@apply border-2 bg-secondary text-white border-primary w-full flex p-2 gap-2 text-2xl items-center justify-center;
+		@apply text-lg px-4 py-2;
 	}
 
-	#about-resume-btn a {
-		@apply flex items-center justify-center text-center text-white w-full;
+	#about-resume-menu {
+		@apply w-96;
 	}
 
 	/* Media query for screens 640px and up: sm */
@@ -38,54 +39,34 @@
 		}
 
 		#about-page-desc {
-			@apply text-base;
-		}
-
-		#about-para {
-			@apply text-lg leading-relaxed;
+			@apply text-2xl;
 		}
 	}
 
 	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
-		#about {
-			@apply px-10;
-		}
-
-		#about-container {
-			@apply justify-start items-center;
-		}
-
-		#about-header {
-			@apply my-2;
-		}
-
 		#about-img {
-			@apply w-[40%] h-full;
-		}
-
-		#about-content {
-			@apply w-[58%] h-full justify-between;
-		}
-
-		#about-box-container {
-			@apply text-3xl;
+			@apply w-[70%];
 		}
 
 		#s-box h4,
 		#s-box p {
-			@apply text-lg;
-		}
-
-		#about-para {
-			@apply text-base leading-relaxed;
+			@apply text-xl;
 		}
 	}
 
 	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
-		#about-box-container {
-			@apply text-3xl;
+		#section-1 {
+			@apply w-[40%];
+		}
+
+		#section-2 {
+			@apply w-[60%];
+		}
+
+		#about-img {
+			@apply w-full;
 		}
 
 		#s-box h4,
@@ -96,12 +77,28 @@
 		#about-para {
 			@apply text-xl leading-relaxed;
 		}
+
+		#about-resume-btn {
+			@apply text-xl px-6 py-3;
+		}
 	}
 
 	/* Media query for screens 1280px and up: xl */
 	@media screen and (min-width: 1280px) {
+		#about-page-title {
+			@apply text-5xl;
+		}
+
+		#about-page-desc {
+			@apply text-3xl;
+		}
+
 		#about-box-container {
-			@apply text-4xl;
+			@apply gap-4;
+		}
+
+		#s-box {
+			@apply p-4 gap-1;
 		}
 
 		#s-box h4,
@@ -110,7 +107,68 @@
 		}
 
 		#about-para {
-			@apply text-xl leading-loose;
+			@apply text-[1.3rem] leading-loose;
+		}
+
+		#about-resume-btn {
+			@apply text-2xl px-8 py-4;
+		}
+	}
+
+	/* Tailwind equivalent: 2xl */
+	@media (min-width: 1536px) {
+		#about-page-title {
+			@apply text-6xl;
+		}
+
+		#about-page-desc {
+			@apply text-4xl;
+		}
+
+		#about-para {
+			@apply text-2xl leading-loose;
+		}
+
+		#about-resume-btn {
+			@apply text-2xl px-10 py-5;
+		}
+	}
+
+	/* Tailwind equivalent: xl-desktop */
+	@media (min-width: 1600px) {
+		#about-page-title {
+			@apply text-6xl;
+		}
+
+		#about-page-desc {
+			@apply text-4xl;
+		}
+
+		#about-para {
+			@apply text-2xl leading-loose;
+		}
+
+		#about-resume-btn {
+			@apply text-2xl px-10 py-5;
+		}
+	}
+
+	/* Tailwind equivalent: 2xl-desktop */
+	@media (min-width: 1920px) {
+		#about-page-title {
+			@apply text-6xl;
+		}
+
+		#about-page-desc {
+			@apply text-4xl;
+		}
+
+		#about-para {
+			@apply text-2xl leading-loose;
+		}
+
+		#about-resume-btn {
+			@apply text-2xl px-12 py-6;
 		}
 	}
 }

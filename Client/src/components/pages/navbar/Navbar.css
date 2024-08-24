@@ -3,15 +3,16 @@
 	background-color: transparent !important;
 }
 
-/* Desktop Menu Styles */
+/* General Desktop Menu Item Styles */
 .desktopMenuListItem {
 	position: relative;
-	font-weight: 500; /* font-medium */
+	font-weight: 500;
 	transition: color 300ms;
 	color: white; /* Default text color */
 	cursor: pointer;
 }
 
+/* Underline Effect for Desktop Menu */
 .desktopMenuListItem::after {
 	content: "";
 	position: absolute;
@@ -20,30 +21,26 @@
 	height: 3px;
 	width: 100%;
 	background-color: #66b2ff;
-	transform: scaleX(0);
+	transform: scaleX(0); /* Start with no underline */
 	transition: transform 300ms;
 }
 
-/* Hover effect */
-.desktopMenuListItem:hover {
-	color: #66b2ff;
-}
-
-/* Show underline on active link */
+/* Active Effect for Desktop Menu */
 .desktopMenuListItem.active::after {
-	transform: scaleX(1);
+	transform: scaleX(1); /* Show underline on active */
 }
 
 /* General Mobile Menu Styles */
 .mobileMenu {
 	display: flex;
 	flex-direction: column;
-	gap: 4rem; /* Space between menu items */
+	gap: 2rem; /* Space between menu items */
 	padding: 1rem; /* Padding for mobile menu */
 	height: 100%; /* Ensure full height */
 	cursor: pointer;
 }
 
+/* Mobile Menu Item Styles */
 .mobileMenuListItem {
 	display: flex;
 	align-items: center;
@@ -54,29 +51,27 @@
 	position: relative;
 }
 
-.mobileMenuListItem i {
-	color: #66b2ff; /* Icon color */
-	font-size: 2rem; /* Slightly larger icon size for better visibility */
-	margin-right: 1rem; /* Increased space between icon and text */
-}
-
+/* Mobile Menu Icon Styles */
+.mobileMenuListItem i,
 .mobileMenuListItem #ico {
 	color: #66b2ff; /* Icon color */
-	font-size: 2rem; /* Slightly larger icon size for better visibility */
-	margin-right: 1rem; /* Increased space between icon and text */
+	font-size: 1.8rem; /* Adjusted icon size for better visibility */
+	margin-right: 1rem; /* Space between icon and text */
 }
 
+/* Mobile Menu Text Styles */
 .mobileMenuListItem span {
 	transition: color 0.3s;
-	font-size: 1.5rem; /* Slightly larger text size for better visibility */
+	font-size: 1.2rem; /* Text size for better visibility */
 }
 
-/* Hover effects */
+/* Hover Effects for Mobile Menu */
 .mobileMenuListItem:hover {
 	color: #66b2ff; /* Text color on hover */
 	transform: scale(1.05); /* Slightly scale up on hover */
 }
 
+/* Underline Effect for Mobile Menu */
 .mobileMenuListItem::after {
 	content: "";
 	position: absolute;
@@ -89,6 +84,50 @@
 	transition: transform 0.3s;
 }
 
-.mobileMenuListItem:hover::after {
-	transform: scaleX(1);
+/* Active State for Mobile Menu */
+.mobileMenuListItem.active::after {
+	transform: scaleX(1) !important;
+	background-color: #66b2ff; /* Underline color */
+}
+
+.mobileMenuListItem.active {
+	color: #66b2ff !important; /* Active text color */
+}
+
+/* Responsive Adjustments */
+
+/* Small screens (up to 639px) */
+@media (max-width: 639px) {
+	#topbar {
+		@apply text-xl;
+	}
+	.mobileMenuListItem {
+		font-size: 1rem; /* Smaller font size for mobile screens */
+	}
+
+	.mobileMenuListItem i {
+		font-size: 1.4rem; /* Adjusted icon size */
+	}
+}
+
+/* Medium screens (640px to 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+	.mobileMenuListItem {
+		font-size: 1.2rem; /* Font size for tablets */
+	}
+
+	.mobileMenuListItem i {
+		font-size: 1.6rem; /* Icon size for tablets */
+	}
+}
+
+/* Large screens (1024px and up) */
+@media (min-width: 1024px) {
+	.mobileMenuListItem {
+		font-size: 1.6rem; /* Larger font size */
+	}
+
+	.mobileMenuListItem i {
+		font-size: 1.8rem; /* Larger icon size */
+	}
 }
