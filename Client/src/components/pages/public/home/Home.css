@@ -156,7 +156,7 @@
 			@apply w-[40%];
 		}
 		#dp-pic {
-			@apply w-[10%];
+			@apply w-[100%];
 		}
 		#home-social-links-landscape {
 			@apply mr-12;
