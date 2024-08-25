@@ -20,7 +20,7 @@
 	}
 
 	#pagination-btns {
-		@apply flex items-center justify-center gap-2 rounded-full text-white bg-secondary hover:bg-primary transition-all duration-300;
+		@apply flex items-center justify-center gap-2 rounded-full text-white bg-secondary hover:bg-blue-800 transition-all duration-300;
 	}
 
 	#card:hover {
