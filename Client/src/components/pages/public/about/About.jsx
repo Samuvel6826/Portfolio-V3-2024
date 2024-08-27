@@ -72,9 +72,9 @@ const About = () => {
                 <div id="section-2" className="flex flex-col items-center justify-between gap-4">
                     <p id='about-para' className='text-justify text-xl leading-relaxed'>
                         I'm a beginner-level MERN Stack Web Developer with proficiency in both frontend and backend development. I build responsive and interactive user interfaces using React, and I leverage frameworks like Bootstrap and Tailwind CSS for efficient design. On the backend, I work with Node.js, Express.js, and MongoDB to create and manage server-side applications and databases. Furthermore, I have experience with version control systems like Git and GitHub, ensuring efficient collaboration and code management. I'm also leveraging AI tools like ChatGPT, Gemini, and others into my development workflow to optimize processes and enhance outcomes.
-                        <br /><br />
+
                         Beyond the MERN stack, I am an avid explorer of new technologies. During my academic journey, I developed an IoT project featuring a MERN-based web interface, as well as a machine learning project focused on face recognition, using Flask, a Python framework. I am committed to continuously expanding my knowledge and skill set by engaging in diverse projects and staying updated with the latest technological advancements.
-                        <br /><br />
+
                         Please find below the list of skills I possess.
                     </p>
 

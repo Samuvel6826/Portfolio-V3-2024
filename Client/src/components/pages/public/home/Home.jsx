@@ -77,7 +77,7 @@ const Home = ({ className = '' }) => {
                                 sequence={[
                                     'MERN Stack Web Developer',
                                     3000,
-                                    'B.Sc.CS Student',
+                                    'B.Sc.Comp Sci Student',
                                     3000,
                                     'Tech Enthusiast',
                                     3000,

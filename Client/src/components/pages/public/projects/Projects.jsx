@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Projects.css';
 import axios from 'axios';
 import Loader from '../../../common/Loader';
@@ -31,7 +31,7 @@ const Projects = () => {
         setActive(active - 1);
     };
 
-    const getProjects = async () => {
+    const getProjects = useCallback(async (retryCount = 0) => {
         try {
             const res = await axios.get(
                 'https://b46wet-capstone-portfolio-backend.onrender.com/projects'
@@ -39,20 +39,24 @@ const Projects = () => {
             setProjects(res.data.data);
             setTotalCards(res.data.data.length);
             setLoading(false);
-        } catch (error) {
-            setError('Failed to fetch projects. Please try again later.');
-            setLoading(false);
+        } catch (err) {
+            if (retryCount < 2) {
+                console.log(`Retrying... (${retryCount + 1})`);
+                getProjects(retryCount + 1); // Retry the request
+            } else {
+                setError('Failed to fetch projects. Please try again later.');
+                setLoading(false);
+            }
         }
-    };
+    }, []); // Empty array because there are no dependencies
 
     useEffect(() => {
         getProjects();
-    }, []);
+    }, [getProjects]);
 
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
-            // console.log('Window width:', width);  // Log the width to the console
             if (width >= 1537) {
                 setCardsPerPage(5);
             } else if (width >= 1280) {
