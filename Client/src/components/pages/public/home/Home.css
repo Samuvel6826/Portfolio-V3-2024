@@ -16,6 +16,23 @@
 		@apply w-full border-2 border-secondary rounded-2xl p-2 text-center transition-transform transform hover:scale-105 flex items-center justify-center flex-row text-xl cursor-pointer;
 	}
 
+	.type::after {
+		content: "|";
+		animation: blinkCursor 0.8s steps(2) infinite;
+		font-weight: bold;
+		margin-left: 2px; /* Space between text and cursor */
+	}
+
+	@keyframes blinkCursor {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+	}
+
 	/* sm (640px) */
 	@media (min-width: 640px) {
 		#dp-pic {

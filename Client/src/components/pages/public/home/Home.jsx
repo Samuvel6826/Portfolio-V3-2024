@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Home.css';
 import { Link } from "react-scroll";
+import { TypeAnimation } from 'react-type-animation';
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import Loader from '../../../common/Loader'; // Ensure this path is correct
 
@@ -71,7 +72,23 @@ const Home = ({ className = '' }) => {
                     <div id='home-content' className="flex w-full flex-col justify-center gap-3 text-base">
                         <p id='intro-text' className='text-2xl font-medium'>Hello!👋🏻</p>
                         <p id='intro-text' className='text-2xl font-medium'> I'm<span id='intro-name' className='font-["aldrich"] text-4xl font-black'> Samuvel A</span></p>
-                        <p id='web-dev' className='text-[1.7rem] font-bold'>MERN Stack Web Developer</p>
+                        <p id='web-dev' className='text-[1.7rem] font-bold'>
+                            <TypeAnimation
+                                sequence={[
+                                    'MERN Stack Web Developer',
+                                    3000,
+                                    'B.Sc.CS Student',
+                                    3000,
+                                    'Tech Enthusiast',
+                                    3000,
+                                ]}
+                                className="type"
+                                wrapper="span"
+                                speed={50} // Typing speed
+                                cursor={false} // Disable the default cursor
+                                repeat={Infinity} // Infinite loop
+                            />
+                        </p>
                         <p id='intro-para' className='text-justify text-xl leading-relaxed'>
                             I hail from the beautiful coastal town of Kanyakumari, Tamil Nadu, India. I'm a passionate web developer. I am seeking an Assistant Web Developer role or Internship to gain experience in a web development environment and contribute to progressive projects. I'm always eager to connect and discuss. Feel free to contact me at any time.
                         </p>
