@@ -13,26 +13,26 @@ const Skills = () => {
             { name: 'React', link: 'https://react.dev/', imageUrl: imageUrls.frontend.react, level: 'Intermediate' },
         ],
         backend: [
-            { name: 'Node.js', link: 'https://nodejs.org/docs/latest/api/', imageUrl: imageUrls.backend.nodejs, level: 'Basic' },
-            { name: 'Express.js', link: 'https://expressjs.com/', imageUrl: imageUrls.backend.expressjs, level: 'Basic' },
+            { name: 'Node.js', link: 'https://nodejs.org/docs/latest/api/', imageUrl: imageUrls.backend.nodejs, level: 'Intermediate' },
+            { name: 'Express.js', link: 'https://expressjs.com/', imageUrl: imageUrls.backend.expressjs, level: 'Intermediate' },
+            { name: 'MongoDB', link: 'https://www.mongodb.com/', imageUrl: imageUrls.backend.mongodb, level: 'Intermediate' },
+            { name: 'Mongoose', link: 'https://mongoosejs.com/', imageUrl: imageUrls.backend.mongoose, level: 'Intermediate' },
             { name: 'MySQL', link: 'https://www.mysql.com/downloads/', imageUrl: imageUrls.backend.mysql, level: 'Basic' },
-            { name: 'MongoDB', link: 'https://www.mongodb.com/', imageUrl: imageUrls.backend.mongodb, level: 'Basic' },
-            { name: 'Mongoose', link: 'https://mongoosejs.com/', imageUrl: imageUrls.backend.mongoose, level: 'Basic' },
             { name: 'JWT Token', link: 'https://jwt.io/', imageUrl: imageUrls.backend.jwt, level: 'Basic' },
         ],
         cloudDeployment: [
+            { name: 'Netlify', link: 'https://app.netlify.com', imageUrl: imageUrls.cloudDeployment.netlify, level: 'Intermediate' },
+            { name: 'Firebase', link: 'https://firebase.google.com/', imageUrl: imageUrls.cloudDeployment.firebase, level: 'Intermediate' },
+            { name: 'Surge.sh', link: 'https://surge.sh', imageUrl: imageUrls.cloudDeployment.surge, level: 'Intermediate' },
+            { name: 'Render', link: 'https://render.com', imageUrl: imageUrls.cloudDeployment.render, level: 'Intermediate' },
             { name: 'AWS', link: 'https://aws.amazon.com/free/webapps/?p=ft&z=subnav&loc=3', imageUrl: imageUrls.cloudDeployment.aws, level: 'Basic' },
-            { name: 'Surge.sh', link: 'https://surge.sh', imageUrl: imageUrls.cloudDeployment.surge, level: 'Basic' },
-            { name: 'Render', link: 'https://render.com', imageUrl: imageUrls.cloudDeployment.render, level: 'Basic' },
-            { name: 'Firebase', link: 'https://firebase.google.com/', imageUrl: imageUrls.cloudDeployment.firebase, level: 'Basic' },
-            { name: 'Netlify', link: 'https://app.netlify.com', imageUrl: imageUrls.cloudDeployment.netlify, level: 'Basic' },
         ],
         other: [
-            { name: 'GitHub', link: 'https://github.com/Samuvel6826', imageUrl: imageUrls.other.github, level: 'Basic' },
-            { name: 'Git', link: 'https://git-scm.com/', imageUrl: imageUrls.other.git, level: 'Basic' },
-            { name: 'Postman', link: 'https://postman.com/', imageUrl: imageUrls.other.postman, level: 'Basic' },
+            { name: 'Git', link: 'https://git-scm.com/', imageUrl: imageUrls.other.git, level: 'Intermediate' },
+            { name: 'GitHub', link: 'https://github.com/Samuvel6826', imageUrl: imageUrls.other.github, level: 'Intermediate' },
+            { name: 'Postman', link: 'https://postman.com/', imageUrl: imageUrls.other.postman, level: 'Intermediate' },
+            { name: 'Visual Studio Code', link: 'https://code.visualstudio.com/', imageUrl: imageUrls.other.vsCode, level: 'Intermediate' },
             { name: 'Google Analytics', link: 'https://analytics.google.com/', imageUrl: imageUrls.other.googleAnalytics, level: 'Basic' },
-            { name: 'Visual Studio Code', link: 'https://code.visualstudio.com/', imageUrl: imageUrls.other.vsCode, level: 'Basic' },
         ],
     };
 
@@ -52,33 +52,33 @@ const Skills = () => {
     );
 
     return (
-        <section id="skills" className="p-6 bg-secondary md:p-8 lg:p-12">
-            <div className="container flex flex-col gap-6 mx-auto">
-                <header className="text-center">
+        <section id="skills" className="bg-primary p-6 md:p-8 lg:p-12">
+            <div className="container mx-auto flex flex-col gap-6">
+                <header className="text-center text-secondary">
                     <h1 id="skills-page-title" className="text-3xl font-bold md:text-4xl lg:text-5xl">Skills</h1>
                     <p id="skills-page-desc" className="text-md md:text-lg lg:text-xl">My Expertise</p>
                 </header>
-                <div id="skills-wrapper" className="p-6 text-center shadow-md rounded-2xl bg-background-light">
+                <div id="skills-wrapper" className="rounded-2xl bg-background-light p-6 text-center shadow-md">
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Frontend Skills</h4>
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Frontend Skills</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.frontend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Backend Skills</h4>
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Backend Skills</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.backend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Cloud Services & Deployment Tool</h4>
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Cloud Services & Deployment Tool</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.cloudDeployment.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-primary md:text-3xl">Other Tools</h4>
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Other Tools</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-6">
                             {skills.other.map(renderSkillBox)}
                         </div>

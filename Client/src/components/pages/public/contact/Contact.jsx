@@ -49,13 +49,12 @@ const Contact = () => {
             });
     };
 
-    return <section id='contact' className='mx-auto flex bg-secondary p-4'>
+    return <section id='contact' className='mx-auto flex bg-primary p-4'>
         <div id="contact-container" className="container mx-auto flex h-full flex-col items-center gap-3">
-            <header id='contact-header' className='text-center text-primary'>
-                <h1 id="contact-page-title">Contact Me</h1>
-                <p id="contact-page-desc">Please fill out the form below to discuss any work opportunities.</p>
+            <header id='contact-header' className='text-center text-secondary'>
+                <h1 id="contact-page-title" className='text-3xl font-bold'>Contact Me</h1>
+                <p id="contact-page-desc" className='text-xl'>Please fill out the form below to discuss any work opportunities.</p>
             </header>
-
 
             <main id='contact-wrapper' className='flex w-full flex-col gap-3'>
                 <form id="contact-form" ref={formRef} onSubmit={formikQuery.handleSubmit}>
@@ -113,7 +112,7 @@ const Contact = () => {
                         </textarea>
                         {formikQuery.touched.message && formikQuery.errors.message ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.message}</div> : <></>}
                     </div>
-                    <button className='flex items-center justify-center bg-tertiary p-2 text-center text-lg text-primary' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
+                    <button className='flex items-center justify-center bg-secondary p-2 text-center text-lg text-letter' type='submit' value='Send' id="submitBtn" disabled={loading}>{loading ? <Loader /> : "Submit"}</button>
                 </form>
 
                 <div id='map-container'>

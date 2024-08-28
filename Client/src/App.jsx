@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import './styles/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreLoader from './components/common/PreLoader';
@@ -16,6 +16,7 @@ const Projects = lazy(() => import('./components/pages/public/projects/Projects'
 const Contact = lazy(() => import('./components/pages/public/contact/Contact'));
 const Footer = lazy(() => import('./components/pages/public/footer/Footer'));
 const Education = lazy(() => import('./components/pages/public/education/Education'));
+const Certificates = lazy(() => import('./components/pages/public/certificates/Certificates'));
 const AdminHero = lazy(() => import('./components/pages/admin/adminHero/AdminHero'));
 const AdminAbout = lazy(() => import('./components/pages/admin/adminAbout/AdminAbout'));
 const AdminEducations = lazy(() => import('./components/pages/admin/adminEducations/AdminEducations'));
@@ -77,6 +78,7 @@ function PublicRoutes() {
         <Home />
         <About />
         <Education />
+        <Certificates />
         <Skills />
         <Projects />
         <Contact />

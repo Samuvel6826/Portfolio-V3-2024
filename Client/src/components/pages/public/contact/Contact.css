@@ -6,14 +6,6 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-	#contact-page-title {
-		@apply text-2xl;
-	}
-
-	#contact-page-desc {
-		@apply text-sm;
-	}
-
 	#contact-form {
 		@apply flex flex-col gap-2;
 	}
@@ -21,18 +13,18 @@
 	#nameContainer,
 	#mobileContainer,
 	#emailContainer {
-		@apply w-full h-[15%] p-2 bg-tertiary flex;
+		@apply w-full h-[15%] p-2 bg-secondary flex;
 	}
 
 	#msgContainer {
-		@apply w-full h-full p-2 bg-tertiary flex;
+		@apply w-full h-full p-2 bg-secondary flex;
 	}
 
 	#your_name,
 	#your_mobile,
 	#your_email,
 	#message {
-		@apply w-full h-full bg-letter p-2 text-tertiary;
+		@apply w-full h-full bg-letter p-2 text-secondary;
 	}
 
 	#your_name::placeholder,

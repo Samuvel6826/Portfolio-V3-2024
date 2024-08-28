@@ -22,13 +22,11 @@ const Projects = () => {
     });
 
     const next = () => {
-        if (active === totalPages) return;
-        setActive(active + 1);
+        if (active < totalPages) setActive(active + 1);
     };
 
     const prev = () => {
-        if (active === 1) return;
-        setActive(active - 1);
+        if (active > 1) setActive(active - 1);
     };
 
     const getProjects = useCallback(async (retryCount = 0) => {
@@ -42,13 +40,13 @@ const Projects = () => {
         } catch (err) {
             if (retryCount < 2) {
                 console.log(`Retrying... (${retryCount + 1})`);
-                getProjects(retryCount + 1); // Retry the request
+                getProjects(retryCount + 1);
             } else {
                 setError('Failed to fetch projects. Please try again later.');
                 setLoading(false);
             }
         }
-    }, []); // Empty array because there are no dependencies
+    }, []);
 
     useEffect(() => {
         getProjects();
@@ -57,17 +55,11 @@ const Projects = () => {
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
-            if (width >= 1537) {
-                setCardsPerPage(5);
-            } else if (width >= 1280) {
-                setCardsPerPage(4);
-            } else if (width >= 1024) {
-                setCardsPerPage(3);
-            } else if (width >= 768) {
-                setCardsPerPage(2);
-            } else {
-                setCardsPerPage(1);
-            }
+            if (width >= 1536) setCardsPerPage(4);
+            else if (width >= 1280) setCardsPerPage(3);
+            else if (width >= 1024) setCardsPerPage(3);
+            else if (width >= 768) setCardsPerPage(2);
+            else setCardsPerPage(1);
         };
 
         handleResize();
@@ -82,30 +74,64 @@ const Projects = () => {
     const renderPageNumbers = () => {
         const pages = [];
 
+        // Function to determine if a page is active
+        const isActivePage = (page) => page === active;
+
+        // First Page Button with conditional styling
         pages.push(
-            <IconButton key={1} className='rounded-full' {...getItemProps(1)}>
+            <IconButton
+                key={1}
+                className={`gap-2 rounded-full ${isActivePage(1) ? 'bg-black text-white' : 'bg-blue-500 text-white hover:bg-blue-600'}`} // Active vs. inactive
+                {...getItemProps(1)}
+            >
                 1
             </IconButton>
         );
 
+        // Add left ellipsis if the active page is more than 2
         if (active > 2) {
-            pages.push(<span key='left-dots' className='mx-2'>...</span>);
+            pages.push(
+                <span
+                    key='left-dots'
+                    className='mx-2 text-gray-400' // Color for ellipsis
+                >
+                    ...
+                </span>
+            );
         }
 
+        // Add active page button if it's not the first or last page
         if (active > 1 && active < totalPages) {
             pages.push(
-                <IconButton key={active} className='rounded-full' {...getItemProps(active)}>
+                <IconButton
+                    key={active}
+                    className='rounded-full bg-black text-white hover:bg-green-600' // Active page styling
+                    {...getItemProps(active)}
+                >
                     {active}
                 </IconButton>
             );
         }
 
+        // Add right ellipsis if the active page is less than totalPages - 1
         if (active < totalPages - 1) {
-            pages.push(<span key='right-dots' className='mx-2'>...</span>);
+            pages.push(
+                <span
+                    key='right-dots'
+                    className='mx-2 text-gray-400' // Color for ellipsis
+                >
+                    ...
+                </span>
+            );
         }
 
+        // Last Page Button with conditional styling
         pages.push(
-            <IconButton key={totalPages} className='rounded-full' {...getItemProps(totalPages)}>
+            <IconButton
+                key={totalPages}
+                className={`rounded-full ${isActivePage(totalPages) ? 'bg-black text-white' : 'bg-blue-500 text-white hover:bg-blue-600'}`} // Active vs. inactive
+                {...getItemProps(totalPages)}
+            >
                 {totalPages}
             </IconButton>
         );
@@ -114,67 +140,59 @@ const Projects = () => {
     };
 
     return (
-        <section id='projects' className='mx-auto flex bg-primary p-4'>
-            <div id='projects-container' className='container mx-auto flex flex-col items-center gap-3'>
-                <header id='projects-header' className='text-center text-tertiary'>
+        <section id='projects' className='mx-auto flex h-full w-full flex-col bg-secondary p-8'>
+            <div id='projects-container' className='container mx-auto h-full w-full'>
+                <header id='projects-header' className='mb-8 text-center text-primary'>
                     <h1 id='projects-page-title'>Projects</h1>
                     <p id='projects-page-desc'>Recent Works</p>
                 </header>
-                <div id='cards-container' className='flex h-full w-full flex-col justify-between gap-3'>
-                    {loading ? (
-                        <div className='mx-auto'><Loader /></div>
-                    ) : error ? (
-                        <div className='error-message mx-auto rounded-full bg-red-800 p-5 text-2xl text-white'>{error}</div>
-                    ) : (
-                        projects.slice(indexOfFirstCard, indexOfLastCard).map((project, index) => (
-                            <div key={index} id='card' className='flex h-full w-full flex-grow flex-col gap-3 rounded-2xl bg-secondary p-4 text-white'>
-                                <div className='border-b-2'>
-                                    {project.name}
+
+                {loading ? (
+                    <Loader className='mx-auto' />
+                ) : error ? (
+                    <div className='error-message mx-auto rounded-full bg-red-800 p-5 text-2xl text-white'>{error}</div>
+                ) : (
+                    <div id='cards-container' className='flex h-full w-full flex-col items-center justify-center gap-4 md:flex-row'>
+                        {projects.slice(indexOfFirstCard, indexOfLastCard).map((project, index) => (
+                            <article key={index} id='card'>
+                                <img src={project.imgUrl} alt={`${project.name} project`} className='h-[50%] w-full transform object-fill transition-transform duration-300 group-hover:scale-105' />
+                                <div className='h-[50%] w-full p-6 text-white'>
+                                    <h2 className='mb-2 text-2xl font-semibold'>{project.name}</h2>
+                                    <p className='mb-4 text-sm'>{project.description}</p>
+                                    <a href={project.siteLink} target='_blank' rel='noopener noreferrer' className='text-primary hover:underline'>View Demo</a>
                                 </div>
-                                <div className='flex'>
-                                    <img className='flex h-full flex-grow' src={project.imgUrl} alt={`${project.name} project`} />
+                                <div id='absolute' className='absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                                    <h3 className='mb-2 text-xl font-bold'>{project.name}</h3>
+                                    <p className='text-sm'>{project.description}</p>
+                                    <a href={project.siteLink} target='_blank' rel='noopener noreferrer' className='mt-4 rounded-full bg-primary px-4 py-2 transition-all duration-300 hover:bg-blue-800'>Visit</a>
                                 </div>
-                                <div className='border-b-2'>
-                                    <div className='border-b-2'>
-                                        {project.description}
-                                    </div>
-                                    <div>
-                                        Project ID: {project.id}
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href={project.siteLink} target='_blank' rel='noopener noreferrer'>Demo</a>
-                                </div>
-                            </div>
-                        ))
-                    )}
-                </div>
+                            </article>
+                        ))}
+                    </div>
+                )}
 
                 {!loading && !error && (
-                    <div id='pagination' className='flex items-center gap-2'>
+                    <div id='pagination' className='mt-8 flex items-center justify-center gap-4'>
                         <Button
                             id='pagination-btns'
                             variant='text'
-                            className='w-[4.5rem] bg-secondary text-white'
                             onClick={prev}
                             disabled={active === 1}
                         >
                             <ArrowLeftIcon strokeWidth={2} className='h-4 w-4' /> Prev
                         </Button>
 
-                        <div id='pagination-pages-btns' className='flex items-center rounded-full'>
+                        <div id='pagination-pages-btns' className='flex items-center gap-2 text-white'>
                             {renderPageNumbers()}
                         </div>
 
                         <Button
                             id='pagination-btns'
                             variant='text'
-                            className='w-[4.5rem] bg-secondary text-white'
                             onClick={next}
                             disabled={active === totalPages}
                         >
-                            Next
-                            <ArrowRightIcon strokeWidth={2} className='h-4 w-4' />
+                            Next <ArrowRightIcon strokeWidth={2} className='h-4 w-4' />
                         </Button>
                     </div>
                 )}

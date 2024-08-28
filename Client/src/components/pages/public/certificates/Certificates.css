@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	/* Container for the entire section */
+	#certificate-section {
+		@apply h-full w-full p-4 text-white lg:py-12;
+	}
+
+	/* Flex container for certificate details and image */
+	.certificate-container {
+		@apply container mx-auto flex flex-col gap-6 lg:flex-row items-center lg:items-start;
+	}
+
+	/* Certificate details section */
+	.certificate-details {
+		@apply bg-white text-gray-900 border border-gray-300 p-6 rounded-lg shadow-lg lg:w-1/3;
+	}
+
+	.certificate-title {
+		@apply text-yellow-500 text-2xl lg:text-3xl font-bold mb-4;
+	}
+
+	.certificate-description {
+		@apply text-lg lg:text-xl text-gray-700 leading-relaxed mb-6;
+	}
+
+	.reference-link {
+		@apply text-blue-500 hover:text-blue-700 font-semibold underline transition-colors duration-300 ease-in-out;
+	}
+
+	/* Certificate image container */
+	.certificate-image-container {
+		@apply lg:w-2/3 flex justify-center lg:justify-end;
+	}
+
+	.certificate-image {
+		@apply max-w-full rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out;
+	}
+
+	/* Responsive styles for smaller screens */
+	@media (max-width: 768px) {
+		#certificate-section {
+			@apply h-auto px-4;
+		}
+
+		.certificate-container {
+			@apply flex-col gap-6;
+		}
+
+		.certificate-details {
+			@apply w-full;
+		}
+
+		.certificate-title {
+			@apply text-3xl;
+		}
+
+		.certificate-description {
+			@apply text-xl;
+		}
+
+		.certificate-image-container {
+			@apply w-full;
+		}
+
+		.certificate-image {
+			@apply w-full;
+		}
+	}
+
+	/* Larger screen adjustments */
+	@media (min-width: 1200px) {
+		.certificate-title {
+			@apply text-2xl;
+		}
+
+		.certificate-description {
+			@apply text-lg;
+		}
+
+		.reference-link {
+			@apply text-lg;
+		}
+	}
+}
