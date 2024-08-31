@@ -39,7 +39,7 @@ const About = () => {
     };
 
     return (
-        <section id='about' className='h-full w-full bg-secondary p-4 text-white lg:py-8'>
+        <section id='about' className='h-full w-full bg-secondary p-4 text-white lg:p-8'>
             <div id='about-container' className='container mx-auto flex h-full w-full flex-col gap-4 lg:flex-row'>
 
                 {/* About Section Header and Image */}

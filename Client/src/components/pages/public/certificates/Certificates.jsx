@@ -2,8 +2,8 @@ import './Certificates.css';
 
 function Certificates() {
     return (
-        <section id="certificate-section" className='section-container bg-secondary'>
-            <div className="certificate-container">
+        <section id="certificate-section" className='section-container h-full w-full bg-secondary p-4 lg:p-8'>
+            <div className="certificate-container container">
                 <div className="certificate-details">
                     <a
                         href="https://www.guvi.in/ai-for-india/?utm_source=fntge&utm_medium=referral"

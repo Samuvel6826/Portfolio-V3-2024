@@ -10,7 +10,7 @@ const Education = () => {
     };
 
     return (
-        <section id="education" className="mx-auto bg-primary p-4">
+        <section id="education" className="h-full w-full bg-primary p-4 lg:p-8">
             <div id="education-container" className="container mx-auto flex h-full flex-col justify-evenly">
                 <h1 id="education-page-title" className="mb-3 text-center text-2xl text-tertiary">
                     Education & Qualifications

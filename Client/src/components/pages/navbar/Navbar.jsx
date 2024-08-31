@@ -67,7 +67,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<header id="topBar" className="sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-lg shadow-lg xl:text-2xl">
+		<header id="topBar" className="sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-lg shadow-lg xl:text-xl">
 			<nav id="nav-header" className="container flex items-center justify-between text-letter">
 				<div id="desktopMenu" className="hidden w-full items-center justify-between lg:flex">
 					<a href="#" id="logo" className="font-aldrich text-2xl font-bold transition-transform duration-300 hover:scale-110"
@@ -103,7 +103,7 @@ const Navbar = () => {
 						>
 							<button
 								id="resumeBtn"
-								className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 text-xl font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+								className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
 							>
 								Resume
 								<ChevronDownIcon

@@ -4,8 +4,20 @@
 
 @layer components {
 	/* Default (mobile-first) styles */
-	#dp-pic {
-		@apply w-[64%] rounded-full shadow-lg;
+	#mern-icons {
+		@apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary transition-transform duration-300 cursor-pointer ease-in-out shadow-md;
+
+		/* Adding hover effects */
+		&:hover {
+			@apply transform scale-125 border-secondary bg-secondary text-white shadow-lg;
+			/* Optional: Adding a slight box shadow for emphasis */
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	/* Optional: Adding a pulse effect on hover */
+	#mern-icons:hover::after {
+		@apply content-[''] absolute inset-0 rounded-full border-4 border-opacity-50 border-primary animate-ping;
 	}
 
 	#home-content-btns-container {
@@ -36,7 +48,7 @@
 	/* sm (640px) */
 	@media (min-width: 640px) {
 		#dp-pic {
-			@apply w-[40%];
+			@apply w-[42%];
 		}
 		#home-social-links {
 			@apply h-44;
@@ -51,7 +63,7 @@
 			@apply text-5xl;
 		}
 		#web-dev {
-			@apply text-[2.2rem];
+			@apply text-[2.56rem];
 		}
 		#intro-para {
 			@apply text-xl leading-relaxed;
@@ -64,10 +76,13 @@
 			@apply w-[35%];
 		}
 		#home-social-links {
-			@apply h-44;
+			@apply h-48;
 		}
 		#home-content-scrollBtn {
-			@apply h-80;
+			@apply h-[22rem];
+		}
+		#home-content {
+			@apply gap-4;
 		}
 		#intro-text {
 			@apply text-3xl;
@@ -76,26 +91,29 @@
 			@apply text-5xl;
 		}
 		#web-dev {
-			@apply text-[2.6rem];
+			@apply text-[2.8rem];
 		}
 		#intro-para {
-			@apply text-xl leading-relaxed;
+			@apply text-xl leading-loose;
 		}
 	}
 
 	/* lg (1024px) */
 	@media (min-width: 1024px) {
-		#home-wrapper {
-			@apply gap-6;
+		#home-container {
+			@apply gap-8;
 		}
-		#home-content {
-			@apply gap-5;
+		#home-wrapper {
+			@apply gap-6 h-[80vh] w-full;
 		}
 		#dp-container {
-			@apply w-[40%];
+			@apply h-full w-[40%] flex-col text-primary bg-tertiary rounded-xl p-4;
+		}
+		#home-content {
+			@apply gap-6 w-[60%];
 		}
 		#dp-pic {
-			@apply w-[100%];
+			@apply w-[100%] h-full my-4;
 		}
 		#intro-text {
 			@apply text-3xl;
@@ -104,122 +122,57 @@
 			@apply text-5xl;
 		}
 		#web-dev {
-			@apply text-[2.6rem];
+			@apply text-[2rem];
 		}
 		#intro-para {
-			@apply text-xl leading-relaxed;
+			@apply text-xl leading-loose;
 		}
 	}
 
 	/* xl (1280px) */
 	@media (min-width: 1280px) {
 		#dp-container {
-			@apply w-[40%];
+			@apply w-[40%] h-full flex-col text-primary bg-tertiary rounded-xl p-4;
 		}
 		#dp-pic {
-			@apply w-[100%];
+			@apply w-[100%] h-full my-4;
 		}
-		#home-social-links-landscape {
-			@apply mr-12;
+		#mern-icons-container {
+			@apply text-xl gap-4;
 		}
-		#home-content-scrollBtn-landscape {
-			@apply ml-6;
+		#home-content {
+			@apply w-[60%] h-full;
 		}
 		#intro-text {
 			@apply text-3xl;
 		}
 		#intro-name {
-			@apply text-5xl;
+			@apply text-6xl;
 		}
 		#web-dev {
-			@apply text-[3rem];
+			@apply text-[2.75rem];
 		}
 		#intro-para {
-			@apply text-xl leading-relaxed;
+			@apply text-2xl leading-loose;
 		}
 	}
 
 	/* 2xl (1536px) */
 	@media (min-width: 1536px) {
-		#dp-container {
-			@apply w-[40%];
-		}
-		#dp-pic {
-			@apply w-[100%];
-		}
-		#home-social-links-landscape {
-			@apply mr-12;
-		}
-		#home-content-scrollBtn-landscape {
-			@apply ml-6;
+		#mern-icons-container {
+			@apply text-2xl gap-6;
 		}
 		#intro-text {
-			@apply text-3xl;
+			@apply text-4xl;
 		}
 		#intro-name {
-			@apply text-5xl;
+			@apply text-7xl;
 		}
 		#web-dev {
-			@apply text-[2.6rem];
+			@apply text-[3.4rem];
 		}
 		#intro-para {
-			@apply text-xl leading-relaxed;
-		}
-	}
-
-	/* xl-desktop (1600px) */
-	@media (min-width: 1600px) {
-		#dp-container {
-			@apply w-[40%];
-		}
-		#dp-pic {
-			@apply w-[100%];
-		}
-		#home-social-links-landscape {
-			@apply mr-12;
-		}
-		#home-content-scrollBtn-landscape {
-			@apply ml-6;
-		}
-		#intro-text {
-			@apply text-3xl;
-		}
-		#intro-name {
-			@apply text-5xl;
-		}
-		#web-dev {
-			@apply text-[2.6rem];
-		}
-		#intro-para {
-			@apply text-xl leading-relaxed;
-		}
-	}
-
-	/* 2xl-desktop (1920px) */
-	@media (min-width: 1920px) {
-		#dp-container {
-			@apply w-[40%];
-		}
-		#dp-pic {
-			@apply w-[100%];
-		}
-		#home-social-links-landscape {
-			@apply mr-12;
-		}
-		#home-content-scrollBtn-landscape {
-			@apply ml-6;
-		}
-		#intro-text {
-			@apply text-3xl;
-		}
-		#intro-name {
-			@apply text-5xl;
-		}
-		#web-dev {
-			@apply text-[2.6rem];
-		}
-		#intro-para {
-			@apply text-xl leading-relaxed;
+			@apply text-[1.76rem] leading-loose;
 		}
 	}
 }
