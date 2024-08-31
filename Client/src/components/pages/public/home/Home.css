@@ -48,13 +48,16 @@
 	/* sm (640px) */
 	@media (min-width: 640px) {
 		#dp-pic {
-			@apply w-[42%];
+			@apply w-[43%];
 		}
 		#home-social-links {
 			@apply h-44;
 		}
 		#home-content-scrollBtn {
 			@apply h-80;
+		}
+		#home-content {
+			@apply pt-60;
 		}
 		#intro-text {
 			@apply text-3xl;
@@ -110,7 +113,7 @@
 			@apply h-full w-[40%] flex-col text-primary bg-tertiary rounded-xl p-4;
 		}
 		#home-content {
-			@apply gap-6 w-[60%];
+			@apply gap-6 w-[60%] p-0;
 		}
 		#dp-pic {
 			@apply w-[100%] h-full my-4;

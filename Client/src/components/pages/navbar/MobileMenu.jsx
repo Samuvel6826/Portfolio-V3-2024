@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Drawer, IconButton, Typography } from "@material-tailwind/react";
 import { IoSettings } from "react-icons/io5";
 import { IoMdDownload } from "react-icons/io";
 import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
-import { Link } from "react-scroll"; // Import Link from react-scroll
+import { Link, Events, scrollSpy } from "react-scroll";
 import './Navbar.css';
 
 const MobileMenu = ({
@@ -20,6 +20,23 @@ const MobileMenu = ({
         setActiveMenu(menu);
         setOpenRight(false); // Close the drawer after clicking
     };
+
+    useEffect(() => {
+        Events.scrollEvent.register('end', (to) => setActiveMenu(to));
+        scrollSpy.update();
+
+        return () => {
+            Events.scrollEvent.remove('end');
+        };
+    }, []);
+
+    const menuItems = [
+        { id: 'home', icon: 'uil uil-estate', label: 'Home', offset: -68 },
+        { id: 'about', icon: 'uil uil-user', label: 'About', offset: -63 },
+        { id: 'skills', icon: 'uil uil-file-alt', label: 'Skills', offset: -63 },
+        { id: 'projects', icon: 'uil uil-briefcase-alt', label: 'Projects', offset: -63 },
+        { id: 'contact', icon: 'uil uil-message', label: 'Contact', offset: -63 },
+    ];
 
     return (
         <Drawer
@@ -56,105 +73,56 @@ const MobileMenu = ({
             </div>
 
             <div className="mb-8 h-full pr-4">
-                <div id="mobileMenu-list" className="flex h-full flex-col">
-                    <div className="mobileMenu flex h-full flex-col" id="mob-lists">
-                        {!isLoginPage && (
-                            <>
-                                <Link
-                                    to="home"
-                                    spy={true}
-                                    smooth={true}
-                                    offset={-68}
-                                    duration={200}
-                                    className={`mobileMenuListItem ${activeMenu === 'home' ? 'active' : ''}`}
-                                    onClick={() => handleMenuClick('home')}
-                                >
-                                    <i className="uil uil-estate"></i>
-                                    <span>Home</span>
-                                </Link>
-                                <Link
-                                    to="about"
-                                    spy={true}
-                                    smooth={true}
-                                    offset={-63}
-                                    duration={200}
-                                    className={`mobileMenuListItem ${activeMenu === 'about' ? 'active' : ''}`}
-                                    onClick={() => handleMenuClick('about')}
-                                >
-                                    <i className="uil uil-user"></i>
-                                    <span>About</span>
-                                </Link>
-                                <Link
-                                    to="skills"
-                                    spy={true}
-                                    smooth={true}
-                                    offset={-63}
-                                    duration={200}
-                                    className={`mobileMenuListItem ${activeMenu === 'skills' ? 'active' : ''}`}
-                                    onClick={() => handleMenuClick('skills')}
-                                >
-                                    <i className="uil uil-file-alt"></i>
-                                    <span>Skills</span>
-                                </Link>
-                                <Link
-                                    to="projects"
-                                    spy={true}
-                                    smooth={true}
-                                    offset={-63}
-                                    duration={200}
-                                    className={`mobileMenuListItem ${activeMenu === 'projects' ? 'active' : ''}`}
-                                    onClick={() => handleMenuClick('projects')}
-                                >
-                                    <i className="uil uil-briefcase-alt"></i>
-                                    <span>Projects</span>
-                                </Link>
-                                <Link
-                                    to="contact"
-                                    spy={true}
-                                    smooth={true}
-                                    offset={-63}
-                                    duration={200}
-                                    className={`mobileMenuListItem ${activeMenu === 'contact' ? 'active' : ''}`}
-                                    onClick={() => handleMenuClick('contact')}
-                                >
-                                    <i className="uil uil-message"></i>
-                                    <span>Contact</span>
-                                </Link>
-                            </>
-                        )}
+                <div className="mobileMenu flex h-full flex-col">
+                    {!isLoginPage && (
+                        menuItems.map(({ id, icon, label, offset }) => (
+                            <Link
+                                key={id}
+                                to={id}
+                                spy={true}
+                                smooth={true}
+                                offset={offset}
+                                duration={200}
+                                className={`mobileMenuListItem ${activeMenu === id ? 'active' : ''}`}
+                                onClick={() => handleMenuClick(id)}
+                            >
+                                <i className={icon}></i>
+                                <span>{label}</span>
+                            </Link>
+                        ))
+                    )}
 
+                    <a
+                        href={ResumePdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mobileMenuListItem"
+                    >
+                        <IoMdDownload className="ico" />
+                        <span>Resume</span>
+                    </a>
+
+                    {user ? (
+                        <button
+                            onClick={() => {
+                                handleLogout();
+                                setOpenRight(false);
+                            }}
+                            className="mobileMenuListItem"
+                            aria-label="Log Out"
+                        >
+                            <i className="uil uil-sign-out-alt ico"></i>
+                            <span>Log Out</span>
+                        </button>
+                    ) : (
                         <a
-                            href={ResumePdf}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/login"
                             className="mobileMenuListItem"
                         >
-                            <IoMdDownload id="ico" />
-                            <span>Resume</span>
+                            <IoSettings className="ico" />
+                            <span>Admin Panel</span>
                         </a>
-
-                        {user ? (
-                            <button
-                                onClick={() => {
-                                    handleLogout();
-                                    setOpenRight(false);
-                                }}
-                                className="mobileMenuListItem"
-                                aria-label="Log Out"
-                            >
-                                <i id="ico" className="uil uil-sign-out-alt"></i>
-                                <span>Log Out</span>
-                            </button>
-                        ) : (
-                            <a
-                                href="/login"
-                                className="mobileMenuListItem"
-                            >
-                                <IoSettings id="ico" />
-                                <span>Admin Panel</span>
-                            </a>
-                        )}
-                    </div>
+                    )}
                 </div>
             </div>
         </Drawer>

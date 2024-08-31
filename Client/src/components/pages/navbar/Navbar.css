@@ -53,7 +53,7 @@
 
 /* Mobile Menu Icon Styles */
 .mobileMenuListItem i,
-.mobileMenuListItem #ico {
+.mobileMenuListItem .ico {
 	color: #66b2ff; /* Icon color */
 	font-size: 1.8rem; /* Adjusted icon size for better visibility */
 	margin-right: 1rem; /* Space between icon and text */

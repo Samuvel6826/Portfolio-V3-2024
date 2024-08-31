@@ -10,64 +10,53 @@ import './Navbar.css';
 
 const Navbar = () => {
 	const [openMenu, setOpenMenu] = useState(false);
-	const [timeoutId, setTimeoutId] = useState(null); // For storing the timeout ID
-	const [openMobileMenu, setOpenMobileMenu] = useState(false); // State for mobile menu
+	const [timeoutId, setTimeoutId] = useState(null); // For managing timeout
+	const [openMobileMenu, setOpenMobileMenu] = useState(false);
+	const [activeMenu, setActiveMenu] = useState('home');
 	const { logOut, user } = useUserAuth();
 	const navigate = useNavigate();
 	const location = useLocation();
-	const [activeMenu, setActiveMenu] = useState(null);
+
+	const isLoginPage = location.pathname === "/login";
 
 	const handleLogout = async () => {
 		try {
 			await logOut();
 			navigate("/login");
 		} catch (error) {
-			console.error(error.message);
+			console.error("Logout error:", error);
 		}
 	};
 
-	const isLoginPage = location.pathname === "/login";
-
-	const handleMenuClick = (menu) => {
-		setActiveMenu(menu);
+	const handleDownloadClick = async (fileUrl) => {
+		try {
+			const response = await fetch(fileUrl);
+			const blob = await response.blob();
+			const link = document.createElement('a');
+			link.href = window.URL.createObjectURL(blob);
+			link.download = fileUrl.split('/').pop();
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		} catch (error) {
+			console.error("Download error:", error);
+		}
 	};
 
-	const handleDownloadClick = (fileUrl) => {
-		fetch(fileUrl)
-			.then(response => response.blob())
-			.then(blob => {
-				const link = document.createElement('a');
-				link.href = window.URL.createObjectURL(blob);
-				link.download = fileUrl.split('/').pop();
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
-			})
-			.catch(error => console.error('Download error:', error));
-	};
-
-	// Handler for mouse enter event
 	const handleMouseEnter = () => {
-		if (timeoutId) {
-			clearTimeout(timeoutId); // Clear any existing timeout
-		}
+		clearTimeout(timeoutId);
 		setOpenMenu(true);
 	};
 
-	// Handler for mouse leave event
 	const handleMouseLeave = () => {
-		const id = setTimeout(() => {
-			setOpenMenu(false);
-		}, 200); // Adjust delay as needed (200ms here)
+		const id = setTimeout(() => setOpenMenu(false), 200);
 		setTimeoutId(id);
 	};
 
-	const toggleMobileMenu = () => {
-		setOpenMobileMenu(!openMobileMenu);
-	};
+	const toggleMobileMenu = () => setOpenMobileMenu(prev => !prev);
 
 	return (
-		<header id="topBar" className="sticky left-0 top-0 z-[20] flex h-16 w-full items-center justify-center bg-tertiary px-4 text-lg shadow-lg xl:text-xl">
+		<header id="topBar" className="sticky top-0 z-20 flex h-16 w-full items-center justify-center bg-tertiary px-4 text-lg shadow-lg xl:text-xl">
 			<nav id="nav-header" className="container flex items-center justify-between text-letter">
 				<div id="desktopMenu" className="hidden w-full items-center justify-between lg:flex">
 					<a href="#" id="logo" className="font-aldrich text-2xl font-bold transition-transform duration-300 hover:scale-110"
@@ -77,23 +66,23 @@ const Navbar = () => {
 
 					{!isLoginPage && (
 						<div className="desktopMenu flex gap-6">
-							<Link to="home" spy={true} smooth={true} offset={-68} duration={200} className={`desktopMenuListItem ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => handleMenuClick('home')}>
-								Home
-							</Link>
-							<Link to="about" spy={true} smooth={true} offset={-63} duration={200} className={`desktopMenuListItem ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
-								About
-							</Link>
-							<Link to="skills" spy={true} smooth={true} offset={-63} duration={200} className={`desktopMenuListItem ${activeMenu === 'skills' ? 'active' : ''}`} onClick={() => handleMenuClick('skills')}>
-								Skills
-							</Link>
-							<Link to="projects" spy={true} smooth={true} offset={-63} duration={200} className={`desktopMenuListItem ${activeMenu === 'projects' ? 'active' : ''}`} onClick={() => handleMenuClick('projects')}>
-								Projects
-							</Link>
-							<Link to="contact" spy={true} smooth={true} offset={-63} duration={200} className={`desktopMenuListItem ${activeMenu === 'contact' ? 'active' : ''}`} onClick={() => handleMenuClick('contact')}>
-								Contact
-							</Link>
+							{['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
+								<Link
+									key={section}
+									to={section}
+									spy={true}
+									smooth={true}
+									offset={-63}
+									duration={200}
+									className={`desktopMenuListItem ${activeMenu === section ? 'active' : ''}`}
+									onSetActive={() => setActiveMenu(section)}
+								>
+									{section.charAt(0).toUpperCase() + section.slice(1)}
+								</Link>
+							))}
 						</div>
 					)}
+
 					<div className="flex gap-6">
 						<div
 							id="resumeContainer"
@@ -103,7 +92,7 @@ const Navbar = () => {
 						>
 							<button
 								id="resumeBtn"
-								className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+								className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-letter focus:outline-none focus:ring-2 focus:ring-primary"
 							>
 								Resume
 								<ChevronDownIcon
@@ -113,23 +102,23 @@ const Navbar = () => {
 							</button>
 							{openMenu && (
 								<div className="absolute right-0 mt-2 w-96 flex-col gap-2 bg-tertiary text-2xl shadow-lg">
-									<CustomMenuList
-										handleDownloadClick={handleDownloadClick}
-									/>
+									<CustomMenuList handleDownloadClick={handleDownloadClick} />
 								</div>
 							)}
 						</div>
 
 						{user ? (
-							<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white" onClick={handleLogout} aria-label="Log Out">
+							<button
+								className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-letter"
+								onClick={handleLogout}
+								aria-label="Log Out"
+							>
 								Log Out
 							</button>
 						) : (
-							<button className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-white">
-								<a href="/login" className="flex items-center">
-									Admin Panel <IoSettings className="ml-2" />
-								</a>
-							</button>
+							<a href="/login" className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-letter">
+								Admin Panel <IoSettings className="ml-2" />
+							</a>
 						)}
 					</div>
 				</div>
@@ -147,16 +136,15 @@ const Navbar = () => {
 						>
 							<i className="uil uil-apps text-xl"></i>
 						</button>
-						<MobileMenu
-							openRight={openMobileMenu}
-							setOpenRight={setOpenMobileMenu}
-							isLoginPage={isLoginPage}
-							handleLogout={handleLogout}
-							user={user}
-						/>
 					</div>
+					<MobileMenu
+						openRight={openMobileMenu}
+						setOpenRight={setOpenMobileMenu}
+						isLoginPage={isLoginPage}
+						handleLogout={handleLogout}
+						user={user}
+					/>
 				</div>
-
 			</nav>
 		</header>
 	);

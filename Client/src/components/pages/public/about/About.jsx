@@ -9,13 +9,13 @@ const About = () => {
     const [openMenu, setOpenMenu] = useState(false);
     let timeoutId = null;
 
-    // Handler for mouse enter event
+    // Handler for mouse enter event: Shows the dropdown menu
     const handleMouseEnter = () => {
         clearTimeout(timeoutId);
         setOpenMenu(true);
     };
 
-    // Handler for mouse leave event
+    // Handler for mouse leave event: Hides the dropdown menu after a delay
     const handleMouseLeave = () => {
         timeoutId = setTimeout(() => {
             setOpenMenu(false);
@@ -25,62 +25,78 @@ const About = () => {
     // Handler for downloading a file
     const handleDownloadClick = async (fileUrl) => {
         try {
+            // Fetch the file from the URL
             const response = await fetch(fileUrl);
             const blob = await response.blob();
             const link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
-            link.download = fileUrl.split('/').pop();
+            link.download = fileUrl.split('/').pop(); // Extract file name
             document.body.appendChild(link);
-            link.click();
+            link.click(); // Trigger the download
             document.body.removeChild(link);
         } catch (error) {
-            console.error('Download error:', error);
+            console.error('Download error:', error); // Log any errors
         }
     };
 
     return (
-        <section id='about' className='h-full w-full bg-secondary p-4 text-white lg:p-8'>
-            <div id='about-container' className='container mx-auto flex h-full w-full flex-col gap-4 lg:flex-row'>
-
+        <section id='about' className='h-full w-full'>
+            <div id='about-container' className='flex h-full w-full flex-col justify-between gap-4 bg-secondary p-4 text-letter lg:flex-row lg:p-10'>
                 {/* About Section Header and Image */}
                 <div id="section-1" className="flex flex-col items-center justify-between gap-4">
-                    <header id='about-header' className='text-center'>
-                        <h1 id='about-page-title' className='text-3xl font-bold text-primary'>About Me</h1>
-                        <p id='about-page-desc' className='text-xl text-gray-300'>My Introduction</p>
+                    <header id='about-header' className='text-center text-primary'>
+                        <h1 id='about-page-title' className='text-3xl font-bold'>About Me</h1>
+                        <p id='about-page-desc' className='text-xl'>My Introduction</p>
                     </header>
 
-                    <img
-                        id='about-img'
-                        className='h-auto w-[75%] rounded-2xl object-cover shadow-lg'
-                        src={aboutImg}
-                        alt="About Me"
-                    />
+                    <div id="about-img-container" className="flex flex-col gap-4">
+                        <img
+                            id='about-img'
+                            className='h-auto w-full rounded-2xl object-cover shadow-lg'
+                            src={aboutImg}
+                            alt="About Me"
+                        />
 
-                    {/* Experience Boxes */}
-                    <div id='about-box-container' className='grid w-full grid-cols-3 gap-4'>
-                        {[...Array(3)].map((_, index) => (
-                            <div key={index} id="s-box" className='flex flex-col items-center rounded-lg bg-tertiary p-4 text-center shadow-md'>
-                                <FaAward className='mb-2 text-3xl text-primary' />
-                                <h4 className='mb-1 text-lg font-semibold'>Experience</h4>
-                                <p className='text-md'>2 years</p>
-                            </div>
-                        ))}
+                        {/* Experience Boxes */}
+                        <div id='about-profile-box-container' className='hidden w-full grid-cols-3 gap-4 sm:grid xl:hidden'>
+                            {[...Array(3)].map((_, index) => (
+                                <div key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md'>
+                                    <FaAward className='text-3xl text-primary' />
+                                    <h4 className='font-semibold'>Experience</h4>
+                                    <p>2 years</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 {/* About Section Content */}
                 <div id="section-2" className="flex flex-col items-center justify-between gap-4">
-                    <p id='about-para' className='text-justify text-xl leading-relaxed'>
-                        I'm a beginner MERN Stack Web Developer skilled in both frontend and backend. I create responsive user interfaces with React and use frameworks like Bootstrap and Tailwind CSS for design. On the backend, I work with Node.js, Express.js, and MongoDB to manage server-side applications. I also have experience with Git and GitHub for version control and collaboration. Additionally, I use AI tools like ChatGPT and Gemini to improve my development workflow.
-                        <br /><br />
-                        Beyond the MERN stack, I'm passionate about exploring new technologies. During my College studies, I built an IoT project with a MERN-based interface and a ML project for face recognition using Flask. I'm dedicated to expanding my skills through diverse projects and staying current with the latest tech trends.
-                        <br /><br />
-                        Please find below the list of skills I possess.
+                    {/* Experience Boxes */}
+                    <div id='about-profile-box-container' className='grid w-full grid-cols-3 gap-4 sm:hidden xl:grid'>
+                        {[...Array(3)].map((_, index) => (
+                            <div key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md'>
+                                <FaAward className='text-3xl text-primary' />
+                                <h4 className='font-semibold'>Experience</h4>
+                                <p>2 years</p>
+                            </div>
+                        ))}
+                    </div>
+                    <p id='about-para' className='flex flex-col gap-4 text-justify text-xl leading-[2.15rem]'>
+                        <span>
+                            I&apos;m a beginner-level MERN Stack Web Developer with skills in both frontend and backend development. I create responsive user interfaces and have experience with Git and GitHub for version control and collaboration. Additionally, I use AI tools like ChatGPT and others to enhance my development workflow.
+                        </span>
+                        <span>
+                            Beyond the MERN stack, I am passionate about exploring new technologies. During my college studies, I built an IoT project with a MERN-based user interface and a machine learning project for face recognition using Python-Flask. I am dedicated to expanding my skills through diverse projects and staying current with the latest tech trends.
+                        </span>
+                        <span>
+                            Below is a list of the skills I possess.
+                        </span>
                     </p>
 
                     {/* Download Resume Button with Dropdown Menu */}
                     <div id="about-resume-container"
-                        className="relative flex w-full items-center justify-center"
+                        className="relative flex w-full items-center justify-center text-xl"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
