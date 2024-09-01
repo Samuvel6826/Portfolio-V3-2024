@@ -18,7 +18,7 @@ const Education = () => {
                     <p id='education-page-desc' className='text-xl'>My Qualifications</p>
                 </header>
 
-                <div id="education-wrapper" className="flex h-[90%] justify-center rounded-2xl border-2 border-secondary">
+                <div id="education-wrapper" className="flex h-[90%] justify-center rounded-2xl border-2 border-secondary p-2">
                     <Steps
                         className="h-full w-full p-2"
                         onChange={onChange}
@@ -26,9 +26,9 @@ const Education = () => {
                         size="default"
                         direction="vertical"
                         items={educationData.map((item) => ({
-                            title: <span id="step-title">{item.title}</span>,
+                            title: <span id="step-title" className='text-2xl font-extrabold text-secondary'>{item.title}</span>,
                             description: (
-                                <ul id="step-description">
+                                <ul id="step-description" className='list-disc pl-5 text-lg font-bold'>
                                     {item.details.map((detail, index) => (
                                         <li key={index}>
                                             {detail.link ? (

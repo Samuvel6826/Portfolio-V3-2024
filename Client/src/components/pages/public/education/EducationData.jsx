@@ -35,7 +35,7 @@ export const educationData = [
         ],
     },
     {
-        title: "UG: 2023 – 2026 (Ongoing)",
+        title: "UG: 2023 – 26 (Ongoing)",
         details: [
             {
                 text: "University: Manonmaniam Sundaranar University, Tirunelveli",
