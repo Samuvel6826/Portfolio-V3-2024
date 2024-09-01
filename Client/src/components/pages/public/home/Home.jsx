@@ -23,8 +23,8 @@ const SocialLink = ({ href, label, icon }) => (
 // Home component to render the home section of the webpage
 const Home = () => {
     return (
-        <section id="home" className="h-full w-full">
-            <div id="home-container" className="flex h-full w-full items-center justify-between bg-primary p-4 text-tertiary lg:p-10">
+        <section id="home" className="h-full w-full bg-primary p-4 text-tertiary lg:p-10">
+            <div id="home-container" className="flex h-full w-full items-center justify-between">
 
                 {/* Social Links (Landscape) */}
                 <div id='home-social-links-landscape' className='hidden h-96 w-5 flex-col items-center justify-between lg:flex'>

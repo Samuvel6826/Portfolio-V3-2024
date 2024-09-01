@@ -26,9 +26,12 @@ export const educationData = [
         title: "Web Development: 2023",
         details: [
             {
-                text: "Full Stack (MERN) Web Development Program in GUVI-Chennai on March 2023 - July 2023",
+                text: " Institute: GUVI an IIT-M & IIM-A incubated Ed-tech Company, Chennai",
                 link: "https://www.guvi.in/share-certificate/E15ri2qD52L30070n4",
             },
+            { text: "Mode: Online" },
+            { text: "Course: Full Stack (MERN) Web Development" },
+            { text: "Completion Year: March 2023 - July 2023" },
         ],
     },
     {

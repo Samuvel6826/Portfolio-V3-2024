@@ -6,9 +6,6 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-	#education-page-title {
-		@apply text-2xl font-bold mb-4 text-tertiary;
-	}
 
 	#step-title {
 		@apply text-xl font-extrabold text-secondary;

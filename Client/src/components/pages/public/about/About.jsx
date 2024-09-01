@@ -40,8 +40,8 @@ const About = () => {
     };
 
     return (
-        <section id='about' className='h-full w-full'>
-            <div id='about-container' className='flex h-full w-full flex-col justify-between gap-4 bg-secondary p-4 text-letter lg:flex-row lg:p-10'>
+        <section id='about' className='h-full w-full bg-secondary p-4 text-letter lg:p-10'>
+            <div id='about-container' className='flex h-full w-full flex-col justify-between gap-4 lg:flex-row '>
                 {/* About Section Header and Image */}
                 <div id="section-1" className="flex flex-col items-center justify-between gap-4">
                     <header id='about-header' className='text-center text-primary'>

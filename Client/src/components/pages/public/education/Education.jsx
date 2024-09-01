@@ -10,11 +10,13 @@ const Education = () => {
     };
 
     return (
-        <section id="education" className="h-full w-full bg-primary p-4 lg:p-8">
-            <div id="education-container" className="container mx-auto flex h-full flex-col justify-evenly">
-                <h1 id="education-page-title" className="mb-3 text-center text-2xl text-tertiary">
-                    Education & Qualifications
-                </h1>
+        <section id="education" className="h-full w-full bg-primary p-4 lg:p-10">
+            <div id="education-container" className="flex h-full w-full flex-col justify-between gap-4">
+
+                <header id='education-header' className='text-center text-tertiary'>
+                    <h1 id='education-page-title' className='text-3xl font-bold'>Education</h1>
+                    <p id='education-page-desc' className='text-xl'>My Qualifications</p>
+                </header>
 
                 <div id="education-wrapper" className="flex h-[90%] justify-center rounded-2xl border-2 border-secondary">
                     <Steps
