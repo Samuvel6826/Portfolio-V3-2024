@@ -49,8 +49,8 @@ const Contact = () => {
             });
     };
 
-    return <section id='contact' className='h-full w-full bg-primary p-4 lg:p-8'>
-        <div id="contact-container" className="container mx-auto flex h-full flex-col items-center gap-3">
+    return <section id='contact' className='h-full w-full bg-primary p-4 lg:p-10'>
+        <div id="contact-container" className="flex h-full flex-col justify-between gap-4">
             <header id='contact-header' className='text-center text-secondary'>
                 <h1 id="contact-page-title" className='text-3xl font-bold'>Contact Me</h1>
                 <p id="contact-page-desc" className='text-xl'>Please fill out the form below to discuss any work opportunities.</p>

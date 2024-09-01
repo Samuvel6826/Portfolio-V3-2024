@@ -56,17 +56,17 @@ const Navbar = () => {
 	const toggleMobileMenu = () => setOpenMobileMenu(prev => !prev);
 
 	return (
-		<header id="topBar" className="sticky top-0 z-20 flex h-16 w-full items-center justify-center bg-tertiary px-4 text-lg shadow-lg xl:text-xl">
-			<nav id="nav-header" className="container flex items-center justify-between text-letter">
+		<header id="topBar" className="sticky top-0 z-20 flex h-16 w-full bg-tertiary px-4 text-base text-letter shadow-lg lg:px-10 xl:text-xl">
+			<nav id="nav-header" className="flex h-full w-full items-center justify-between">
 				<div id="desktopMenu" className="hidden w-full items-center justify-between lg:flex">
-					<a href="#" id="logo" className="font-aldrich text-2xl font-bold transition-transform duration-300 hover:scale-110"
-						style={{ fontSize: "1.8rem", background: "linear-gradient(90deg, #00c6ff, #0072ff)", WebkitBackgroundClip: "text", color: "transparent", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}>
+					<a href="#" id="logo" className="font-aldrich text-[1.6rem] font-bold transition-transform duration-300 hover:scale-110 xl:text-4xl"
+						style={{ background: "linear-gradient(90deg, #00c6ff, #0072ff)", WebkitBackgroundClip: "text", color: "transparent", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}>
 						Samtocode24
 					</a>
 
 					{!isLoginPage && (
-						<div className="desktopMenu flex gap-6">
-							{['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
+						<div className="flex gap-3 xl:gap-6">
+							{['home', 'about', 'education', 'skills', 'projects', 'contact'].map((section) => (
 								<Link
 									key={section}
 									to={section}
@@ -83,7 +83,7 @@ const Navbar = () => {
 						</div>
 					)}
 
-					<div className="flex gap-6">
+					<div className="flex gap-4">
 						<div
 							id="resumeContainer"
 							className="relative"

@@ -43,10 +43,6 @@
 		#contact-page-title {
 			@apply text-4xl;
 		}
-
-		#contact-page-desc {
-			@apply text-base;
-		}
 	}
 
 	/* Media query for screens 768px and up: md */

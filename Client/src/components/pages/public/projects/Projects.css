@@ -6,16 +6,6 @@
 @layer components {
 	/* Styles for all screen sizes */
 
-	/* Project Page Title */
-	#projects-page-title {
-		@apply text-4xl font-bold;
-	}
-
-	/* Project Page Description */
-	#projects-page-desc {
-		@apply text-xl mt-2;
-	}
-
 	/* Pagination Buttons */
 	#pagination-btns {
 		@apply w-[4.5rem] flex items-center justify-center gap-2 rounded-full text-tertiary bg-primary hover:bg-blue-800 transition-all duration-300;
@@ -64,10 +54,6 @@
 			@apply text-2xl; /* Smaller title for small screens */
 		}
 
-		#projects-page-desc {
-			@apply text-lg; /* Smaller description for small screens */
-		}
-
 		#pagination-btns {
 			@apply w-[3rem] text-sm; /* Smaller pagination buttons */
 		}
@@ -84,13 +70,8 @@
 	/* Medium screens (640px and up) */
 	@media (min-width: 640px) {
 		#projects-page-title {
-			@apply text-3xl; /* Medium screens title size */
+			@apply text-4xl; /* Medium screens title size */
 		}
-
-		#projects-page-desc {
-			@apply text-xl; /* Medium screens description size */
-		}
-
 		#pagination-btns {
 			@apply w-[4rem]; /* Slightly smaller pagination buttons */
 		}
@@ -98,14 +79,6 @@
 
 	/* Large screens (768px and up) */
 	@media (min-width: 768px) {
-		#projects-page-title {
-			@apply text-4xl; /* Larger title for large screens */
-		}
-
-		#projects-page-desc {
-			@apply text-xl; /* Same description size for large screens */
-		}
-
 		#pagination-btns {
 			@apply w-[4.5rem]; /* Standard pagination button size */
 		}
@@ -117,14 +90,6 @@
 
 	/* Extra Large screens (1024px and up) */
 	@media (min-width: 1024px) {
-		#projects-page-title {
-			@apply text-5xl; /* Larger title for extra large screens */
-		}
-
-		#projects-page-desc {
-			@apply text-2xl; /* Larger description for extra large screens */
-		}
-
 		#pagination-btns {
 			@apply w-[5rem]; /* Larger pagination buttons */
 		}

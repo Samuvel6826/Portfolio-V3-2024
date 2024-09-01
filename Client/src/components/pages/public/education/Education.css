@@ -12,9 +12,6 @@
 		#education-page-title {
 			@apply text-4xl;
 		}
-		#education-page-desc {
-			@apply text-2xl;
-		}
 	}
 
 	/* Media query for screens 768px and up: md */

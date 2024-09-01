@@ -33,6 +33,7 @@ const MobileMenu = ({
     const menuItems = [
         { id: 'home', icon: 'uil uil-estate', label: 'Home', offset: -68 },
         { id: 'about', icon: 'uil uil-user', label: 'About', offset: -63 },
+        { id: 'education', icon: 'uil uil-user', label: 'Education', offset: -63 },
         { id: 'skills', icon: 'uil uil-file-alt', label: 'Skills', offset: -63 },
         { id: 'projects', icon: 'uil uil-briefcase-alt', label: 'Projects', offset: -63 },
         { id: 'contact', icon: 'uil uil-message', label: 'Contact', offset: -63 },

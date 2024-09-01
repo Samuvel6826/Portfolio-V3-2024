@@ -61,26 +61,26 @@ const Skills = () => {
 
                 <div id="skills-wrapper" className="rounded-2xl bg-background-light p-4 text-center shadow-md">
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Frontend Skills</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Frontend Skills</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.frontend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Backend Skills</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Backend Skills</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.backend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Cloud Services & Deployment Tool</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Cloud Services & Deployment Tools</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.cloudDeployment.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
-                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Other Tools</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
+                        <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Other Tools</h4>
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.other.map(renderSkillBox)}
                         </div>
                     </div>

@@ -27,7 +27,7 @@ const Home = () => {
             <div id="home-container" className="flex h-full w-full items-center justify-between">
 
                 {/* Social Links (Landscape) */}
-                <div id='home-social-links-landscape' className='hidden h-96 w-5 flex-col items-center justify-between lg:flex'>
+                <div id='home-social-links-landscape' className='hidden h-80 w-5 flex-col items-center justify-between lg:flex'>
                     <SocialLink href="https://www.instagram.com/mr_fun_factory_24/" label="Instagram Profile" icon={<FaInstagram />} />
                     <SocialLink href="https://www.linkedin.com/in/samuvelantony/" label="LinkedIn Profile" icon={<FaLinkedin />} />
                     <SocialLink href="https://github.com/Samuvel6826" label="Github Profile" icon={<FaGithub />} />
@@ -101,7 +101,7 @@ const Home = () => {
                         </p>
 
                         {/* Buttons for Projects and Hire Me */}
-                        <div id='home-content-btns-container' className="flex items-center justify-between gap-4 text-lg">
+                        <div id='home-content-btns-container' className="flex items-center justify-between gap-4 text-lg font-semibold">
                             <Link to="projects" id='home-content-btns' spy={true} smooth={true} offset={-63} duration={300}>
                                 <lord-icon
                                     src="https://cdn.lordicon.com/qmsejndz.json"
@@ -129,7 +129,7 @@ const Home = () => {
                 </main>
 
                 {/* Scroll Button (Landscape) */}
-                <div id='home-content-scrollBtn-landscape' className='hidden h-96 w-5 cursor-pointer text-xl lg:flex'>
+                <div id='home-content-scrollBtn-landscape' className='hidden h-80 w-5 cursor-pointer text-xl lg:flex'>
                     <Link to="about" spy={true} smooth={true} offset={-63} duration={200} className="flex h-full w-full flex-col items-center justify-between">
                         <lottie-player src="https://lottie.host/17ea85ea-f50f-46e7-9cdf-fa48642adf34/eRQlAqMDbf.json" background="transparent" speed="1" style={{ width: "60px", height: "50px" }} loop autoplay></lottie-player>
                         <div className='m-0 flex -rotate-90 flex-row gap-2'>

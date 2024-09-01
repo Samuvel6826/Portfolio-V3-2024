@@ -135,7 +135,7 @@
 	/* xl (1280px) */
 	@media (min-width: 1280px) {
 		#dp-container {
-			@apply w-[40%] h-full flex-col text-primary bg-tertiary rounded-xl p-4;
+			@apply w-[40%] h-full flex-col text-primary bg-tertiary rounded-xl px-8 py-6;
 		}
 		#dp-pic {
 			@apply w-[100%] h-full my-4;

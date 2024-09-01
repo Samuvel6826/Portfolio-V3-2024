@@ -28,9 +28,6 @@
 		#certificate-page-title {
 			@apply text-4xl;
 		}
-		#certificate-page-desc {
-			@apply text-2xl;
-		}
 	}
 
 	@media (min-width: 1024px) {

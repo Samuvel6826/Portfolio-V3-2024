@@ -12,9 +12,6 @@
 		#about-page-title {
 			@apply text-4xl;
 		}
-		#about-page-desc {
-			@apply text-2xl;
-		}
 		#about-img-container {
 			@apply flex-row;
 		}
