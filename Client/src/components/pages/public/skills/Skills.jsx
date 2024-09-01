@@ -1,4 +1,3 @@
-import React from 'react';
 import './Skills.css';
 import imageUrls from './imageUrls';
 
@@ -37,7 +36,7 @@ const Skills = () => {
     };
 
     const renderSkillBox = (skill) => (
-        <div key={skill.name} className="skills-box">
+        <div key={skill.name} className="skills-box text-lg font-semibold">
             <a href={skill.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-center">
                 <div className="skill-image-wrapper">
                     <img
@@ -52,34 +51,36 @@ const Skills = () => {
     );
 
     return (
-        <section id="skills" className="bg-primary p-6 md:p-8 lg:p-12">
-            <div className="container mx-auto flex flex-col gap-6">
-                <header className="text-center text-secondary">
-                    <h1 id="skills-page-title" className="text-3xl font-bold md:text-4xl lg:text-5xl">Skills</h1>
-                    <p id="skills-page-desc" className="text-md md:text-lg lg:text-xl">My Expertise</p>
+        <section id="skills" className="h-full w-full bg-primary p-4 lg:p-10">
+            <div className="flex h-full w-full flex-col justify-between gap-4">
+
+                <header id='skills-header' className="text-center text-secondary">
+                    <h1 id="skills-page-title" className="text-3xl font-bold">Skills</h1>
+                    <p id="skills-page-desc" className="text-xl">My Expertise</p>
                 </header>
-                <div id="skills-wrapper" className="rounded-2xl bg-background-light p-6 text-center shadow-md">
+
+                <div id="skills-wrapper" className="rounded-2xl bg-background-light p-4 text-center shadow-md">
                     <div className="mb-8">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Frontend Skills</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
                             {skills.frontend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Backend Skills</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
                             {skills.backend.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Cloud Services & Deployment Tool</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
                             {skills.cloudDeployment.map(renderSkillBox)}
                         </div>
                     </div>
                     <div className="mb-8">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary md:text-3xl">Other Tools</h4>
-                        <div id="skills-list" className="flex flex-wrap justify-center gap-6">
+                        <div id="skills-list" className="flex flex-wrap justify-center gap-4">
                             {skills.other.map(renderSkillBox)}
                         </div>
                     </div>

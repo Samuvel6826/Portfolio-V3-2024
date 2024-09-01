@@ -5,14 +5,6 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-	#skills-page-title {
-		@apply text-2xl font-bold;
-	}
-
-	#skills-page-desc {
-		@apply text-sm;
-	}
-
 	#skills-list {
 		@apply flex flex-wrap gap-4 justify-center;
 	}
@@ -44,7 +36,7 @@
 	}
 
 	.skill-level {
-		@apply text-xs text-gray-700;
+		@apply text-gray-700;
 		@apply transition-colors duration-700 ease-in-out;
 	}
 
@@ -55,7 +47,7 @@
 		}
 
 		#skills-page-desc {
-			@apply text-base;
+			@apply text-2xl;
 		}
 
 		#skills-wrapper {
@@ -65,42 +57,17 @@
 		.skills-box {
 			@apply p-5;
 		}
-
-		.skill-level {
-			@apply text-sm;
-		}
 	}
 
 	@media screen and (min-width: 768px) {
 		#skills {
 			@apply px-12;
 		}
-
-		.skill-level {
-			@apply text-base;
-		}
 	}
 
 	@media screen and (min-width: 1024px) {
 		#skills-wrapper {
 			@apply p-8;
-		}
-	}
-
-	/* Mobile-specific styles */
-	@media screen and (max-width: 639px) {
-		.skills-box {
-			@apply p-3; /* Reduce padding */
-			width: calc(50% - 0.5rem); /* Two boxes per row */
-		}
-
-		.skill-image {
-			width: 5.5rem; /* Reduce width */
-			height: 3rem; /* Reduce height */
-		}
-
-		.skill-level {
-			@apply text-xs; /* Smaller text */
 		}
 	}
 }
