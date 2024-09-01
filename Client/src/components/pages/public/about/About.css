@@ -41,12 +41,6 @@
 
 	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
-		#about-page-title {
-			@apply text-5xl;
-		}
-		#about-page-desc {
-			@apply text-xl;
-		}
 		#section-1 {
 			@apply w-[40%];
 		}

@@ -4,51 +4,49 @@
 
 @layer components {
 	/* Container for the entire section */
-	#certificate-section {
-		@apply h-full w-full p-4 text-white lg:py-12;
+	#img-card {
+		@apply bg-primary rounded-lg shadow-2xl;
 	}
-
-	/* Flex container for certificate details and image */
-	.certificate-container {
-		@apply container mx-auto flex flex-col gap-6 lg:flex-row items-center;
+	#certificates-container img {
+		@apply w-full h-full rounded-lg object-fill;
 	}
-
-	/* Certificate image container */
-	.certificate-image-container {
-		@apply w-full flex justify-center;
-	}
-
-	.certificate-image {
-		@apply max-w-full rounded-lg shadow-2xl;
-	}
-
 	/* Responsive styles for smaller screens */
-	@media (max-width: 768px) {
-		#certificate-section {
-			@apply h-auto px-4;
+	@media (min-width: 640px) {
+		#certificate-page-title {
+			@apply text-4xl;
 		}
-
-		.certificate-title {
-			@apply text-3xl;
-		}
-
-		.certificate-description {
-			@apply text-xl;
-		}
-	}
-
-	/* Larger screen adjustments */
-	@media (min-width: 1200px) {
-		.certificate-title {
+		#certificate-page-desc {
 			@apply text-2xl;
 		}
+	}
 
-		.certificate-description {
-			@apply text-lg;
-		}
+	@media (min-width: 768px) {
+	}
 
-		.reference-link {
-			@apply text-lg;
+	@media (min-width: 1024px) {
+		/* Tailwind equivalent: lg */
+		#certificates-wrapper {
+			@apply flex-row;
 		}
+		#certificates-container {
+			@apply grid-cols-1 w-[20%];
+		}
+		#guvi-certificate {
+			@apply w-[80%];
+		}
+	}
+
+	@media (min-width: 1280px) {
+		/* Tailwind equivalent: xl */
+		#certificates-container {
+			@apply grid-cols-1 w-[15%];
+		}
+		#guvi-certificate {
+			@apply w-[85%];
+		}
+	}
+
+	@media (min-width: 1536px) {
+		/* Tailwind equivalent: 2xl */
 	}
 }
