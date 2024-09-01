@@ -19,19 +19,21 @@
 
 	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
+		.education-steps {
+			@apply gap-3;
+		}
+		#step-description {
+			@apply gap-2;
+		}
 	}
 
 	/* Media query for screens 1024px and up: lg */
 	@media screen and (min-width: 1024px) {
-	}
-
-	/* Media query for screens 1280px and up: xl */
-	@media screen and (min-width: 1280px) {
-		/* Add any extra-large screen specific styles here */
-	}
-
-	/* Media query for screens 1536px and up: 2xl */
-	@media screen and (min-width: 1536px) {
-		/* Add any extra-extra-large screen specific styles here */
+		#step-title {
+			@apply text-3xl;
+		}
+		#step-description {
+			@apply text-xl;
+		}
 	}
 }
