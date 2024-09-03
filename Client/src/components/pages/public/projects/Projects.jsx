@@ -141,7 +141,7 @@ const Projects = () => {
 
     return (
         <section id='projects' className='h-full w-full bg-secondary p-4 lg:p-10'>
-            <div id='projects-container' className='flex h-full w-full flex-col justify-between gap-4'>
+            <div id='projects-container' className='flex h-full w-full flex-col items-center justify-between gap-4'>
                 <header id='projects-header' className='text-center text-primary'>
                     <h1 id='projects-page-title' className='text-3xl font-bold'>Projects</h1>
                     <p id='projects-page-desc' className='text-xl'>Recent Works</p>

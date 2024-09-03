@@ -1,6 +1,6 @@
 import { useState } from "react";
 import aboutImg from '../../../../assets/about-img.jpeg';
-import { FaAward } from "react-icons/fa";
+import { FaGithub, FaProjectDiagram, FaCode } from 'react-icons/fa'; // Add other icons as needed
 import CustomMenuList from "../../navbar/CustomMenuList";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import './About.css';
@@ -39,6 +39,27 @@ const About = () => {
         }
     };
 
+    const experienceData = [
+        {
+            url: "https://github.com/Samuvel6826?tab=repositories",
+            icon: <FaGithub className='text-3xl text-primary' />,
+            title: "GitHub",
+            description: "36 Repos"
+        },
+        {
+            url: "https://www.geeksforgeeks.org/user/samuveomy2",
+            icon: <FaProjectDiagram className='text-3xl text-primary' />,
+            title: "GeeksforGeeks",
+            description: "Problems Solved"
+        },
+        {
+            url: "https://leetcode.com/samtocode24",
+            icon: <FaCode className='text-3xl text-primary' />,
+            title: "LeetCode",
+            description: "Problems Solved"
+        }
+    ];
+
     return (
         <section id='about' className='h-full w-full bg-secondary p-4 text-letter lg:p-10'>
             <div id='about-container' className='flex h-full w-full flex-col justify-between gap-4 lg:flex-row'>
@@ -59,12 +80,12 @@ const About = () => {
 
                         {/* Experience Boxes */}
                         <div id='about-profile-box-container' className='hidden w-full grid-cols-3 gap-4 sm:grid xl:hidden'>
-                            {[...Array(3)].map((_, index) => (
-                                <div key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md'>
-                                    <FaAward className='text-3xl text-primary' />
-                                    <h4 className='font-semibold'>Experience</h4>
-                                    <p>2 years</p>
-                                </div>
+                            {experienceData.map((data, index) => (
+                                <a key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md' href={data.url} target="_blank" rel="noopener noreferrer">
+                                    {data.icon}
+                                    <h4 className='font-semibold'>{data.title}</h4>
+                                    <p>{data.description}</p>
+                                </a>
                             ))}
                         </div>
                     </div>
@@ -74,12 +95,12 @@ const About = () => {
                 <div id="section-2" className="flex flex-col items-center justify-between gap-4">
                     {/* Experience Boxes */}
                     <div id='about-profile-box-container' className='grid w-full grid-cols-3 gap-4 sm:hidden xl:grid'>
-                        {[...Array(3)].map((_, index) => (
-                            <div key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md'>
-                                <FaAward className='text-3xl text-primary' />
-                                <h4 className='font-semibold'>Experience</h4>
-                                <p>2 years</p>
-                            </div>
+                        {experienceData.map((data, index) => (
+                            <a key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md' href={data.url} target="_blank" rel="noopener noreferrer">
+                                {data.icon}
+                                <h4 className='font-semibold'>{data.title}</h4>
+                                <p>{data.description}</p>
+                            </a>
                         ))}
                     </div>
                     <p id='about-para' className='flex flex-col gap-4 text-justify text-xl leading-[2.15rem]'>
