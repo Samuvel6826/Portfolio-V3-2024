@@ -96,7 +96,7 @@ const About = () => {
                     {/* Experience Boxes */}
                     <div id='about-profile-box-container' className='grid w-full grid-cols-3 gap-4 sm:hidden xl:grid'>
                         {experienceData.map((data, index) => (
-                            <a key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md' href={data.url} target="_blank" rel="noopener noreferrer">
+                            <a key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-sm shadow-md' href={data.url} target="_blank" rel="noopener noreferrer">
                                 {data.icon}
                                 <h4 className='font-semibold'>{data.title}</h4>
                                 <p>{data.description}</p>
