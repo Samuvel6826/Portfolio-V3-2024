@@ -9,7 +9,6 @@ import {
     Typography,
 } from '@material-tailwind/react';
 import toast, { Toaster } from 'react-hot-toast';
-import { LuIndianRupee } from "react-icons/lu";
 
 const Razorpay = () => {
     const [amount, setAmount] = useState("");

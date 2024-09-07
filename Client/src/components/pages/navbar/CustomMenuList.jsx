@@ -1,48 +1,25 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { IoMdDownload } from "react-icons/io";
 import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
 import ResumePng from '../../../assets/Resume/Samuvel-Resume.png';
-import Loader from '../../common/Loader'; // Import the Loader component
 
 const menuItems = [
     { title: "Download as PDF", description: ResumePdf },
     { title: "Download as PNG", description: ResumePng },
 ];
 
-const CustomMenuList = ({ handleDownloadClick }) => {
+const CustomMenuList = () => {
     const [dialogOpen, setDialogOpen] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    const handleConfirmDownload = () => {
-        if (selectedFile && typeof handleDownloadClick === 'function') {
-            handleDownloadClick(selectedFile);
-        }
-        setDialogOpen(false);
-    };
-
-    const handleCancelDownload = () => setDialogOpen(false);
-
-    const handleImageLoad = () => {
-        setLoading(false); // Set loading to false when image is loaded
-    };
 
     return (
         <div className="relative flex h-full w-full flex-col gap-4 p-4">
             <div className="relative flex items-center justify-center bg-white p-4">
-                {loading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-white">
-                        <Loader /> {/* Use the imported Loader component */}
-                    </div>
-                )}
                 <a href={ResumePdf} target="_blank" rel="noopener noreferrer">
                     <img
                         src={ResumePng}
                         alt="Resume Thumbnail"
-                        className={`h-full w-full object-cover ${loading ? 'opacity-0' : 'opacity-100'}`}
-                        onLoad={handleImageLoad}
-                        onError={() => setLoading(false)} // Hide loader if image fails to load
+                        className="h-full w-full object-cover"
                     />
                 </a>
             </div>
@@ -69,14 +46,15 @@ const CustomMenuList = ({ handleDownloadClick }) => {
                         <h3 className="text-lg font-semibold">Confirm Download</h3>
                         <p className="my-4">Are you sure you want to download this file?</p>
                         <div className="flex items-center justify-center gap-4">
-                            <button
-                                onClick={handleConfirmDownload}
+                            <a
+                                href={selectedFile}
+                                download
                                 className="rounded bg-green-500 px-4 py-2 text-white"
+                                onClick={() => setDialogOpen(false)}
                             >
                                 Confirm
-                            </button>
+                            </a>
                             <button
-                                onClick={handleCancelDownload}
                                 className="rounded bg-red-500 px-4 py-2 text-white"
                             >
                                 Cancel
@@ -87,10 +65,6 @@ const CustomMenuList = ({ handleDownloadClick }) => {
             )}
         </div>
     );
-};
-
-CustomMenuList.propTypes = {
-    handleDownloadClick: PropTypes.func.isRequired,
 };
 
 export default CustomMenuList;

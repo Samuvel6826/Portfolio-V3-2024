@@ -172,7 +172,7 @@ const Projects = () => {
                 )}
 
                 {!loading && !error && (
-                    <div id='pagination' className='mt-8 flex items-center justify-center gap-4'>
+                    <div id='pagination' className='mt-8 flex items-center justify-center gap-3'>
                         <Button
                             id='pagination-btns'
                             variant='text'

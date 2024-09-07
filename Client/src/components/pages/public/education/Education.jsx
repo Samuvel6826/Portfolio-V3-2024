@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Education.css';
 import { Steps } from 'antd';
 import { educationData } from './EducationData';

@@ -28,21 +28,6 @@ const Navbar = () => {
 		}
 	};
 
-	const handleDownloadClick = async (fileUrl) => {
-		try {
-			const response = await fetch(fileUrl);
-			const blob = await response.blob();
-			const link = document.createElement('a');
-			link.href = window.URL.createObjectURL(blob);
-			link.download = fileUrl.split('/').pop();
-			document.body.appendChild(link);
-			link.click();
-			document.body.removeChild(link);
-		} catch (error) {
-			console.error("Download error:", error);
-		}
-	};
-
 	const handleMouseEnter = () => {
 		clearTimeout(timeoutId);
 		setOpenMenu(true);
@@ -102,7 +87,7 @@ const Navbar = () => {
 							</button>
 							{openMenu && (
 								<div className="absolute right-0 mt-2 w-96 flex-col gap-2 bg-tertiary text-2xl shadow-lg">
-									<CustomMenuList handleDownloadClick={handleDownloadClick} />
+									<CustomMenuList />
 								</div>
 							)}
 						</div>

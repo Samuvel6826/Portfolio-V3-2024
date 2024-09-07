@@ -48,25 +48,6 @@
 
 	/* Media Queries for Responsive Design */
 
-	/* Small screens (up to 640px) */
-	@media (max-width: 639px) {
-		#projects-page-title {
-			@apply text-2xl; /* Smaller title for small screens */
-		}
-
-		#pagination-btns {
-			@apply w-[3rem] text-sm; /* Smaller pagination buttons */
-		}
-
-		#card {
-			@apply rounded-md; /* Smaller card for small screens */
-		}
-
-		#card #absolute {
-			@apply p-4; /* Smaller padding for small screens */
-		}
-	}
-
 	/* Medium screens (640px and up) */
 	@media (min-width: 640px) {
 		#projects-page-title {
