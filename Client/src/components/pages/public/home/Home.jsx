@@ -45,7 +45,7 @@ const Home = () => {
                         {/* Profile Picture */}
                         <img
                             id='dp-pic'
-                            className='right-15 top-0 w-[57%] rounded-full object-cover shadow-lg max-lg:absolute'
+                            className='right-15 top-0 w-[57%] cursor-pointer rounded-full object-cover shadow-lg max-lg:absolute'
                             src={homeImg}
                             alt="Samuvel A, a MERN stack web developer"
                             loading="lazy"

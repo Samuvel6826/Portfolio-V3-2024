@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { useUserAuth } from "../../authentication/UserAuthContext";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { IoSettings } from "react-icons/io5";
 import CustomMenuList from "./CustomMenuList";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-scroll";
@@ -77,13 +75,13 @@ const Navbar = () => {
 						>
 							<button
 								id="resumeBtn"
-								className="flex items-center gap-3 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-letter focus:outline-none focus:ring-2 focus:ring-primary"
+								className="flex items-center justify-center gap-2 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-letter focus:outline-none focus:ring-2 focus:ring-primary"
 							>
 								Resume
-								<ChevronDownIcon
-									strokeWidth={2.5}
-									className={`h-4 w-4 transition-transform ${openMenu ? "rotate-180" : "rotate-0"}`}
-								/>
+								<span strokeWidth={2.5}
+									className={`material-symbols-outlined h-4 w-4 transition-transform ${openMenu ? "rotate-180" : "rotate-0"}`}>
+									keyboard_arrow_down
+								</span>
 							</button>
 							{openMenu && (
 								<div className="absolute right-0 mt-2 w-96 flex-col gap-2 bg-tertiary text-2xl shadow-lg">
@@ -99,10 +97,16 @@ const Navbar = () => {
 								aria-label="Log Out"
 							>
 								Log Out
+								<span className="material-symbols-outlined ml-2">
+									logout
+								</span>
 							</button>
 						) : (
 							<a href="/login" className="flex items-center rounded-full border border-primary bg-transparent px-4 py-2 text-primary transition-all duration-300 hover:bg-primary hover:text-letter">
-								Admin Panel <IoSettings className="ml-2" />
+								Admin Panel
+								<span className="material-symbols-outlined ml-2">
+									admin_panel_settings
+								</span>
 							</a>
 						)}
 					</div>

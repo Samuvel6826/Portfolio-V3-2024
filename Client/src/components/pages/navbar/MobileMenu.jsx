@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Drawer, IconButton, Typography } from "@material-tailwind/react";
-import { IoSettings } from "react-icons/io5";
-import { IoMdDownload } from "react-icons/io";
 import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
 import { Link, Events, scrollSpy } from "react-scroll";
 import './Navbar.css';
@@ -31,12 +29,12 @@ const MobileMenu = ({
     }, []);
 
     const menuItems = [
-        { id: 'home', icon: 'uil uil-estate', label: 'Home', offset: -68 },
-        { id: 'about', icon: 'uil uil-user', label: 'About', offset: -63 },
-        { id: 'education', icon: 'uil uil-user', label: 'Education', offset: -63 },
-        { id: 'skills', icon: 'uil uil-file-alt', label: 'Skills', offset: -63 },
-        { id: 'projects', icon: 'uil uil-briefcase-alt', label: 'Projects', offset: -63 },
-        { id: 'contact', icon: 'uil uil-message', label: 'Contact', offset: -63 },
+        { id: 'home', icon: 'home', label: 'Home', offset: -68 },
+        { id: 'about', icon: 'person', label: 'About', offset: -63 },
+        { id: 'education', icon: 'school', label: 'Education', offset: -63 },
+        { id: 'skills', icon: 'workspace_premium', label: 'Skills', offset: -63 },
+        { id: 'projects', icon: 'business_center', label: 'Projects', offset: -63 },
+        { id: 'contact', icon: 'phone_in_talk', label: 'Contact', offset: -63 },
     ];
 
     return (
@@ -87,7 +85,9 @@ const MobileMenu = ({
                                 className={`mobileMenuListItem ${activeMenu === id ? 'active' : ''}`}
                                 onClick={() => handleMenuClick(id)}
                             >
-                                <i className={icon}></i>
+                                <span className="material-symbols-outlined ico">
+                                    {icon}
+                                </span>
                                 <span>{label}</span>
                             </Link>
                         ))
@@ -99,7 +99,9 @@ const MobileMenu = ({
                         rel="noopener noreferrer"
                         className="mobileMenuListItem"
                     >
-                        <IoMdDownload className="ico" />
+                        <span className="material-symbols-outlined ico">
+                            download
+                        </span>
                         <span>Resume</span>
                     </a>
 
@@ -112,7 +114,9 @@ const MobileMenu = ({
                             className="mobileMenuListItem"
                             aria-label="Log Out"
                         >
-                            <i className="uil uil-sign-out-alt ico"></i>
+                            <span className="material-symbols-outlined ico">
+                                logout
+                            </span>
                             <span>Log Out</span>
                         </button>
                     ) : (
@@ -120,7 +124,9 @@ const MobileMenu = ({
                             href="/login"
                             className="mobileMenuListItem"
                         >
-                            <IoSettings className="ico" />
+                            <span className="material-symbols-outlined ico">
+                                admin_panel_settings
+                            </span>
                             <span>Admin Panel</span>
                         </a>
                     )}
