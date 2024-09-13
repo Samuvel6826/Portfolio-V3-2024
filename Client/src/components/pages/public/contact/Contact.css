@@ -12,8 +12,10 @@
 
 	#nameContainer,
 	#mobileContainer,
-	#emailContainer {
-		@apply w-full h-[15%] p-2 bg-secondary flex;
+	#subjectContainer,
+	#emailContainer,
+	#fileContainer {
+		@apply w-full h-[15%] p-2 text-letter bg-secondary flex;
 	}
 
 	#msgContainer {
@@ -23,13 +25,16 @@
 	#your_name,
 	#your_mobile,
 	#your_email,
-	#message {
+	#your_subject,
+	#message,
+	#fileUpload {
 		@apply w-full h-full bg-letter p-2 text-secondary;
 	}
 
 	#your_name::placeholder,
 	#your_mobile::placeholder,
 	#your_email::placeholder,
+	#your_subject::placeholder,
 	#message::placeholder {
 		@apply text-cyan-900;
 	}

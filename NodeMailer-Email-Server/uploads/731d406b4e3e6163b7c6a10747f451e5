@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Manual Parsing Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="theme-switch">
+        <input type="checkbox" id="themeToggle" aria-label="Toggle dark/light theme">
+        <label for="themeToggle">Toggle Dark/Light Theme</label>
+    </div>
+
+    <main class="container">
+        <h1>Advanced Bulk Manual Parsing Calculator</h1>
+
+        <textarea id="userInput" placeholder="Enter numbers separated by spaces, newlines, or commas..."
+            oninput="validateInput()" aria-label="Input field for numbers"></textarea>
+
+        <section class="button-group operators">
+            <button onclick="setOperation('+')" aria-label="Addition">Addition</button>
+            <button onclick="setOperation('-')" aria-label="Subtraction">Subtraction</button>
+            <button onclick="setOperation('*')" aria-label="Multiplication">Multiplication</button>
+            <button onclick="setOperation('/')" aria-label="Division">Division</button>
+        </section>
+
+        <section class="button-group actions">
+            <button onclick="calculateResult()" aria-label="Calculate result">Calculate</button>
+            <button onclick="clearInput()" aria-label="Clear input">Clear Input</button>
+            <button onclick="resetResult()" aria-label="Reset result">Reset Result</button>
+            <button onclick="copyResult()" aria-label="Copy result">Copy Result</button>
+        </section>
+
+        <div id="displayBox">
+            <h2>Operation:</h2>
+            <textarea id="operationDisplay">Select an operation</textarea>
+        </div>
+
+        <div id="result">The result is: 0</div>
+        <div class="error" id="error"></div>
+        <div class="info" id="info"></div>
+    </main>
+
+    <!-- Footer with copyright information -->
+    <footer
+        style="text-align: center; padding: 10px; background-color: #f1f1f1; margin-top: 20px; text-decoration: none;">
+        <span>
+            <a style="text-decoration: none;" href="https://samtocode24.web.app" target="_blank"
+                rel="noopener noreferrer">
+                <p>&copy; 2024 Bulk Calculator Project. Made by Samuvel A. All rights reserved.</p>
+            </a>
+        </span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
