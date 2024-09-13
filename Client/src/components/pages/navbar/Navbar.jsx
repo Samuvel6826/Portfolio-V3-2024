@@ -44,7 +44,7 @@ const Navbar = () => {
 				<div id="desktopMenu" className="hidden w-full items-center justify-between lg:flex">
 					<a href="#" id="logo" className="font-aldrich text-[1.6rem] font-bold transition-transform duration-300 hover:scale-110 xl:text-4xl"
 						style={{ background: "linear-gradient(90deg, #00c6ff, #0072ff)", WebkitBackgroundClip: "text", color: "transparent", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}>
-						Samtocode24
+						SamToCode24
 					</a>
 
 					{!isLoginPage && (
