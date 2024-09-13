@@ -78,7 +78,7 @@ const Contact = () => {
         });
 
         try {
-            const response = await axios.post('http://localhost:3000/email/send-email', formData, {
+            const response = await axios.post('https://nodemailer-email-server.onrender.com/email/send-email', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data', // Required for file uploads
                 },

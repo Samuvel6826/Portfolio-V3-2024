@@ -21,7 +21,6 @@ const transporter = nodemailer.createTransport({
         user: username,
         pass: password,
     },
-    debug: true, // Enable debug mode for detailed logs (disable in production)
 });
 
 // Constants for validation
