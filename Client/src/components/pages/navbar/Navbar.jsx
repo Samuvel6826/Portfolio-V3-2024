@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { useUserAuth } from "../../authentication/UserAuthContext";
 import CustomMenuList from "./CustomMenuList";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-scroll";
 import './Navbar.css';
@@ -42,7 +43,7 @@ const Navbar = () => {
 		<header id="topBar" className="sticky top-0 z-20 flex h-16 w-full bg-tertiary px-4 text-base text-letter shadow-lg lg:px-10 xl:text-xl">
 			<nav id="nav-header" className="flex h-full w-full items-center justify-between">
 				<div id="desktopMenu" className="hidden w-full items-center justify-between lg:flex">
-					<a href="#" id="logo" className="font-aldrich text-[1.6rem] font-bold transition-transform duration-300 hover:scale-110 xl:text-4xl"
+					<a href="home" id="logo" className="font-aldrich text-[1.6rem] font-bold transition-transform duration-300 hover:scale-110 xl:text-4xl"
 						style={{ background: "linear-gradient(90deg, #00c6ff, #0072ff)", WebkitBackgroundClip: "text", color: "transparent", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}>
 						SamToCode24
 					</a>
@@ -78,13 +79,14 @@ const Navbar = () => {
 								className="flex items-center justify-center gap-2 rounded-full border border-primary bg-transparent px-4 py-2 font-normal capitalize tracking-normal text-primary transition-all duration-300 hover:bg-primary hover:text-letter focus:outline-none focus:ring-2 focus:ring-primary"
 							>
 								Resume
-								<span strokeWidth={2.5}
-									className={`material-symbols-outlined h-4 w-4 transition-transform ${openMenu ? "rotate-180" : "rotate-0"}`}>
-									keyboard_arrow_down
-								</span>
+								<ChevronDownIcon
+									aria-label="Toggle dropdown"
+									strokeWidth={2.5}
+									className={`h-4 w-4 transition-transform ${openMenu ? "rotate-0" : "rotate-180"}`}
+								/>
 							</button>
 							{openMenu && (
-								<div className="absolute right-0 mt-2 w-96 flex-col gap-2 bg-tertiary text-2xl shadow-lg">
+								<div className="absolute left-1/2 mt-2 w-80 -translate-x-1/2 transform bg-tertiary text-2xl shadow-lg">
 									<CustomMenuList />
 								</div>
 							)}
@@ -119,11 +121,11 @@ const Navbar = () => {
 							Samtocode24
 						</a>
 						<button
-							className="flex items-center rounded-lg border-2 border-primary p-2 transition-colors duration-300 hover:bg-gray-800"
+							className="flex items-center rounded-lg border-2 border-primary px-2 py-1 transition-colors duration-300 hover:bg-gray-800"
 							onClick={toggleMobileMenu}
 							aria-label="Open menu"
 						>
-							<i className="uil uil-apps text-xl"></i>
+							<i className="uil uil-apps text-2xl"></i>
 						</button>
 					</div>
 					<MobileMenu

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './Projects.css';
 import axios from 'axios';
 import Loader from '../../../common/Loader';
@@ -40,7 +40,7 @@ const Projects = () => {
         } catch (err) {
             if (retryCount < 2) {
                 console.log(`Retrying... (${retryCount + 1})`);
-                getProjects(retryCount + 1);
+                await getProjects(retryCount + 1);
             } else {
                 setError('Failed to fetch projects. Please try again later.');
                 setLoading(false);

@@ -13,7 +13,7 @@ const CustomMenuList = () => {
     const [selectedFile, setSelectedFile] = useState(null);
 
     return (
-        <div className="relative flex h-full w-full flex-col gap-4 p-4">
+        <div className="relative flex h-full w-full flex-col gap-4 p-4" data-aos="flip-down">
             <div className="relative flex items-center justify-center bg-white p-4">
                 <a href={ResumePdf} target="_blank" rel="noopener noreferrer">
                     <img

@@ -100,7 +100,7 @@ const Contact = () => {
                     <p id="contact-page-desc" className='text-xl'>Please fill out the form below to discuss any work opportunities.</p>
                 </header>
 
-                <main id='contact-wrapper' className='flex w-full flex-col gap-3'>
+                <main id='contact-wrapper' className='flex w-full flex-col gap-3' data-aos="fade-right">
                     <form id="contact-form" ref={formRef} onSubmit={formikQuery.handleSubmit}>
                         <div id='nameContainer'>
                             <input
@@ -129,20 +129,6 @@ const Contact = () => {
                             />
                         </div>
 
-                        <div id='subjectContainer'>
-                            <input
-                                type="text"
-                                className="subject"
-                                placeholder='Subject'
-                                id='your_subject'
-                                name='your_subject'
-                                onChange={formikQuery.handleChange}
-                                onBlur={formikQuery.handleBlur}
-                                value={formikQuery.values.your_subject}
-                            />
-                            {formikQuery.touched.your_subject && formikQuery.errors.your_subject ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.your_subject}</div> : <></>}
-                        </div>
-
                         <div id='emailContainer'>
                             <input
                                 type="email"
@@ -155,6 +141,21 @@ const Contact = () => {
                                 value={formikQuery.values.your_email}
                             />
                             {formikQuery.touched.your_email && formikQuery.errors.your_email ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.your_email}</div> : <></>}
+                        </div>
+
+
+                        <div id='subjectContainer'>
+                            <input
+                                type="text"
+                                className="subject"
+                                placeholder='Subject'
+                                id='your_subject'
+                                name='your_subject'
+                                onChange={formikQuery.handleChange}
+                                onBlur={formikQuery.handleBlur}
+                                value={formikQuery.values.your_subject}
+                            />
+                            {formikQuery.touched.your_subject && formikQuery.errors.your_subject ? <div id='require' style={{ color: "red" }}>*{formikQuery.errors.your_subject}</div> : <></>}
                         </div>
 
                         <div id='msgContainer'>
@@ -186,7 +187,7 @@ const Contact = () => {
                         </button>
                     </form>
 
-                    <div id='map-container'>
+                    <div id='map-container' data-aos="fade-left">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7898.414636338594!2d77.246475!3d8.181859!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMTAnNTQuNyJOIDc3wrAxNCc0Ny4zIkU!5e0!3m2!1sen!2sin!4v1715710048191!5m2!1sen!2sin"
                             width="100%"

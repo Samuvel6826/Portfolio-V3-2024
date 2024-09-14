@@ -41,8 +41,8 @@ function Certificates() {
                     <p id="certificate-page-desc" className="text-xl">My Achievements</p>
                 </header>
 
-                <div id="certificates-wrapper" className="flex flex-col gap-4 lg:flex-row">
-                    <div id="certificates-container" className="grid w-full grid-cols-2 gap-4 lg:w-1/5 lg:grid-cols-1">
+                <div id="certificates-wrapper" className="flex flex-col gap-4 overflow-hidden lg:flex-row">
+                    <div id="certificates-container" className="grid w-full grid-cols-2 gap-4 lg:w-1/5 lg:grid-cols-1" data-aos="fade-right">
                         {certificateData.map((certificate, index) => (
                             <div key={index} id="img-card" className="group">
                                 <a href={certificate.link} target="_blank" rel="noopener noreferrer">
@@ -55,7 +55,7 @@ function Certificates() {
                         ))}
                     </div>
 
-                    <div id="guvi-certificate-wrapper" className="w-full lg:w-4/5">
+                    <div id="guvi-certificate-wrapper" className="w-full lg:w-4/5" data-aos="fade-left">
                         <a
                             href="https://www.guvi.in/verify-certificate?id=E15ri2qD52L30070n4#"
                             target="_blank"

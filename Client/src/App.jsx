@@ -1,5 +1,7 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import './styles/App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreLoader from './components/common/PreLoader';
 import ErrorBoundary from './components/common/ErrorBoundary';
@@ -28,6 +30,9 @@ const Login = lazy(() => import('./components/authentication/Login'));
 const Signup = lazy(() => import('./components/authentication/Signup'));
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 750 }); // Initialize AOS
+  }, []);
   return (
     <UserAuthContextProvider>
       <Router>

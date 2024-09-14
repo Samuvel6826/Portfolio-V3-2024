@@ -59,26 +59,26 @@ const Skills = () => {
                     <p id="skills-page-desc" className="text-xl">My Expertise</p>
                 </header>
 
-                <div id="skills-wrapper" className="rounded-2xl bg-background-light p-4 text-center shadow-md">
-                    <div className="mb-8">
+                <div id="skills-wrapper" className="overflow-hidden rounded-2xl bg-background-light p-4 text-center shadow-md">
+                    <div className="mb-8" id='frontendContainer' data-aos="fade-right">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Frontend Skills</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.frontend.map(renderSkillBox)}
                         </div>
                     </div>
-                    <div className="mb-8">
+                    <div className="mb-8" id='backendContainer' data-aos="fade-left">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Backend Skills</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.backend.map(renderSkillBox)}
                         </div>
                     </div>
-                    <div className="mb-8">
+                    <div className="mb-8" id='cloudDeploymentContainer' data-aos="fade-right">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Cloud Services & Deployment Tools</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.cloudDeployment.map(renderSkillBox)}
                         </div>
                     </div>
-                    <div className="mb-8">
+                    <div className="mb-8" id='otherToolsContainer' data-aos="fade-left">
                         <h4 className="mb-4 text-2xl font-semibold capitalize text-secondary">Other Tools</h4>
                         <div id="skills-list" className="flex flex-wrap justify-center gap-2">
                             {skills.other.map(renderSkillBox)}
