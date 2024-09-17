@@ -82,10 +82,8 @@ const Footer = () => {
                     <div id="foot-containers">
                         <h3 id='headings'>PAYMENT</h3>
                         <div className='btns-container'>
+
                             <Razorpay />
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z" /></svg>Pay with Stripe
-                            </button>
 
                             <Space wrap>
                                 <Popover content={content} trigger="click">
@@ -94,6 +92,13 @@ const Footer = () => {
                                     </button>
                                 </Popover>
                             </Space>
+
+                            <a href="https://ko-fi.com/samtocode24" target='_blank' rel="noopener noreferrer">
+                                <button>
+                                    <FaCoffee /> Buy me a ko-fi
+                                </button>
+                            </a>
+
                         </div>
                     </div>
 
@@ -101,16 +106,13 @@ const Footer = () => {
                     <div id="foot-containers">
                         <h3 id='headings'>SUPPORT MY WORK</h3>
                         <div className="btns-container" id='support-btns'>
-                            <a href="https://ko-fi.com/samtocode24" target='_blank' rel="noopener noreferrer">
-                                <button>
-                                    <FaCoffee /> Buy me a ko-fi
-                                </button>
-                            </a>
+
                             <a href="https://github.com/Samuvel6826/MERN-Portfolio-2024" target='_blank' rel="noopener noreferrer">
                                 <button>
                                     <FaGithub /> View Source code
                                 </button>
                             </a>
+
                         </div>
 
                         {/* Footer social media links */}
@@ -133,25 +135,22 @@ const Footer = () => {
 
                 <hr className='h-[2px] w-full bg-secondary' />
 
-                <div id="footer-bottom" className='flex h-full w-full flex-col flex-wrap items-center justify-center gap-4 text-center text-sm'>
+                <div id="footer-bottom" className='flex h-full w-full flex-col flex-wrap items-center justify-between gap-4 text-center text-sm'>
                     {/* Footer bottom section */}
-                    <div className='flex flex-row gap-6'>
-                        <p>
-                            India/English
-                        </p>
-                        <span className='hidden lg:flex'>&#8195;|&#8195;</span>
-                        <p>
-                            Made by Samuvel A
-                        </p>
-                        <span className='hidden lg:flex'>&#8195;|&#8195;</span>
 
-                    </div>
+                    <p>
+                        India/English
+                    </p>
+                    <p>
+                        Made by Samuvel A
+                    </p>
+
+
                     <p className='flex items-center gap-3'>
                         Made with <span className='flex items-center gap-2 text-xl'><FaReact /> <RiTailwindCssFill /> <FaNodeJs /> <SiExpress /> <SiMongodb />& 💙</span>
                     </p>
-                    <span className='hidden lg:flex'>&#8195;|&#8195;</span>
                     <p>
-                        &#169;&nbsp;2024 samtocode24 All rights reserved.
+                        &#169;&nbsp;2024 samtocode24 All rights reserved
                     </p>
                 </div>
             </div>

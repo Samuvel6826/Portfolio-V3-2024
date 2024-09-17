@@ -29,8 +29,8 @@ const CustomMenuList = () => {
     };
 
     return (
-        <div className="mx-auto flex max-w-md flex-col gap-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-100 p-6 shadow-lg" data-aos="flip-down">
-            <div className="rounded-lg bg-white p-4 shadow-md transition-shadow duration-300 hover:shadow-xl">
+        <div className="m-0 flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-100 p-4" data-aos="flip-down">
+            <div className="w-full rounded-lg bg-white p-4 transition-shadow duration-300 hover:shadow-xl">
                 <a href={ResumePdf} target="_blank" rel="noopener noreferrer" className="group relative block">
                     <img
                         src={ResumePng}
@@ -42,14 +42,14 @@ const CustomMenuList = () => {
                     </div>
                 </a>
             </div>
-            <ul className="flex flex-col gap-3">
+            <ul className="m-0 flex h-auto w-full flex-col items-center justify-center gap-3 p-0">
                 {menuItems.map(({ title, description, icon: Icon }) => (
-                    <li key={title}>
+                    <li key={title} className='w-full'>
                         <button
                             onClick={() => handleDownload(description)}
-                            className="group flex w-full items-center justify-between rounded-lg bg-white px-4 py-3 text-blue-600 shadow-md transition-all duration-200 hover:bg-blue-600 hover:text-white hover:shadow-lg"
+                            className="group flex h-full w-full items-center justify-center rounded-lg bg-white p-4 text-blue-600 transition-all duration-200 hover:bg-blue-600 hover:text-white hover:shadow-lg"
                         >
-                            <span className="flex items-center gap-3">
+                            <span className="flex w-full items-center gap-3">
                                 <Icon className="text-2xl" />
                                 <span className="text-xl font-medium">{title}</span>
                             </span>
@@ -82,10 +82,10 @@ const CustomMenuList = () => {
                         </p>
 
                         {/* Action Buttons */}
-                        <div className="flex justify-center gap-2 sm:gap-4">
+                        <div className="flex w-full gap-2 sm:gap-4">
                             <button
                                 onClick={() => setDialogOpen(false)}
-                                className="rounded-lg bg-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 md:text-base"
+                                className="w-full flex-grow rounded-lg bg-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 md:text-base"
                             >
                                 Cancel
                             </button>
@@ -93,7 +93,7 @@ const CustomMenuList = () => {
                                 href={selectedFile}
                                 download
                                 onClick={confirmDownload}
-                                className={`px-3 py-2 rounded-lg no-underline text-inherit text-white visited:text-white hover:no-underline hover:text-white text-center text-sm md:text-base font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 ${downloadStarted ? 'bg-blue-400 cursor-not-allowed opacity-60' : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700'
+                                className={`flex-grow w-full px-3 py-2 rounded-lg text-sm md:text-base font-medium text-white text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 ${downloadStarted ? 'bg-blue-400 cursor-not-allowed opacity-60' : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700'
                                     }`}
                                 disabled={downloadStarted}
                             >

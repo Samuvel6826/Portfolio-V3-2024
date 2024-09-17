@@ -86,7 +86,7 @@ const Navbar = () => {
 								/>
 							</button>
 							{openMenu && (
-								<div className="absolute left-1/2 mt-4 w-80 -translate-x-1/2 transform text-2xl shadow-lg">
+								<div className="absolute left-1/2 mt-4 w-80 -translate-x-1/2 transform rounded-xl shadow-lg">
 									<CustomMenuList />
 								</div>
 							)}
