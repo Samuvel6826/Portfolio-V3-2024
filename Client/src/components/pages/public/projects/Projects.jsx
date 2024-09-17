@@ -42,7 +42,7 @@ const Projects = () => {
                 console.log(`Retrying... (${retryCount + 1})`);
                 await getProjects(retryCount + 1);
             } else {
-                setError('Failed to fetch projects. Please try again later.');
+                setError('Failed to fetch projects. Please refresh the page');
                 setLoading(false);
             }
         }

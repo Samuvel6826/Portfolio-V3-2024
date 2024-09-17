@@ -33,4 +33,11 @@
 			@apply text-xl;
 		}
 	}
+
+	/* Media query for screens 1536px and up: 2xl */
+	@media screen and (min-width: 1536px) {
+		#education-page-title {
+			@apply text-5xl;
+		}
+	}
 }

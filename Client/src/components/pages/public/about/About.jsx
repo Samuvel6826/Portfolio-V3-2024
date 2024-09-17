@@ -1,6 +1,6 @@
 import { useState } from "react";
 import aboutImg from '../../../../assets/about-img.jpeg';
-import { FaGithub, FaProjectDiagram, FaCode } from 'react-icons/fa'; // Add other icons as needed
+import { FaGithub, FaProjectDiagram, FaRobot } from 'react-icons/fa'; // Add other icons as needed
 import CustomMenuList from "../../navbar/CustomMenuList";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import './About.css';
@@ -41,22 +41,22 @@ const About = () => {
 
     const experienceData = [
         {
+            url: "https://docs.google.com/document/d/1n7J53m4ZjvEjA62SAYm9quZoHb92cumZ7G0gknJfIhg/edit?usp=sharing", // IoT waste management project URL
+            icon: <FaProjectDiagram className='text-primary' />, // Updated icon for IoT
+            title: "IoT",
+            description: "Smart Waste Management"
+        },
+        {
             url: "https://github.com/Samuvel6826?tab=repositories",
-            icon: <FaGithub className='text-3xl text-primary' />,
+            icon: <FaGithub className='text-primary' />,
             title: "GitHub",
-            description: "36 Repos"
+            description: "36 Repositories"
         },
         {
-            url: "https://www.geeksforgeeks.org/user/samuveomy2",
-            icon: <FaProjectDiagram className='text-3xl text-primary' />,
-            title: "GeeksforGeeks",
-            description: "Problems Solved"
-        },
-        {
-            url: "https://leetcode.com/samtocode24",
-            icon: <FaCode className='text-3xl text-primary' />,
-            title: "LeetCode",
-            description: "Problems Solved"
+            url: "https://github.com/Samuvel6826/PKC.SF.B.Sc.CS_2023-26/tree/11977b825b4d0c4a92c7cd56e097103fe4a99e09/Full-Stack-Projects/Dlib_Face_Recognition_App", // Face recognition project URL
+            icon: <FaRobot className='text-primary' />, // Updated icon for ML
+            title: "ML",
+            description: "Face Recognition System"
         }
     ];
 
@@ -70,7 +70,7 @@ const About = () => {
                         <p id='about-page-desc' className='text-xl'>My Introduction</p>
                     </header>
 
-                    <div id="about-img-container" className="flex flex-col gap-4">
+                    <div id="about-img-container" className="flex h-full flex-col gap-4 lg:items-center lg:justify-center">
                         <img
                             id='about-img'
                             className='h-auto w-full rounded-2xl object-cover shadow-lg'
@@ -79,12 +79,19 @@ const About = () => {
                         />
 
                         {/* Experience Boxes */}
-                        <div id='about-profile-box-container' className='hidden w-full grid-cols-3 gap-4 sm:grid xl:hidden'>
+                        <div id='about-profile-box-container' className='mob-ex grid w-full grid-cols-3 gap-2 lg:hidden'>
                             {experienceData.map((data, index) => (
-                                <a key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-lg shadow-md' href={data.url} target="_blank" rel="noopener noreferrer">
-                                    {data.icon}
-                                    <h4 className='font-semibold'>{data.title}</h4>
-                                    <p>{data.description}</p>
+                                <a key={index} id="about-profile-box"
+                                    href={data.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: 'none' }} // Remove default underline
+                                >
+                                    <div id="exIcon" className='text-3xl text-primary'>
+                                        {data.icon}
+                                    </div>
+                                    <h4 className='text-xl font-semibold text-primary'>{data.title}</h4>
+                                    <p className='text-base text-gray-600'>{data.description}</p>
                                 </a>
                             ))}
                         </div>
@@ -94,12 +101,21 @@ const About = () => {
                 {/* About Section Content */}
                 <div id="section-2" className="flex flex-col items-center justify-between gap-4">
                     {/* Experience Boxes */}
-                    <div id='about-profile-box-container' className='grid w-full grid-cols-3 gap-4 sm:hidden xl:grid'>
+                    <div id='about-profile-box-container' className='lap-ex hidden w-full grid-cols-3 gap-4 lg:grid'>
                         {experienceData.map((data, index) => (
-                            <a key={index} id="about-profile-box" className='flex flex-col items-center justify-center gap-2 rounded-2xl bg-tertiary p-4 text-center text-sm shadow-md' href={data.url} target="_blank" rel="noopener noreferrer">
-                                {data.icon}
-                                <h4 className='font-semibold'>{data.title}</h4>
-                                <p>{data.description}</p>
+                            <a key={index} id="about-profile-box"
+                                href={data.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: 'none' }} // Remove default underline
+                            >
+                                <div className='flex flex-col items-center justify-start gap-2'>
+                                    <div id="exIcon" className='text-3xl text-primary'>
+                                        {data.icon}
+                                    </div>
+                                    <h4 className='text-xl font-semibold text-primary'>{data.title}</h4>
+                                    <p className='text-base text-gray-600'>{data.description}</p>
+                                </div>
                             </a>
                         ))}
                     </div>
@@ -133,7 +149,7 @@ const About = () => {
                             />
                         </button>
                         {openMenu && (
-                            <div id="about-resume-menu" className="absolute bottom-full left-1/2 mb-2 w-80 translate-x-[-50%] transform flex-col gap-2 bg-tertiary shadow-lg">
+                            <div id="about-resume-menu" className="absolute bottom-full left-1/2 mb-4 w-80 translate-x-[-50%] transform flex-col gap-2 bg-tertiary shadow-lg">
                                 <CustomMenuList
                                     handleDownloadClick={handleDownloadClick}
                                 />

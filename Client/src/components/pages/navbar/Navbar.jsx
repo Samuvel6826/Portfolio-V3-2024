@@ -40,7 +40,7 @@ const Navbar = () => {
 	const toggleMobileMenu = () => setOpenMobileMenu(prev => !prev);
 
 	return (
-		<header id="topBar" className="sticky top-0 z-20 flex h-16 w-full bg-tertiary px-4 text-base text-letter shadow-lg lg:px-10 xl:text-xl">
+		<header id="topBar" className="sticky top-0 z-20 flex h-16 w-full bg-tertiary px-4 text-base text-letter shadow-lg lg:px-10 xl:text-xl 2xl:text-2xl">
 			<nav id="nav-header" className="flex h-full w-full items-center justify-between">
 				<div id="desktopMenu" className="hidden w-full items-center justify-between lg:flex">
 					<a href="home" id="logo" className="font-aldrich text-[1.6rem] font-bold transition-transform duration-300 hover:scale-110 xl:text-4xl"
@@ -82,11 +82,11 @@ const Navbar = () => {
 								<ChevronDownIcon
 									aria-label="Toggle dropdown"
 									strokeWidth={2.5}
-									className={`h-4 w-4 transition-transform ${openMenu ? "rotate-0" : "rotate-180"}`}
+									className={`h-4 w-4 transition-transform ${openMenu ? "rotate-180" : "rotate-0"}`}
 								/>
 							</button>
 							{openMenu && (
-								<div className="absolute left-1/2 mt-2 w-80 -translate-x-1/2 transform bg-tertiary text-2xl shadow-lg">
+								<div className="absolute left-1/2 mt-4 w-80 -translate-x-1/2 transform text-2xl shadow-lg">
 									<CustomMenuList />
 								</div>
 							)}

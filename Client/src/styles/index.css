@@ -21,7 +21,7 @@
 
 	/* Remove default text decoration and apply link styles */
 	a {
-		@apply no-underline hover:text-blue-700;
+		@apply no-underline hover:text-link;
 	}
 
 	/* Heading styles */

@@ -92,7 +92,7 @@ const Contact = () => {
     };
 
     return (
-        <section id='contact' className='h-full w-full bg-primary p-4 lg:p-10'>
+        <section id='contact' className='h-full w-full overflow-hidden bg-primary p-4 lg:p-10'>
             <Toaster /> {/* Add Toaster component to handle notifications */}
             <div id="contact-container" className="flex h-full flex-col justify-between gap-4">
                 <header id='contact-header' className='text-center text-secondary'>
@@ -100,8 +100,8 @@ const Contact = () => {
                     <p id="contact-page-desc" className='text-xl'>Please fill out the form below to discuss any work opportunities.</p>
                 </header>
 
-                <main id='contact-wrapper' className='flex w-full flex-col gap-3' data-aos="fade-right">
-                    <form id="contact-form" ref={formRef} onSubmit={formikQuery.handleSubmit}>
+                <main id='contact-wrapper' className='flex w-full flex-col gap-3' >
+                    <form id="contact-form" ref={formRef} onSubmit={formikQuery.handleSubmit} data-aos="fade-right">
                         <div id='nameContainer'>
                             <input
                                 type="text"

@@ -6,7 +6,9 @@
 
 @layer components {
 	/* Default styles for all screen sizes */
-
+	#about-profile-box {
+		@apply flex transform flex-col gap-2 rounded-2xl bg-tertiary p-3 text-center shadow-lg transition-transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary;
+	}
 	/* Media query for screens 640px and up: sm */
 	@media screen and (min-width: 640px) {
 		#about-page-title {
@@ -19,20 +21,29 @@
 			@apply w-[65%];
 		}
 		#about-profile-box-container {
-			@apply grid-cols-1;
+			@apply grid-cols-1 gap-4;
 		}
 		#about-profile-box {
-			@apply text-xl;
+			@apply justify-around;
+		}
+		#about-profile-box #exIcon {
+			@apply text-4xl;
+		}
+		#about-profile-box h4 {
+			@apply text-2xl;
+		}
+		#about-profile-box p {
+			@apply text-lg;
 		}
 	}
 
 	/* Media query for screens 768px and up: md */
 	@media screen and (min-width: 768px) {
-		#about-profile-box {
-			@apply text-2xl gap-4;
-		}
 		#about-para {
 			@apply text-xl leading-loose;
+		}
+		#about-profile-box p {
+			@apply text-xl;
 		}
 	}
 
@@ -54,10 +65,19 @@
 			@apply grid-cols-3;
 		}
 		#about-profile-box {
-			@apply text-base gap-2;
+			@apply justify-start items-center;
+		}
+		#about-profile-box #exIcon {
+			@apply text-2xl;
+		}
+		#about-profile-box h4 {
+			@apply text-xl;
+		}
+		#about-profile-box p {
+			@apply text-sm;
 		}
 		#about-para {
-			@apply text-[1.3rem] leading-loose;
+			@apply text-[1.15rem] leading-[1.9rem];
 		}
 		#about-resume-btn {
 			@apply text-[1.3rem] p-4;
@@ -72,8 +92,14 @@
 		#section-2 {
 			@apply w-[65%];
 		}
-		#about-profile-box {
-			@apply text-[1.35rem] gap-2;
+		#about-profile-box #exIcon {
+			@apply text-4xl;
+		}
+		#about-profile-box h4 {
+			@apply text-2xl;
+		}
+		#about-profile-box p {
+			@apply text-xl;
 		}
 		#about-para {
 			@apply text-[1.35rem] leading-[2.5rem];
@@ -85,17 +111,26 @@
 
 	/* Tailwind equivalent: 2xl */
 	@media (min-width: 1536px) {
+		#about-page-title {
+			@apply text-5xl;
+		}
 		#section-1 {
 			@apply w-[30%];
 		}
 		#section-2 {
 			@apply w-[70%];
 		}
-		#about-profile-box {
-			@apply text-[1.6rem] gap-4;
+		#about-profile-box #exIcon {
+			@apply text-5xl;
+		}
+		#about-profile-box h4 {
+			@apply text-4xl;
+		}
+		#about-profile-box p {
+			@apply text-2xl;
 		}
 		#about-para {
-			@apply text-[1.8rem] leading-loose;
+			@apply text-[1.8rem] leading-[3.5rem];
 		}
 		#about-resume-btn {
 			@apply text-[1.6rem] p-4;

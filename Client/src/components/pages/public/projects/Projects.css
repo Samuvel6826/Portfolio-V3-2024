@@ -79,4 +79,11 @@
 			@apply px-12; /* Extra padding for extra large screens */
 		}
 	}
+
+	/* Media query for screens 1536px and up: 2xl */
+	@media screen and (min-width: 1536px) {
+		#projects-page-title {
+			@apply text-5xl;
+		}
+	}
 }

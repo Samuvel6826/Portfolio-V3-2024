@@ -50,4 +50,9 @@
 			@apply w-[85%];
 		}
 	}
+	@media (min-width: 1536px) {
+		#certificate-page-title {
+			@apply text-5xl;
+		}
+	}
 }
