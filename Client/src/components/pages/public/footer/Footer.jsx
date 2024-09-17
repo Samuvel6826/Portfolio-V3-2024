@@ -130,6 +130,12 @@ const Footer = () => {
                                 </a>
                             ))}
                         </div>
+
+                        <a href="home" id="logo" className="mt-2 font-aldrich text-4xl font-bold tracking-widest transition-transform duration-300 hover:scale-110"
+                            style={{ background: "linear-gradient(90deg, #ff4b5c, #0072ff)", WebkitBackgroundClip: "text", color: "transparent", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}>
+                            SamToCode24
+                        </a>
+
                     </div>
                 </div>
 

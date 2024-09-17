@@ -7,6 +7,26 @@
 @layer components {
 	/* Default styles for all screen sizes */
 
+	/* Enhanced Tailwind CSS for a universal button */
+	/* Enhanced Tailwind CSS for a stylish button without background color */
+	#footer button {
+		@apply px-4 py-2 rounded-lg font-semibold border border-blue-600  hover:bg-blue-600 text-letter active:bg-blue-700 shadow-md transition-transform duration-300 transform focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+	}
+
+	/* Hover effect to enlarge and change background color */
+	#footer button:hover {
+		@apply scale-105 bg-blue-600;
+	}
+
+	/* Focus effect to add a ring around the button without a white border */
+	#footer button:focus {
+		@apply ring-offset-2 ring-blue-500 ring-2;
+	}
+
+	/* Active effect to slightly shrink and change background color */
+	#footer button:active {
+		@apply scale-95 bg-blue-700;
+	}
 	#footer #headings {
 		@apply text-primary text-3xl font-bold;
 	}
