@@ -87,11 +87,13 @@ const About = () => {
                                     rel="noopener noreferrer"
                                     style={{ textDecoration: 'none' }} // Remove default underline
                                 >
-                                    <div id="exIcon" className='text-3xl text-primary'>
-                                        {data.icon}
+                                    <div className='flex flex-col items-center justify-start gap-2'>
+                                        <div id="exIcon" className='text-3xl text-primary'>
+                                            {data.icon}
+                                        </div>
+                                        <h4 className='text-xl font-semibold text-primary'>{data.title}</h4>
+                                        <p className='text-base text-gray-600'>{data.description}</p>
                                     </div>
-                                    <h4 className='text-xl font-semibold text-primary'>{data.title}</h4>
-                                    <p className='text-base text-gray-600'>{data.description}</p>
                                 </a>
                             ))}
                         </div>
@@ -149,7 +151,7 @@ const About = () => {
                             />
                         </button>
                         {openMenu && (
-                            <div id="about-resume-menu" className="absolute bottom-full left-1/2 mb-4 w-80 translate-x-[-50%] transform flex-col gap-2 bg-tertiary shadow-lg">
+                            <div id="about-resume-menu" className="absolute bottom-full left-1/2 mb-4 w-80 translate-x-[-50%] transform flex-col gap-2 bg-transparent shadow-lg">
                                 <CustomMenuList
                                     handleDownloadClick={handleDownloadClick}
                                 />
