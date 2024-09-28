@@ -1,4 +1,5 @@
 /* General Styles */
+
 .active {
 	background-color: transparent !important;
 }
@@ -69,19 +70,6 @@
 .mobileMenuListItem:hover {
 	color: #66b2ff; /* Text color on hover */
 	transform: scale(1.05); /* Slightly scale up on hover */
-}
-
-/* Underline Effect for Mobile Menu */
-.mobileMenuListItem::after {
-	content: "";
-	position: absolute;
-	bottom: -1rem;
-	left: 0;
-	height: 2px;
-	width: 100%;
-	background-color: #66b2ff; /* Underline color */
-	transform: scaleX(0);
-	transition: transform 0.3s;
 }
 
 /* Active State for Mobile Menu */

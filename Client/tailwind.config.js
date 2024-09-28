@@ -46,7 +46,7 @@ export default withMT({
         "border": "#dcdcdc",        // Light Gray for borders to add definition without being harsh
         "text-primary": "#333333",   // Dark Gray for main text for good readability
         "text-secondary": "#666666", // Medium Gray for secondary text for subtle differentiation
-        "link": "#66b2ff",          // Matching secondary color for links to maintain consistency
+        "link": "#e93380",          // Matching secondary color for links to maintain consistency
         "success": "#28a745",        // Standard Green for success messages
         "warning": "#ffc107",        // Warm Amber for warning messages
         "error": "#dc3545",          // Standard Red for error messages
