@@ -189,7 +189,7 @@ const Contact = () => {
 
                     <div id='map-container' data-aos="fade-left">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7898.414636338594!2d77.246475!3d8.181859!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMTAnNTQuNyJOIDc3wrAxNCc0Ny4zIkU!5e0!3m2!1sen!2sin!4v1715710048191!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2412.036606469489!2d77.24719524529459!3d8.182719891557351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMTAnNTQuNyJOIDc3wrAxNCc0Ny4zIkU!5e1!3m2!1sen!2sin!4v1732508303043!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
