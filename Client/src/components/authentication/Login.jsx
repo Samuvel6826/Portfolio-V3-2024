@@ -75,14 +75,14 @@ const Login = () => {
                         {loading ? "Logging In..." : "Log In"}
                     </button>
                 </form>
-                <div className="mt-6 text-center">
+                {/* <div className="mt-6 text-center">
                     <Link
                         to="/signUp"
                         className="text-sm font-medium text-blue-600 hover:underline"
                     >
                         Don't have an account? Sign Up
                     </Link>
-                </div>
+                </div> */}
             </div>
             <Toaster />
         </section>
