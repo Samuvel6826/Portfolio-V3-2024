@@ -1,11 +1,11 @@
 // imageUrls.jsx
-import netlifyLogo from '../../../../assets/logo-netlify-large-fullcolor-lightmode.png'
-import reactLogo from '../../../../assets/logo_React_light.svg'
-import mongodbLogo from '../../../../assets/MongoDB_Fores-Green.svg'
-import mongooseLogo from '../../../../assets/Mongoose.js.svg'
-import githubLogo from '../../../../assets/github-mark.svg'
-import renderLogo from '../../../../assets/render-community.svg'
-import postmanLogo from '../../../../assets/Postman-logo-orange-2021.svg'
+import netlifyLogo from '../../../../assets/logos/logo-netlify-large-fullcolor-lightmode.png'
+import reactLogo from '../../../../assets/logos/logo_React_light.svg'
+import mongodbLogo from '../../../../assets/logos/MongoDB_Fores-Green.svg'
+import mongooseLogo from '../../../../assets/logos/Mongoose.js.svg'
+import githubLogo from '../../../../assets/logos/github-mark.svg'
+import renderLogo from '../../../../assets/logos/render-community.svg'
+import postmanLogo from '../../../../assets/logos/Postman-logo-orange-2021.svg'
 
 const imageUrls = {
     frontend: {

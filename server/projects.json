@@ -1,0 +1,93 @@
+[
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1cb"
+        },
+        "projectID": 1,
+        "name": "The BIBLE",
+        "description": "The Holy Bible in English with 4 versions. It contains next and previous buttons to navigate the verses.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1702094201/The_Bible_h0ajxc.png",
+        "siteLink": "https://admirable-figolla-a39cff.netlify.app/",
+        "category": "Utilities",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    },
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1d0"
+        },
+        "projectID": 2,
+        "name": "CRUD WITH STUDENT & TEACHER MANAGEMENT",
+        "description": "Admin dashboard implementing CRUD with Student & Teacher Management, including Assigning Features.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1702094196/CRUD_tr40vi.png",
+        "siteLink": "https://tourmaline-gumdrop-6f0708.netlify.app/dashboard",
+        "category": "CRUD Operations",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    },
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1cd"
+        },
+        "projectID": 3,
+        "name": "WASTE MANAGEMENT SYSTEM",
+        "description": "A CRUD project with AUTH, JWT, and IoT sensor integration.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1715486636/Screenshot_2024-05-12_at_9.32.04_AM_hyvtk8.png",
+        "siteLink": "https://wastemanagementbypkc.netlify.app",
+        "category": "Data Management",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    },
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1ce"
+        },
+        "projectID": 4,
+        "name": "QUIZ APP",
+        "description": "A quiz app with 7 rounds, each with unique challenges.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1702094200/PKC_Quiz_muce4g.png",
+        "siteLink": "https://quiz-app-cs-pkc-2023-26.netlify.app",
+        "category": "Games & Fun",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    },
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1cf"
+        },
+        "projectID": 5,
+        "name": "PAGINATION",
+        "description": "Dog's Images based on the Stanford Dogs Dataset.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1702094198/Dogs_Image_kumdsz.png",
+        "siteLink": "https://benevolent-chimera-fee51e.netlify.app/",
+        "category": "Utilities",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    },
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1d1"
+        },
+        "projectID": 6,
+        "name": "SIMPLE DICTIONARY",
+        "description": "A simple JavaScript-based dictionary.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1702094196/Dictionary_jpde8n.png",
+        "siteLink": "https://deft-cassata-4b0352.netlify.app/",
+        "category": "Utilities",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    },
+    {
+        "_id": {
+            "$oid": "65c71aa756dca096e399b1cc"
+        },
+        "projectID": 7,
+        "name": "SIMPLE CALCULATOR",
+        "description": "A simple JavaScript calculator.",
+        "imgUrl": "https://res.cloudinary.com/dgsucveh2/image/upload/v1702094194/Calculator_frt7gf.png",
+        "siteLink": "https://aquamarine-malasada-bb530c.netlify.app/",
+        "category": "Utilities",
+        "createdAt": "2024-12-15",
+        "updatedAt": "2024-12-15"
+    }
+]

@@ -1,0 +1,158 @@
+[
+    {
+        "skillID": 1,
+        "category": "Frontend",
+        "skills": [
+            {
+                "name": "HTML",
+                "link": "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
+                "imageUrl": "https://img.icons8.com/color/480/html-5--v1.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "CSS",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+                "imageUrl": "https://img.icons8.com/color/480/css3.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "JavaScript",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "imageUrl": "https://img.icons8.com/color/480/javascript--v1.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Bootstrap",
+                "link": "https://getbootstrap.com/",
+                "imageUrl": "https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Tailwind CSS",
+                "link": "https://tailwindcss.com/",
+                "imageUrl": "https://img.icons8.com/fluency/480/tailwind_css.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "React",
+                "link": "https://react.dev/",
+                "imageUrl": "https://react.dev/logo-og.png",
+                "level": "Intermediate"
+            }
+        ]
+    },
+    {
+        "skillID": 2,
+        "category": "Backend",
+        "skills": [
+            {
+                "name": "Node.js",
+                "link": "https://nodejs.org/docs/latest/api/",
+                "imageUrl": "https://nodejs.org/static/logos/nodejsDark.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Express.js",
+                "link": "https://expressjs.com/",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "MongoDB",
+                "link": "https://www.mongodb.com/",
+                "imageUrl": "https://www.mongodb.com/favicon.ico",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Mongoose",
+                "link": "https://mongoosejs.com/",
+                "imageUrl": "https://mongoosejs.com/docs/images/mongoose5_62x62.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "MySQL",
+                "link": "https://www.mysql.com/downloads/",
+                "imageUrl": "https://www.mysql.com/common/logos/logo-mysql-170x115.png",
+                "level": "Basic"
+            },
+            {
+                "name": "JWT Token",
+                "link": "https://jwt.io/",
+                "imageUrl": "https://jwt.io/img/logo.svg",
+                "level": "Basic"
+            }
+        ]
+    },
+    {
+        "skillID": 3,
+        "category": "Cloud Deployment",
+        "skills": [
+            {
+                "name": "Netlify",
+                "link": "https://app.netlify.com",
+                "imageUrl": "https://img.icons8.com/color/480/netlify.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Firebase",
+                "link": "https://firebase.google.com/",
+                "imageUrl": "https://www.gstatic.com/devrel-devsite/prod/vb04bc6a770b206c5880569d039fa6eaa90ca0850e1afe1934dab7999e04ac53a/firebase/images/lockup.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Surge.sh",
+                "link": "https://surge.sh",
+                "imageUrl": "https://surge.sh/images/logos/svg/surge-logo.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Render",
+                "link": "https://render.com",
+                "imageUrl": "https://render.com/assets/img/logo.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "AWS",
+                "link": "https://aws.amazon.com/free/webapps/?p=ft&z=subnav&loc=3",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png",
+                "level": "Basic"
+            }
+        ]
+    },
+    {
+        "skillID": 4,
+        "category": "Other",
+        "skills": [
+            {
+                "name": "Git",
+                "link": "https://git-scm.com/",
+                "imageUrl": "https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "GitHub",
+                "link": "https://github.com/Samuvel6826",
+                "imageUrl": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Postman",
+                "link": "https://postman.com/",
+                "imageUrl": "https://www.postman.com/favicon.ico",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Visual Studio Code",
+                "link": "https://code.visualstudio.com/",
+                "imageUrl": "https://code.visualstudio.com/assets/images/code-stable.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Google Analytics",
+                "link": "https://analytics.google.com/",
+                "imageUrl": "https://developers.google.com/static/analytics/images/terms/lockup_ic_Analytics_horiz_272px_clr.png",
+                "level": "Basic"
+            }
+        ]
+    }
+]
