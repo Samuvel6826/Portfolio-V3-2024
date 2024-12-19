@@ -24,29 +24,44 @@ const getAllProjects = async (req, res) => {
 // Get a single project by projectID
 const getProjectById = async (req, res) => {
     try {
-        const project = await Project.findOne({ projectID: req.params.projectID });
-        console.log(req.params.projectID);
+        const { projectID } = req.query; // Extract projectID from the query parameter
+
+        if (!projectID) {
+            return res.status(400).json({ message: 'ProjectID query parameter is required' });
+        }
+
+        // Find the project based on projectID
+        const project = await Project.findOne({ projectID: parseInt(projectID) });
 
         if (!project) {
             return res.status(404).json({ message: 'Project not found' });
         }
+
         res.status(200).json(project);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
 };
 
 // Update a project by projectID
 const updateProject = async (req, res) => {
     try {
+        const { projectID } = req.query; // Extract projectID from the query parameter
+
+        if (!projectID) {
+            return res.status(400).json({ message: 'ProjectID query parameter is required' });
+        }
+
         const updatedProject = await Project.findOneAndUpdate(
-            { projectID: req.params.projectID },
+            { projectID: parseInt(projectID) },
             req.body,
             { new: true }
         );
+
         if (!updatedProject) {
             return res.status(404).json({ message: 'Project not found' });
         }
+
         res.status(200).json(updatedProject);
     } catch (error) {
         res.status(400).json({ error: error.message });
@@ -56,10 +71,18 @@ const updateProject = async (req, res) => {
 // Delete a project by projectID
 const deleteProject = async (req, res) => {
     try {
-        const deletedProject = await Project.findOneAndDelete({ projectID: req.params.projectID });
+        const { projectID } = req.query; // Extract projectID from the query parameter
+
+        if (!projectID) {
+            return res.status(400).json({ message: 'ProjectID query parameter is required' });
+        }
+
+        const deletedProject = await Project.findOneAndDelete({ projectID: parseInt(projectID) });
+
         if (!deletedProject) {
             return res.status(404).json({ message: 'Project not found' });
         }
+
         res.status(200).json({ message: 'Project deleted successfully' });
     } catch (error) {
         res.status(400).json({ error: error.message });

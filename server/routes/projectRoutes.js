@@ -11,7 +11,7 @@ router.get('/', getProjectsLimiter, projectController.getAllProjects); // Apply 
 // POST create a new project (with rate limiting)
 router.post('/', createProjectLimiter, projectController.createProject); // Apply rate limiter for POST /projects
 
-router.get('/', projectController.getProjectById);   // Get project by ID
+router.get('/single', projectController.getProjectById);   // Get project by ID
 router.put('/', projectController.updateProject);    // Update project by ID
 router.delete('/', projectController.deleteProject); // Delete project by ID
 
