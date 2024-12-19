@@ -45,7 +45,13 @@ const skillSchema = new mongoose.Schema({
         type: String,
         default: getFormattedDate // Automatically update on creation
     }
-});
+},
+    {
+        versionKey: false,
+        collection: 'skills',
+        toJSON: { virtuals: true, versionKey: false },
+        toObject: { virtuals: true, versionKey: false }
+    });
 
 // Middleware to update `updatedAt` field automatically
 skillSchema.pre('save', function (next) {
@@ -54,6 +60,6 @@ skillSchema.pre('save', function (next) {
 });
 
 // Create the Skills model
-const Skill = mongoose.model('Skills', skillSchema);
+const Skill = mongoose.model('skills', skillSchema);
 
 module.exports = Skill;

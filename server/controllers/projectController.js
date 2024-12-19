@@ -1,5 +1,3 @@
-// controllers/projectController.js
-
 const Project = require('../models/projectModel');
 
 // Create a new project
@@ -23,10 +21,12 @@ const getAllProjects = async (req, res) => {
     }
 };
 
-// Get a single project by ID
+// Get a single project by projectID
 const getProjectById = async (req, res) => {
     try {
-        const project = await Project.findById(req.params.id);
+        const project = await Project.findOne({ projectID: req.params.projectID });
+        console.log(req.params.projectID);
+
         if (!project) {
             return res.status(404).json({ message: 'Project not found' });
         }
@@ -36,10 +36,14 @@ const getProjectById = async (req, res) => {
     }
 };
 
-// Update a project by ID
+// Update a project by projectID
 const updateProject = async (req, res) => {
     try {
-        const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedProject = await Project.findOneAndUpdate(
+            { projectID: req.params.projectID },
+            req.body,
+            { new: true }
+        );
         if (!updatedProject) {
             return res.status(404).json({ message: 'Project not found' });
         }
@@ -49,10 +53,10 @@ const updateProject = async (req, res) => {
     }
 };
 
-// Delete a project by ID
+// Delete a project by projectID
 const deleteProject = async (req, res) => {
     try {
-        const deletedProject = await Project.findByIdAndDelete(req.params.id);
+        const deletedProject = await Project.findOneAndDelete({ projectID: req.params.projectID });
         if (!deletedProject) {
             return res.status(404).json({ message: 'Project not found' });
         }

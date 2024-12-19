@@ -54,7 +54,13 @@ const projectSchema = new mongoose.Schema({
     type: String,
     default: getFormattedDate // Automatically update on creation
   }
-});
+},
+  {
+    versionKey: false,
+    collection: 'projects',
+    toJSON: { virtuals: true, versionKey: false },
+    toObject: { virtuals: true, versionKey: false }
+  });
 
 // Middleware to update `updatedAt` field automatically
 projectSchema.pre('save', function (next) {
@@ -63,6 +69,6 @@ projectSchema.pre('save', function (next) {
 });
 
 // Create the Projects model
-const Project = mongoose.model('Projects', projectSchema);
+const Project = mongoose.model('projects', projectSchema);
 
 module.exports = Project;
