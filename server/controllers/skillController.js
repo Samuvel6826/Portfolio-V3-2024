@@ -14,7 +14,7 @@ const createSkillCategory = async (req, res) => {
 // Get all skill categories
 const getAllSkillCategories = async (req, res) => {
     try {
-        const skillCategories = await Skill.find();
+        const skillCategories = await Skill.find().sort({ SkillID: 1 });
         res.status(200).json(skillCategories);
     } catch (error) {
         res.status(400).json({ error: error.message });
@@ -52,7 +52,7 @@ const updateSkillCategory = async (req, res) => {
         }
 
         const updatedSkillCategory = await Skill.findOneAndUpdate(
-            { skillID: parseInt(skillID, 10) },
+            { skillID: Number(skillID, 10) },
             req.body,
             { new: true }
         );
@@ -76,7 +76,7 @@ const deleteSkillCategory = async (req, res) => {
             return res.status(400).json({ message: 'skillID query parameter is required' });
         }
 
-        const deletedSkillCategory = await Skill.findOneAndDelete({ skillID: parseInt(skillID, 10) });
+        const deletedSkillCategory = await Skill.findOneAndDelete({ skillID: Number(skillID, 10) });
 
         if (!deletedSkillCategory) {
             return res.status(404).json({ message: 'Skill category not found' });

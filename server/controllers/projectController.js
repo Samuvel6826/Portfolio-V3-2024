@@ -11,10 +11,10 @@ const createProject = async (req, res) => {
     }
 };
 
-// Get all projects
+// Get all projects sorted by projectID
 const getAllProjects = async (req, res) => {
     try {
-        const projects = await Project.find();
+        const projects = await Project.find().sort({ projectID: 1 });  // Sorting by projectID in ascending order (1 for ascending, -1 for descending)
         res.status(200).json(projects);
     } catch (error) {
         res.status(400).json({ error: error.message });
@@ -31,7 +31,7 @@ const getProjectById = async (req, res) => {
         }
 
         // Find the project based on projectID
-        const project = await Project.findOne({ projectID: parseInt(projectID) });
+        const project = await Project.findOne({ projectID: Number(projectID) });
 
         if (!project) {
             return res.status(404).json({ message: 'Project not found' });
@@ -53,7 +53,7 @@ const updateProject = async (req, res) => {
         }
 
         const updatedProject = await Project.findOneAndUpdate(
-            { projectID: parseInt(projectID) },
+            { projectID: Number(projectID) },
             req.body,
             { new: true }
         );
@@ -77,7 +77,7 @@ const deleteProject = async (req, res) => {
             return res.status(400).json({ message: 'ProjectID query parameter is required' });
         }
 
-        const deletedProject = await Project.findOneAndDelete({ projectID: parseInt(projectID) });
+        const deletedProject = await Project.findOneAndDelete({ projectID: Number(projectID) });
 
         if (!deletedProject) {
             return res.status(404).json({ message: 'Project not found' });
