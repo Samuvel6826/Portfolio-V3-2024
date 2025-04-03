@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors'); // Import CORS
 
 // Import routes and middleware
 const indexRouter = require('./routes/index');
@@ -15,6 +16,13 @@ const { errorHandlerMiddleware } = require('./middlewares/errorHandlers'); // Im
 const connectToDatabase = require('./configs/mongoDBconfig.js');
 
 var app = express();
+
+// CORS configuration
+app.use(cors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // Allow cookies to be sent with requests
+}));
 
 // Continue setting up the app after database connection
 app.use(logger('dev'));

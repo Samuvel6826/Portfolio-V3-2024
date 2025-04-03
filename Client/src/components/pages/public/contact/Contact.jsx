@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import axios from 'axios';
 import './Contact.css';
-import Loader from '../../../common/Loader';
+import Loader from '../../shared/Loader';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 const Contact = () => {
     const [loading, setLoading] = useState(false);
@@ -93,7 +93,6 @@ const Contact = () => {
 
     return (
         <section id='contact' className='h-full w-full overflow-hidden bg-primary p-4 lg:p-10'>
-            <Toaster /> {/* Add Toaster component to handle notifications */}
             <div id="contact-container" className="flex h-full flex-col justify-between gap-4">
                 <header id='contact-header' className='text-center text-secondary'>
                     <h1 id="contact-page-title" className='text-3xl font-bold'>Contact Me</h1>

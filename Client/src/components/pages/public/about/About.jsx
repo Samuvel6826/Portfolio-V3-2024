@@ -1,7 +1,7 @@
 import { useState } from "react";
 import aboutImg from '../../../../assets/about-img.jpeg';
 import { FaGithub, FaProjectDiagram, FaRobot } from 'react-icons/fa'; // Add other icons as needed
-import CustomMenuList from "../../navbar/CustomMenuList";
+import CustomMenuList from "../../shared/navbar/children/CustomMenuList";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import './About.css';
 
@@ -53,7 +53,7 @@ const About = () => {
             description: "36 Repositories"
         },
         {
-            url: "https://github.com/Samuvel6826/PKC.SF.B.Sc.CS_2023-26/tree/11977b825b4d0c4a92c7cd56e097103fe4a99e09/Full-Stack-Projects/Dlib_Face_Recognition_App", // Face recognition project URL
+            url: "https://github.com/Samuvel6826/Face-Recognition_Facenet.git", // Face recognition project URL
             icon: <FaRobot className='text-primary' />, // Updated icon for ML
             title: "ML",
             description: "Face Recognition System"

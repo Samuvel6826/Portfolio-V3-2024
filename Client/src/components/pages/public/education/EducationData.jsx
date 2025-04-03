@@ -1,6 +1,7 @@
 export const educationData = [
     {
         title: "SSLC: 2019",
+        result: "https://drive.google.com/file/d/1U3b410BHM6IDLxejx2JN1ukq452NmPG5/view?usp=sharing",
         details: [
             {
                 text: "School: Christian Matriculation Higher Secondary School, Kallukkoottam",
@@ -12,6 +13,7 @@ export const educationData = [
     },
     {
         title: "HSC: 2021",
+        result: "https://drive.google.com/file/d/1U3b410BHM6IDLxejx2JN1ukq452NmPG5/view?usp=sharing",
         details: [
             {
                 text: "School: Mother Theresa Higher Secondary School, Mylacode",
@@ -24,6 +26,7 @@ export const educationData = [
     },
     {
         title: "Web Development: 2023",
+        result: "https://www.guvi.in/share-certificate/E15ri2qD52L30070n4",
         details: [
             {
                 text: " Institute: GUVI an IIT-M & IIM-A incubated Ed-tech Company, Chennai",
@@ -36,6 +39,7 @@ export const educationData = [
     },
     {
         title: "UG: 2023 – 26 (Ongoing)",
+        result: "https://drive.google.com/file/d/1cohorsKCQRLTQx2tvvDTbVCISnHxREEG/view?usp=sharing",
         details: [
             {
                 text: "University: Manonmaniam Sundaranar University, Tirunelveli",
@@ -46,8 +50,8 @@ export const educationData = [
                 link: "https://www.pioneerkumaraswamycollege.com",
             },
             { text: "Field of Study: B.Sc. Computer Science" },
-            { text: "CGPA: 85% (First Two Semesters)" },
-            { text: "Completion Year: 2026 (Expected)" },
+            { text: "CGPA: 8.52 (First Three Semesters)" },
+            { text: "First Class with Distinction" },
         ],
     },
 ];

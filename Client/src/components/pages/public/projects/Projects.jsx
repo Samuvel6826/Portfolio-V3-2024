@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import './Projects.css';
 import axios from 'axios';
-import Loader from '../../../common/Loader';
+import Loader from '../../shared/Loader';
 import { Button, IconButton } from '@material-tailwind/react';
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 
@@ -32,10 +32,12 @@ const Projects = () => {
     const getProjects = useCallback(async (retryCount = 0) => {
         try {
             const res = await axios.get(
-                'https://b46wet-capstone-portfolio-backend.onrender.com/projects'
+                import.meta.env.VITE_SERVER_HOST_URL + "/projects"
             );
-            setProjects(res.data.data);
-            setTotalCards(res.data.data.length);
+            // console.log(res.data);
+
+            setProjects(res.data);
+            setTotalCards(res.data.length);
             setLoading(false);
         } catch (err) {
             if (retryCount < 2) {

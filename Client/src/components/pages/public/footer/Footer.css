@@ -78,7 +78,7 @@
 			@apply w-72 gap-2 text-base;
 		}
 		#footer .btns-container-menu {
-			@apply text-base gap-2;
+			@apply text-base gap-2 text-start;
 		}
 		#footer #support-btns button {
 			@apply w-60;

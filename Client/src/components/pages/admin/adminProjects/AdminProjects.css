@@ -1,0 +1,51 @@
+.admin-projects {
+	padding: 20px;
+}
+
+.project-form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.project-form input,
+.project-form textarea {
+	margin-bottom: 10px;
+	padding: 8px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.project-form button {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.project-list {
+	margin-top: 20px;
+}
+
+.project-item {
+	background-color: #f9f9f9;
+	padding: 15px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+}
+
+.project-item button {
+	margin-left: 10px;
+	padding: 6px 12px;
+	background-color: #f44336;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.project-item button:hover {
+	background-color: #d32f2f;
+}

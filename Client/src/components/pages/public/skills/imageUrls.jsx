@@ -1,6 +1,7 @@
 // imageUrls.jsx
 import netlifyLogo from '../../../../assets/logos/logo-netlify-large-fullcolor-lightmode.png'
-import reactLogo from '../../../../assets/logos/logo_React_light.svg'
+import reactLogo from '../../../../assets/logos/reactjs_wordmark_light.svg'
+import nextjsLogo from '../../../../assets/logos/nextjs.svg'
 import mongodbLogo from '../../../../assets/logos/MongoDB_Fores-Green.svg'
 import mongooseLogo from '../../../../assets/logos/Mongoose.js.svg'
 import githubLogo from '../../../../assets/logos/github-mark.svg'
@@ -15,6 +16,7 @@ const imageUrls = {
         bootstrap: 'https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg',
         tailwind: 'https://img.icons8.com/fluency/480/tailwind_css.png',
         react: reactLogo,
+        nextjs: nextjsLogo,
     },
     backend: {
         nodejs: 'https://nodejs.org/static/logos/nodejsDark.svg',

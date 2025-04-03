@@ -26,21 +26,21 @@ const Education = () => {
                         size="default"
                         direction="vertical"
                         items={educationData.map((item) => ({
-                            title: <span id="step-title" className='text-2xl font-extrabold text-secondary'>{item.title}</span>,
+                            title: (
+                                <a href={item.result || "#"} target="_blank" rel="noopener noreferrer">
+                                    <span id="step-title" className='text-2xl font-extrabold text-secondary'>{item.title}</span>
+                                </a>
+                            ),
                             description: (
-                                <ul id="step-description" className='flex list-disc flex-col pl-5 text-lg font-bold'>
-                                    {item.details.map((detail, index) => (
-                                        <li key={index}>
-                                            {detail.link ? (
-                                                <a href={detail.link} target="_blank" rel="noopener noreferrer">
-                                                    {detail.text}
-                                                </a>
-                                            ) : (
-                                                detail.text
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <a href={item.result || "#"} target="_blank" rel="noopener noreferrer">
+                                    <ul id="step-description" className='flex list-disc flex-col pl-5 text-lg font-bold'>
+                                        {item.details.map((detail, index) => (
+                                            <li key={index}>
+                                                {detail.text}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </a>
                             ),
                         }))}
                     />

@@ -47,7 +47,7 @@ const Footer = () => {
                     <div id='foot-menu-container' className='max-lg:hidden'>
                         <h3 id='headings'>MENU</h3>
                         <div className="btns-container-menu">
-                            <a href="#hero">Home</a>
+                            <a href="#home">Home</a>
                             <a href="#about">About</a>
                             <a href="#skills">Skills</a>
                             <a href="#projects">Projects</a>
@@ -133,7 +133,7 @@ const Footer = () => {
 
                         <a href="home" id="logo" className="mt-2 font-aldrich text-4xl font-bold tracking-widest transition-transform duration-300 hover:scale-110"
                             style={{ background: "linear-gradient(90deg, #ff4b5c, #0072ff)", WebkitBackgroundClip: "text", color: "transparent", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}>
-                            SamToCode24
+                            SAMUVEL A
                         </a>
 
                     </div>

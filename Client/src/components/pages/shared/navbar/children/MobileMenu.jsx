@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Drawer, IconButton, Typography } from "@material-tailwind/react";
-import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
+import ResumePdf from '../../../../../assets/Resume/Samuvel-Resume.pdf';
 import { Link, Events, scrollSpy } from "react-scroll";
-import './Navbar.css';
+import '../Navbar.css';
 
 const MobileMenu = ({
     openRight = false,

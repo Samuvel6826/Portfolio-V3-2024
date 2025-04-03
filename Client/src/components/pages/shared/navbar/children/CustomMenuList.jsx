@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IoMdDownload, IoMdClose } from "react-icons/io";
 import { FaFilePdf, FaFileImage } from "react-icons/fa";
-import ResumePdf from '../../../assets/Resume/Samuvel-Resume.pdf';
-import ResumePng from '../../../assets/Resume/Samuvel-Resume.png';
+import ResumePdf from '../../../../../assets/Resume/Samuvel-Resume.pdf';
+import ResumePng from '../../../../../assets/Resume/Samuvel-Resume.png';
 
 const menuItems = [
     { title: "Download as PDF", description: ResumePdf, icon: FaFilePdf },

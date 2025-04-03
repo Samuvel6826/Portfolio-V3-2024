@@ -6,10 +6,11 @@ const Skills = () => {
         frontend: [
             { name: 'HTML', link: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5', imageUrl: imageUrls.frontend.html, level: 'Intermediate' },
             { name: 'CSS', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS', imageUrl: imageUrls.frontend.css, level: 'Intermediate' },
-            { name: 'JavaScript', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', imageUrl: imageUrls.frontend.javascript, level: 'Intermediate' },
-            { name: 'Bootstrap', link: 'https://getbootstrap.com/', imageUrl: imageUrls.frontend.bootstrap, level: 'Intermediate' },
             { name: 'Tailwind CSS', link: 'https://tailwindcss.com/', imageUrl: imageUrls.frontend.tailwind, level: 'Intermediate' },
+            { name: 'JavaScript', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', imageUrl: imageUrls.frontend.javascript, level: 'Intermediate' },
+            // { name: 'Bootstrap', link: 'https://getbootstrap.com/', imageUrl: imageUrls.frontend.bootstrap, level: 'Intermediate' },
             { name: 'React', link: 'https://react.dev/', imageUrl: imageUrls.frontend.react, level: 'Intermediate' },
+            { name: 'Next.js', link: 'https://nextjs.org/', imageUrl: imageUrls.frontend.nextjs, level: 'Intermediate' },
         ],
         backend: [
             { name: 'Node.js', link: 'https://nodejs.org/docs/latest/api/', imageUrl: imageUrls.backend.nodejs, level: 'Intermediate' },

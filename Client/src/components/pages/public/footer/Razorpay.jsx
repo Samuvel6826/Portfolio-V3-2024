@@ -8,7 +8,7 @@ import {
     Input,
     Typography,
 } from '@material-tailwind/react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const Razorpay = () => {
     const [amount, setAmount] = useState("");
@@ -139,7 +139,6 @@ const Razorpay = () => {
                     </div>
                 </PopoverContent>
             </Popover>
-            <Toaster />
         </div>
     );
 }
