@@ -8,6 +8,7 @@ import {
   Outlet,
   Navigate
 } from 'react-router-dom';
+import healthCheckService from './services/healthCheckService'; // Import health check service
 
 // Shared Components
 import { Toaster } from 'react-hot-toast'; // For showing toast notifications
@@ -119,6 +120,20 @@ function App() {
   // Initialize AOS (Animate On Scroll) library for animations
   useEffect(() => {
     AOS.init({ duration: 750 });
+  }, []);
+
+  // Health check ping - will be triggered once when the app loads
+  useEffect(() => {
+    // Initial health check when the app loads
+    const pingServer = async () => {
+      try {
+        await healthCheckService.pingHealthCheck();
+      } catch (error) {
+        console.error('Server health check failed:', error);
+      }
+    };
+
+    pingServer();
   }, []);
 
   return (

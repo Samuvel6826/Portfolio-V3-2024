@@ -31,10 +31,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Health check route
+app.get('/health-check', (req, res) => {
+    res.status(200).json({ status: 'ok', message: 'API is healthy' });
+});
+
 // Use routes
 app.use('/', indexRouter);
-app.use('/projects', projectRoutes);  // Mount project routes at /projects
-app.use('/skills', skillRoutes);      // Mount skill routes at /skills
+app.use('/projects', projectRoutes);
+app.use('/skills', skillRoutes);
 
 // Global error handler
 app.use(errorHandlerMiddleware);
